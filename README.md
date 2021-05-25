@@ -6,5 +6,5 @@ Create with : <br>
 -html <br>
 -sass <br>
 -javascript <br>
--gsap (greensock animation platform) <br>
+-gsap (greensock animation platform - for animation) <br>
 -pace.js (for preloading)
