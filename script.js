@@ -20,8 +20,8 @@ var opening = gsap.timeline();
 
 Pace.on('done', function(){
         
-opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.5})
-        .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.5,}, '-=1.35')
+opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
+        .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { yPercent: 100, stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
         .to('.ryrd.stay1', { xPercent: -265, ease: Expo.easeInOut, duration: .5 }, '-=.6')
