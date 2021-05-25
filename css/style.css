@@ -8,7 +8,7 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  scrollbar-width: 14px;
+  scrollbar-width: 9px;
   scrollbar-color: #000875 transparent;
 }
 
@@ -1246,7 +1246,7 @@ body {
     width: 15vw;
   }
   #skill {
-    min-height: 90vh;
+    min-height: 70vh;
   }
   #skill #skill-title {
     width: 10%;
@@ -1257,18 +1257,18 @@ body {
   }
   #skill #skill-content {
     width: 90%;
-    padding: 50px 25px;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    padding: 20px 25px 60px 25px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #skill #skill-content .skill-box {
-    width: 150px;
+    width: 180px;
     height: 150px;
-    margin: 0 20px;
+    margin: 20px 20px;
   }
   #skill #skill-content .skill-box img {
-    width: 60px;
+    width: 75px;
   }
   #skill #skill-content .skill-box p {
     font-size: 2.3vw;
@@ -1278,7 +1278,7 @@ body {
     margin-top: 2.5px;
   }
   #work {
-    height: 100vh;
+    height: 80vh;
   }
   #work #work-title {
     width: 10%;
@@ -1300,7 +1300,7 @@ body {
     height: 30%;
   }
   #work #work-content #work-other h3 {
-    font-size: 3vw;
+    font-size: 2.5vw;
     letter-spacing: 1px;
   }
   #footer {
@@ -1390,7 +1390,7 @@ body {
   #header #profile-wrapper #profile-box {
     width: 56vw;
     position: absolute;
-    bottom: 13%;
+    bottom: 11%;
     right: 8%;
   }
   #header #scroll-down p {
@@ -1458,7 +1458,7 @@ body {
     display: none;
   }
   #about #about-content #about-text #about-txt-img2 {
-    bottom: -4%;
+    bottom: 2%;
     right: 7%;
     width: 30vw;
   }
