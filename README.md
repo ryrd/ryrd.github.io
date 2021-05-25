@@ -2,9 +2,9 @@
 
 My portofolio website source code
 
-Create with :
--html
--sass
--javascript
--gsap (greensock animation platform)
+Create with : <br>
+-html <br>
+-sass <br>
+-javascript <br>
+-gsap (greensock animation platform) <br>
 -pace.js (for preloading)
