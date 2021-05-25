@@ -62,10 +62,9 @@ ScrollTrigger.matchMedia({
                 yPercent: -50,
                 scrollTrigger: {
                         trigger: '#profile-box',
-                        start: 'top 55%',
+                        start: 'top bottom',
                         end: 'bottom top',
-                        scrub: 1,
-                        markers : true
+                        scrub: 1
                 }
         });
 },
@@ -294,8 +293,9 @@ s3.addEventListener('touchstart', function(e) {
 gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '#skill',
-                start: 'top 60%',
-                toggleActions: 'play none none reverse'
+                start: 'top 55%',
+                toggleActions: 'play none none reverse',
+                markers: true
         },
         opacity: 0,
         yPercent: 35,
