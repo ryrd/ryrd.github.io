@@ -62,9 +62,10 @@ ScrollTrigger.matchMedia({
                 yPercent: -50,
                 scrollTrigger: {
                         trigger: '#profile-box',
-                        start: 'top 60%',
+                        start: 'top 55%',
                         end: 'bottom top',
-                        scrub: 1
+                        scrub: 1,
+                        markers : true
                 }
         });
 },
