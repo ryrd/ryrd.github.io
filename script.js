@@ -293,9 +293,8 @@ s3.addEventListener('touchstart', function(e) {
 gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '#skill',
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-                markers: true
+                start: 'top 77%',
+                toggleActions: 'play none none reverse'
         },
         opacity: 0,
         yPercent: 35,
