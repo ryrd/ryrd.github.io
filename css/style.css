@@ -8,7 +8,7 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  scrollbar-width: 14px;
+  scrollbar-width: 9px;
   scrollbar-color: #000875 transparent;
 }
 
@@ -1458,7 +1458,7 @@ body {
     display: none;
   }
   #about #about-content #about-text #about-txt-img2 {
-    bottom: -4%;
+    bottom: 2%;
     right: 7%;
     width: 30vw;
   }
