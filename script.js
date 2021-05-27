@@ -336,7 +336,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top bottom',
                                 end: 'top 4%',
                                 scrub: 2.5
-                        },scale: 1.4
+                        },scale: 1.35
                 });       
         },
         "(min-width: 451px)": function(){
