@@ -40,7 +40,6 @@ $text : 'Oswald';
     }
 }
 
-
 body{
     background: $dark;
     cursor: url('../img/cursor.png'), auto;
@@ -54,7 +53,6 @@ body{
     background: transparent;
     border: 2px solid $cold;
     border-radius: 50%;
-    // transition: 0.13s;
     top: -11px;
     left: -12px;
     transform: translate(-50%, -50%);
@@ -80,6 +78,7 @@ body{
         align-items: flex-start;
         flex-direction: column;
         padding-left: 11vw;
+        mix-blend-mode: difference;
 
         #header-title1{
             width: 150%;
@@ -99,7 +98,6 @@ body{
                     margin: -2px;
                     font-weight: 400;
                     display: inline-block;
-                    mix-blend-mode: difference;
                 }
             }
         }
@@ -119,7 +117,6 @@ body{
                     margin: 0px;
                     font-weight: 300;
                     display: inline-block;
-                    mix-blend-mode: difference;
                 }
             }
         }
@@ -338,7 +335,6 @@ body{
                     margin: 0 auto;
                     overflow: hidden;
 
-
                     p{
                         font-family: $text;
                         font-size: 2vw;
@@ -388,7 +384,7 @@ body{
             
             #about-txt-img1{
                 position: absolute;
-                top: 43%;
+                top: 20%;
                 left: 3%;
                 width: 15vw;
             }
@@ -435,15 +431,13 @@ body{
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 10px 150px 50px 150px;
+        padding: 10px 100px 60px 100px;
         position: relative;
 
-        // background: grey;
-
         .skill-box{
-            width: 150px;
+            width: 12vw;
             height: 150px;
-            margin: 0 10px;
+            margin: 1vh 1vw;
             color: $light;
             display: flex;
             flex-direction: column;
@@ -453,11 +447,9 @@ body{
             filter: saturate(0) contrast(1.7);
             transition: .5s ease-in-out;
 
-            // background: orange;
-
             img{
                 transition: .5s cubic-bezier(0,.57,.45,1);
-                width: 60px;
+                width: 40%;
             }
             
             p{
@@ -596,6 +588,7 @@ body{
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 
     #footer-grad-top{
         position: absolute;
@@ -799,7 +792,7 @@ body{
 
 
         h1, h2{
-            font-family: bebas neue;
+            font-family: $heading;
             font-weight:lighter;
             letter-spacing: 1px;
         }
@@ -901,6 +894,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+    cursor: none !important;
 }
 #preloader-blue{
     background: $cold;
@@ -992,6 +986,7 @@ body{
 
         #about--title{
             width: 10%;
+            height: 100%;
 
             h2{
                 transform: rotate(-90deg);
@@ -1094,13 +1089,12 @@ body{
             align-items: center;
 
             .skill-box{
-                width: 180px;
-                height: 150px;
-                margin: 20px 20px;
+                width: 15vw;
+                height: 12vh;
+                margin: 1vw 2vw;
 
-                // background: orange;
                 img{
-                    width: 75px;
+                    width: 50%;
                 }
 
                 p{
@@ -1196,7 +1190,7 @@ body{
         #about-content{
             #about-text{
                 #about-text-content{
-                    width: 70%;
+                    width: 80%;
                     align-items: center;
                     
                     .about-box-reveal{
@@ -1217,6 +1211,14 @@ body{
 @media (max-width: 450px){
     #cursor{
         display: none;
+    }
+
+    *{
+        scrollbar-width: 8px;
+    }
+
+    *::-webkit-scrollbar{
+        width: 8px;
     }
 
     #header{
@@ -1258,7 +1260,7 @@ body{
             #profile-box{
                 width: 56vw;
                 position: absolute;
-                bottom: 11%;
+                bottom: 8%;
                 right: 8%
             }
         }
@@ -1279,6 +1281,7 @@ body{
 
         #about--title{
             width: 10%;
+            height: 100%;
 
             h2{
                 transform: rotate(-90deg);
@@ -1343,9 +1346,9 @@ body{
                 }
 
                 #about-txt-img2{
-                    bottom: 2%;
+                    bottom: 0%;
                     right: 7%;
-                    width: 30vw;
+                    width: 28vw;
                 }
             }
         }
@@ -1364,16 +1367,16 @@ body{
 
         #skill-content{
             width: 90%;
-            padding: 50px 25px;
+            padding: 17px 25px 30px 25px;
             align-items: flex-start;
 
             .skill-box{
-                width: 75px;
-                height: 60px;
-                margin: 20px 5px;
+                width: 19vw;
+                height: 10vh;
+                margin: 2vh 1.5vw;
 
                 img{
-                    width: 35px;
+                    width: 45%;
                 }
 
                 p{
@@ -1411,8 +1414,8 @@ body{
                     width: 80%;
 
                     .block-white-line{
-                        height: 1px;
-                        margin-top: 1%;
+                        height: .5px;
+                        margin-top: .5%;
                         width: 90%;
                     }
 
@@ -1443,6 +1446,10 @@ body{
 
     #footer{
         height: 70vh;
+
+        #footer-grad-top{
+            height: 42%;
+        }
 
         #footer-grad-bottom{
             #socials{
@@ -1516,6 +1523,7 @@ body{
             }
             p{
                 font-size: .7rem;
+                padding-right: 15px;
             }
         }
     
@@ -1553,8 +1561,8 @@ body{
         }
         #fullimg-close{
             top: 31%;
-            width: 35px;
-            height: 30px;
+            width: 22px;
+            height: 19px;
         }
     }
 }

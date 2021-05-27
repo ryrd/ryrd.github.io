@@ -94,6 +94,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-left: 11vw;
+  mix-blend-mode: difference;
 }
 
 #header #headline #header-title1 {
@@ -116,7 +117,6 @@ body {
   margin: -2px;
   font-weight: 400;
   display: inline-block;
-  mix-blend-mode: difference;
 }
 
 #header #headline #header-title2 {
@@ -137,7 +137,6 @@ body {
   margin: 0px;
   font-weight: 300;
   display: inline-block;
-  mix-blend-mode: difference;
 }
 
 #header #profile-wrapper {
@@ -476,7 +475,7 @@ body {
 
 #about #about-content #about-text #about-txt-img1 {
   position: absolute;
-  top: 43%;
+  top: 20%;
   left: 3%;
   width: 15vw;
 }
@@ -541,14 +540,14 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 10px 150px 50px 150px;
+  padding: 10px 100px 60px 100px;
   position: relative;
 }
 
 #skill #skill-content .skill-box {
-  width: 150px;
+  width: 12vw;
   height: 150px;
-  margin: 0 10px;
+  margin: 1vh 1vw;
   color: #fdfdfd;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -573,7 +572,7 @@ body {
 #skill #skill-content .skill-box img {
   -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
   transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  width: 60px;
+  width: 40%;
 }
 
 #skill #skill-content .skill-box p {
@@ -742,6 +741,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 #footer #footer-grad-top {
@@ -990,7 +990,7 @@ body {
 }
 
 .show-project .project-title-box h1, .show-project .project-title-box h2 {
-  font-family: bebas neue;
+  font-family: "bebas neue";
   font-weight: lighter;
   letter-spacing: 1px;
 }
@@ -1103,6 +1103,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  cursor: none !important;
 }
 
 #preloader-blue {
@@ -1173,6 +1174,7 @@ body {
   }
   #about #about--title {
     width: 10%;
+    height: 100%;
   }
   #about #about--title h2 {
     -webkit-transform: rotate(-90deg);
@@ -1263,12 +1265,12 @@ body {
             align-items: center;
   }
   #skill #skill-content .skill-box {
-    width: 180px;
-    height: 150px;
-    margin: 20px 20px;
+    width: 15vw;
+    height: 12vh;
+    margin: 1vw 2vw;
   }
   #skill #skill-content .skill-box img {
-    width: 75px;
+    width: 50%;
   }
   #skill #skill-content .skill-box p {
     font-size: 2.3vw;
@@ -1340,7 +1342,7 @@ body {
     height: 100%;
   }
   #about #about-content #about-text #about-text-content {
-    width: 70%;
+    width: 80%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1356,6 +1358,12 @@ body {
 @media (max-width: 450px) {
   #cursor {
     display: none;
+  }
+  * {
+    scrollbar-width: 8px;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
   }
   #header {
     height: 85vh;
@@ -1390,7 +1398,7 @@ body {
   #header #profile-wrapper #profile-box {
     width: 56vw;
     position: absolute;
-    bottom: 11%;
+    bottom: 8%;
     right: 8%;
   }
   #header #scroll-down p {
@@ -1405,6 +1413,7 @@ body {
   }
   #about #about--title {
     width: 10%;
+    height: 100%;
   }
   #about #about--title h2 {
     -webkit-transform: rotate(-90deg);
@@ -1458,9 +1467,9 @@ body {
     display: none;
   }
   #about #about-content #about-text #about-txt-img2 {
-    bottom: 2%;
+    bottom: 0%;
     right: 7%;
-    width: 30vw;
+    width: 28vw;
   }
   #skill {
     min-height: 60vh;
@@ -1474,18 +1483,18 @@ body {
   }
   #skill #skill-content {
     width: 90%;
-    padding: 50px 25px;
+    padding: 17px 25px 30px 25px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
   #skill #skill-content .skill-box {
-    width: 75px;
-    height: 60px;
-    margin: 20px 5px;
+    width: 19vw;
+    height: 10vh;
+    margin: 2vh 1.5vw;
   }
   #skill #skill-content .skill-box img {
-    width: 35px;
+    width: 45%;
   }
   #skill #skill-content .skill-box p {
     font-size: 2.5vw;
@@ -1515,8 +1524,8 @@ body {
     width: 80%;
   }
   #work #work-content .work-box .work-display .block-white-line {
-    height: 1px;
-    margin-top: 1%;
+    height: .5px;
+    margin-top: .5%;
     width: 90%;
   }
   #work #work-content .work-box .work-display h3, #work #work-content .work-box .work-display p {
@@ -1538,6 +1547,9 @@ body {
   }
   #footer {
     height: 70vh;
+  }
+  #footer #footer-grad-top {
+    height: 42%;
   }
   #footer #footer-grad-bottom #socials {
     height: 8vh;
@@ -1610,6 +1622,7 @@ body {
   }
   .show-project .project-title-box p {
     font-size: .7rem;
+    padding-right: 15px;
   }
   .show-project .project-images {
     margin-bottom: 1vh;
@@ -1635,8 +1648,8 @@ body {
   }
   #work-img-fullimg #fullimg-close {
     top: 31%;
-    width: 35px;
-    height: 30px;
+    width: 22px;
+    height: 19px;
   }
 }
 /*# sourceMappingURL=style.css.map */

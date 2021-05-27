@@ -35,6 +35,8 @@
 	width: var(--wl);
 	height: 50px;
 	overflow: hidden;
+
+	cursor: none;
 }
 
 @media (max-width: 450px) {
