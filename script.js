@@ -259,9 +259,9 @@ gsap.to('#about-txt-img1', {
                 trigger: '#about-txt-img1',
                 start: 'top bottom',
                 end: '200% top',
-                scrub: .8
+                scrub: .6
         },
-        yPercent: 60
+        yPercent: 50
 });
 gsap.to('#about-txt-img2', {
         scrollTrigger: {
@@ -327,13 +327,28 @@ document.getElementById('work1-close').addEventListener('click', function(){
 });
 
 //footer
-gsap.from('#footer #img-footer', {
-        scrollTrigger: {
-                trigger: '#footer',
-                start: 'top bottom',
-                end: 'top 4%',
-                scrub: 2.5
-        },scale: 1.2
+
+ScrollTrigger.matchMedia({
+        "(max-width: 450px)": function(){
+                gsap.from('#footer #img-footer', {
+                        scrollTrigger: {
+                                trigger: '#footer',
+                                start: 'top bottom',
+                                end: 'top 4%',
+                                scrub: 2.5
+                        },scale: 1.4
+                });       
+        },
+        "(min-width: 451px)": function(){
+                gsap.from('#footer #img-footer', {
+                        scrollTrigger: {
+                                trigger: '#footer',
+                                start: 'top bottom',
+                                end: 'top 4%',
+                                scrub: 2.5
+                        },scale: 1.2
+                });             
+        },
 });
 
 gsap.from('.footer-social', {
