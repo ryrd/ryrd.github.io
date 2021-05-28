@@ -333,7 +333,7 @@ ScrollTrigger.matchMedia({
                 gsap.from('#footer #img-footer', {
                         scrollTrigger: {
                                 trigger: '#footer',
-                                start: 'top bottom',
+                                start: 'top 90%',
                                 end: 'top 4%',
                                 scrub: 2.5,
                                 markers: true
