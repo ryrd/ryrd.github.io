@@ -336,6 +336,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top 80%',
                                 end: 'top 45%',
                                 scrub: 2.5,
+                                invalidateOnRefresh: false,
                                 markers: true
                         },scale: 1.35
                 });       
