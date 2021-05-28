@@ -334,7 +334,7 @@ ScrollTrigger.matchMedia({
                         scrollTrigger: {
                                 trigger: '#footer',
                                 start: 'top 80%',
-                                end: 'top 40%',
+                                end: 'top 45%',
                                 scrub: 2.5,
                                 markers: true
                         },scale: 1.35
