@@ -335,7 +335,8 @@ ScrollTrigger.matchMedia({
                                 trigger: '#footer',
                                 start: 'top bottom',
                                 end: 'top 4%',
-                                scrub: 2.5
+                                scrub: 2.5,
+                                markers: true
                         },scale: 1.35
                 });       
         },
