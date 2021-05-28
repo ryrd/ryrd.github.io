@@ -337,7 +337,7 @@ ScrollTrigger.matchMedia({
                                 end: '+=270',
                                 scrub: 2.5,
                                 //scroller: '#footer'
-                                markers: true
+                                //markers: true
                         },scale: 1.35
                 });       
         },
