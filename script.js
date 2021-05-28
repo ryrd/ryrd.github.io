@@ -334,7 +334,7 @@ ScrollTrigger.matchMedia({
                         scrollTrigger: {
                                 trigger: '#footer',
                                 start: 'top 80%',
-                                end: '+=10%',
+                                end: '+=200',
                                 scrub: 2.5,
                                 invalidateOnRefresh: true,
                                 markers: true
