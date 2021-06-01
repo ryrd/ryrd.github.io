@@ -213,6 +213,7 @@ body{
     display: flex;
     flex-direction: row;
     letter-spacing: 2px;
+    background: $dark;
 
     #about--title{
         height: 100vh;
@@ -405,6 +406,7 @@ body{
     display: flex;
     flex-direction: row;
     letter-spacing: 2px;
+    background: $dark;
 
     #skill-title{
         width: 20%;
@@ -480,6 +482,7 @@ body{
     height: 150vh;
     display: flex;
     flex-direction: row;
+    background: $dark;
 
     #work-title{
         width: 20%;
@@ -607,6 +610,8 @@ body{
             z-index: -1;
             object-fit: cover;
             position: fixed;
+            bottom: 0%;
+            left: 0;
         }
     }
 
@@ -1451,6 +1456,12 @@ body{
 
         #footer-grad-top{
             height: 42%;
+        }
+
+        picture{
+            img{
+                bottom: -8%;
+            }
         }
 
         #footer-grad-bottom{

@@ -308,11 +308,11 @@ var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 //work
 //work-district survei
 let work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, xPercent: -20, ease: Expo.easeOut, duration: 2})
-    .from('#district-survey .project-title-box h2', { opacity: 0, xPercent: -20, ease: Expo.easeOut, duration: 2}, '-=1.8')
+work.from('#district-survey .project-title-box h1', { opacity: 0, xPercent: -40, ease: Expo.easeOut, duration: 2, delay: .4})
+    .from('#district-survey .project-title-box h2', { opacity: 0, xPercent: -40, ease: Expo.easeOut, duration: 2}, '-=1.8')
     .from('#district-survey #work1-close',{opacity: 0, ease: Power2.easeIn}, '-=1.9')
     .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=1.8')
-    .from('#district-survey .project-title-box p', { opacity: 0, xPercent: -10, ease: Expo.easeOut, duration: 1.2}, '-=1.8')
+    .from('#district-survey .project-title-box p', { opacity: 0, xPercent: -15, ease: Expo.easeOut, duration: 1.2}, '-=1.8')
     .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
     .from('#district-survey .project-images .pr-image-box', { y: 85, opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=1.8');
 
@@ -327,31 +327,6 @@ document.getElementById('work1-close').addEventListener('click', function(){
 });
 
 //footer
-
-//ScrollTrigger.matchMedia({
-        //"(max-width: 450px)": function(){
-               // gsap.from('#footer #img-footer', {
-                      //  scrollTrigger: {
-                           //     trigger: '#footer',
-                           //     start: 'top 80%',
-                          //      end: '+=270',
-                          //      scrub: 2.5,
-                                //scroller: '#footer'
-                                //markers: true
-                      //  },scale: 1.35
-              //  });       
-      //  },
-       // "(min-width: 451px)": function(){
-         //       gsap.from('#footer #img-footer', {
-        //                scrollTrigger: {
-                          //      trigger: '#footer',
-                           //     start: 'top bottom',
-                           //     end: 'top 4%',
-                            //    scrub: 2.5
-                      //  },scale: 1.2
-               // });             
-       // },
-//});
 
 gsap.from('.footer-social', {
         scrollTrigger: {

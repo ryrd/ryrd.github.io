@@ -270,6 +270,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   letter-spacing: 2px;
+  background: #090909;
 }
 
 #about #about--title {
@@ -498,6 +499,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   letter-spacing: 2px;
+  background: #090909;
 }
 
 #skill #skill-title {
@@ -608,6 +610,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background: #090909;
 }
 
 #work #work-title {
@@ -762,6 +765,8 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   position: fixed;
+  bottom: 0%;
+  left: 0;
 }
 
 #footer #footer-grad-bottom {
@@ -1551,6 +1556,9 @@ body {
   }
   #footer #footer-grad-top {
     height: 42%;
+  }
+  #footer picture img {
+    bottom: -8%;
   }
   #footer #footer-grad-bottom #socials {
     height: 8vh;
