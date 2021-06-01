@@ -609,9 +609,10 @@ body{
             height: 100%;
             z-index: -1;
             object-fit: cover;
-            position: fixed;
-            bottom: 0%;
-            left: 0;
+            transition: .8s ease-out;
+            // position: fixed;
+            // bottom: 0%;
+            // left: 0;
         }
     }
 
@@ -1458,11 +1459,11 @@ body{
             height: 42%;
         }
 
-        picture{
-            img{
-                bottom: -8%;
-            }
-        }
+        // picture{
+        //     img{
+        //         bottom: -8%;
+        //     }
+        // }
 
         #footer-grad-bottom{
             #socials{

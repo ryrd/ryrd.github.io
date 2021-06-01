@@ -764,9 +764,8 @@ body {
   z-index: -1;
   -o-object-fit: cover;
      object-fit: cover;
-  position: fixed;
-  bottom: 0%;
-  left: 0;
+  -webkit-transition: .8s ease-out;
+  transition: .8s ease-out;
 }
 
 #footer #footer-grad-bottom {
@@ -1556,9 +1555,6 @@ body {
   }
   #footer #footer-grad-top {
     height: 42%;
-  }
-  #footer picture img {
-    bottom: -8%;
   }
   #footer #footer-grad-bottom #socials {
     height: 8vh;
