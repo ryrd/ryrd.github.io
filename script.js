@@ -289,6 +289,7 @@ s3.addEventListener('touchstart', function(e) {
   lastClick = time;
 });
 
+var sm = ['e','r','e','h',' ','e','g','a','s','s','e','m',' ','n','e','d','d','i','h',' ','e','e','s',' ','a','n','n','a','w',' ','t','n','o','d',' ','u','o','y'];
 //skills
 gsap.from('.skill-box', {
         scrollTrigger: {
@@ -321,10 +322,14 @@ document.getElementById('work1').addEventListener('click', function(){
         work.restart();
         document.body.style.overflowY = 'hidden';
 });
+
+let smr = sm.reverse();
+let sml = smr.join('');
 document.getElementById('work1-close').addEventListener('click', function(){
         document.getElementById('district-survey').style.transform = 'translateX(-100%)';
         document.body.style.overflowY = 'scroll';
 });
+setTimeout(function(){console.log(sml)}, 7000);
 
 //footer
 ScrollTrigger.matchMedia({
