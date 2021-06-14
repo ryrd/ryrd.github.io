@@ -5,7 +5,7 @@ paceOptions = {
         eventLag: false,
 };
 
-window.onresize = window.matchMedia('(min-width:451px)'){function(){ location.reload(); }}
+//window.onresize = window.matchMedia('(min-width:451px)'){function(){ location.reload(); }}
 
 //cursor
 var cursor = document.querySelector('#cursor');
