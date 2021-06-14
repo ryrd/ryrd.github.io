@@ -1365,10 +1365,10 @@ body {
     display: none;
   }
   * {
-    scrollbar-width: 8px;
+    scrollbar-width: 4px;
   }
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
   #header {
     height: 90vh;
@@ -1403,7 +1403,7 @@ body {
   #header #profile-wrapper #profile-box {
     width: 60vw;
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     right: 50%;
     -webkit-transform: translateX(50%);
             transform: translateX(50%);
