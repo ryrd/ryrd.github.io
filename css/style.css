@@ -1403,7 +1403,7 @@ body {
   #header #profile-wrapper #profile-box {
     width: 60vw;
     position: absolute;
-    bottom: 8%;
+    bottom: 9%;
     right: 50%;
     -webkit-transform: translateX(50%);
             transform: translateX(50%);
