@@ -5,6 +5,8 @@ paceOptions = {
         eventLag: false,
 };
 
+window.onresize = function(){ location.reload(); }
+
 //cursor
 var cursor = document.querySelector('#cursor');
 document.addEventListener('mousemove', (e) => {
