@@ -1230,19 +1230,18 @@ body{
     }
 
     #header{
-        height: 100vh;
+        height: 90vh;
         flex-direction: column;
 
         #headline{
             width: 100%;
-            padding-left: 7vw;
+            padding-left: 9vw;
             z-index: 3;
             height: 99%;
 
             #header-title1{
                 max-height: 12vw;
                 width: 100%;
-                transform: translateY(-90%);
 
                 h1{
                     span{
@@ -1253,8 +1252,7 @@ body{
 
             #header-title2{
                 margin-top: 0vh;
-                transform: translateY(-110%);
-
+                
                 h3{
                     span{
                         font-size: 5.5vw;
@@ -1268,10 +1266,14 @@ body{
             height: 1%;
 
             #profile-box{
-                width: 56vw;
+                width: 60vw;
                 position: absolute;
                 bottom: 5%;
-                right: 10%
+                @media (max-height: 750px){
+                    bottom: 1%;
+                }
+                right: 50%;
+                transform: translateX(50%)
             }
         }
 
