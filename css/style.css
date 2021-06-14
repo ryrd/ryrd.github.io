@@ -1379,19 +1379,23 @@ body {
   }
   #header #headline {
     width: 100%;
-    padding-left: 9vw;
+    padding-left: 7vw;
     z-index: 3;
     height: 99%;
   }
   #header #headline #header-title1 {
     max-height: 12vw;
     width: 100%;
+    -webkit-transform: translateY(-90%);
+            transform: translateY(-90%);
   }
   #header #headline #header-title1 h1 span {
     font-size: 10vw;
   }
   #header #headline #header-title2 {
     margin-top: 0vh;
+    -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
   }
   #header #headline #header-title2 h3 span {
     font-size: 5.5vw;
@@ -1401,12 +1405,10 @@ body {
     height: 1%;
   }
   #header #profile-wrapper #profile-box {
-    width: 60vw;
+    width: 56vw;
     position: absolute;
-    bottom: 7%;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    bottom: 3%;
+    right: 10%;
   }
   #header #scroll-down p {
     font-size: 11px;

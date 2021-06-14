@@ -19,28 +19,8 @@ document.body.style.overflowY = 'hidden';
 var opening = gsap.timeline();
 
 Pace.on('done', function(){
-
-ScrollTrigger.matchMedia({
-
-"(max-width: 450px)": function(){
+        
 opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
-        .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
-        .from('.ryrd', { yPercent: 100, stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
-        .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 })
-        .to('.ryrd.stay1', { xPercent: -265, ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .to('.ryrd.stay2', { xPercent: -307, ease: Expo.easeInOut, duration: .5 }, '-=.4')
-        .to('#header-title1', {xPercent: 41, width: '65%', ease: Expo.easeInOut, duration: .8 },'-=.6')
-        .to('#header-title1', { yPercent: -350, ease: Expo.easeInOut, duration: .5 })
-        .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.4')
-        .set('#header-title2', { yPercent: -490, xPercent: 55})
-        .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'<')
-        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 },'<')
-        .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
-},
-"(min-width: 451px)": function(){
- opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { yPercent: 100, stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
@@ -52,8 +32,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
-}
-});     
+        
         document.body.style.overflowY = 'scroll';
 });        
 
@@ -80,7 +59,7 @@ ScrollTrigger.matchMedia({
 
 "(max-width: 450px)": function(){
         gsap.to('#profile-box', {
-                yPercent: -50,
+                yPercent: -120,
                 scrollTrigger: {
                         trigger: '#profile-box',
                         start: 'top bottom',
