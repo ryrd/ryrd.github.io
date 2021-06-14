@@ -5,7 +5,7 @@ paceOptions = {
         eventLag: false,
 };
 
-window.onresize = function(){ location.reload(); }
+body.onresize = function(){ location.reload(); }
 
 //cursor
 var cursor = document.querySelector('#cursor');
