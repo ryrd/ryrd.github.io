@@ -35,7 +35,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('.ryrd.stay2', { transform: 'translateX(-320%)', ease: Expo.easeInOut, duration: .5 }, '-=.4')
         .to('#header-title1', {transform: 'translateX(30%)', width: '59.5%', ease: Expo.easeInOut, duration: .8 },'-=.65')
         .to('#header-title1', { transform: 'translate(57%, -370%)', scale: 1.55, ease: Expo.easeInOut, duration: .5 })
-        .to('#header-title1 h1', { transform: 'translateY(13.5%)', ease: Expo.easeInOut, duration: .5 },'<')
+        .to('#header-title1 h1', { transform: 'translateY(14%)', ease: Expo.easeInOut, duration: .5 },'<')
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.5')
         .set('#header-title2', { transform: 'translate(53%, -470%)', scale: 1.1})
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'<')
