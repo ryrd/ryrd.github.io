@@ -1418,15 +1418,9 @@ body {
   }
 }
 
-@media only screen and (max-width: 450px) and (min-height: 651px) and (max-height: 660px) and (max-width: 375px) {
+@media (max-width: 450px) and (max-height: 700px) and (max-width: 375px) {
   #header #profile-wrapper #profile-box {
-    bottom: 1%;
-  }
-}
-
-@media only screen and (max-width: 450px) and (max-height: 700px) and (max-width: 375px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 5%;
+    bottom: 3%;
   }
 }
 
