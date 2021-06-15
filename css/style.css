@@ -453,6 +453,10 @@ body {
   display: inline-block;
 }
 
+#about #about-content #about-text #about-text-content .about-box-reveal #about-txt-5 {
+  mix-blend-mode: normal;
+}
+
 #about #about-content #about-text #about-text-content .about-box-reveal #about-txt-1, #about #about-content #about-text #about-text-content .about-box-reveal #about-txt-5, #about #about-content #about-text #about-text-content .about-box-reveal #about-txt-7 {
   margin-left: 4%;
 }
@@ -1403,10 +1407,14 @@ body {
   #header #profile-wrapper #profile-box {
     width: 60vw;
     position: absolute;
-    bottom: 20%;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    bottom: 5%;
+    right: 20%;
+  }
+}
+
+@media (max-width: 450px) and (max-height: 700px) {
+  #header #profile-wrapper #profile-box {
+    bottom: 3%;
   }
 }
 

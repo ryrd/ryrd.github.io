@@ -5,7 +5,12 @@ paceOptions = {
         eventLag: false,
 };
 
-//window.onresize = window.matchMedia('(min-width:451px)'){function(){ location.reload(); }}
+function reloadAgain(){ 
+        location.reload(); 
+}
+// window.matchMedia('(min-width:451px)'){ window.onresize = 
+//         reloadnAgain();
+// }
 
 //cursor
 var cursor = document.querySelector('#cursor');
@@ -27,15 +32,15 @@ ScrollTrigger.matchMedia({
 "(max-width: 450px)": function(){
 opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
-        .from('.ryrd', { yPercent: 100, stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
+        .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 })
-        .to('.ryrd.stay1', { xPercent: -265, ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .to('.ryrd.stay2', { xPercent: -307, ease: Expo.easeInOut, duration: .5 }, '-=.4')
-        .to('#header-title1', {xPercent: 40, width: '59.5%', ease: Expo.easeInOut, duration: .8 },'-=.6')
-        .to('#header-title1', { yPercent: -350, scale: 1.55, ease: Expo.easeInOut, duration: .5 })
-        .to('#header-title1 h1', { xPercent: 11.5, ease: Expo.easeInOut, duration: .5 },'<')
+        .to('.ryrd.stay1', { transform: 'translateX(-265%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay2', { transform: 'translateX(-307%)', ease: Expo.easeInOut, duration: .5 }, '-=.4')
+        .to('#header-title1', {transform: 'translateX(30%)', width: '59.5%', ease: Expo.easeInOut, duration: .8 },'-=.6')
+        .to('#header-title1', { transform: 'translate(57%, -370%)', scale: 1.55, ease: Expo.easeInOut, duration: .5 })
+        .to('#header-title1 h1', { transform: 'translateY(11.5%)', ease: Expo.easeInOut, duration: .5 },'<')
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.5')
-        .set('#header-title2', { yPercent: -475, xPercent: 53, scale: 1.1})
+        .set('#header-title2', { transform: 'translate(53%, -475%)', scale: 1.1})
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'<')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 },'<')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
@@ -45,10 +50,10 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
 "(min-width: 451px)": function(){
  opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
-        .from('.ryrd', { yPercent: 100, stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
+        .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
-        .to('.ryrd.stay1', { xPercent: -265, ease: Expo.easeInOut, duration: .5 }, '-=.6')
-        .to('.ryrd.stay2', { xPercent: -307, ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay1', { transform: 'translateX(-250%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
+        .to('.ryrd.stay2', { transform: 'translateX(-290%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
@@ -83,7 +88,7 @@ ScrollTrigger.matchMedia({
 
 "(max-width: 450px)": function(){
         gsap.to('#profile-box', {
-                yPercent: -55,
+                transform: 'translateY(-55%)',
                 scrollTrigger: {
                         trigger: '#profile-box',
                         start: 'top bottom',
@@ -148,7 +153,7 @@ gsap.from('.about-box-reveal #about-txt-1', {
                 start: 'top 90%',
                 toggleActions: 'play none none reverse'
         },
-        yPercent: 120,
+        transform: 'translateY(120%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -158,7 +163,7 @@ gsap.from('.about-box-reveal #about-txt-2', {
                 start: 'bottom 90%',
                 toggleActions: 'play none none reverse'
         },
-        yPercent: 120,
+        transform: 'translateY(120%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -179,7 +184,7 @@ gsap.from('.about-box-reveal #about-txt-3', {
                 start: 'bottom 90%',
                 toggleActions: 'play none none reverse'
         },
-        yPercent: 120,
+        transform: 'translateY(120%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -189,7 +194,7 @@ gsap.from('.about-box-reveal #about-txt-4', {
                 start: 'center 90%',
                 toggleActions: 'play none none reverse'
         },
-        xPercent: -110,
+        transform: 'translateX(-110%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -199,7 +204,7 @@ gsap.from('.about-box-reveal #about-txt-5', {
                 start: 'top 95%',
                 toggleActions: 'play none none reverse'
         },
-        yPercent: 120,
+        transform: 'translateY(120%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -209,7 +214,7 @@ gsap.from('.about-box-reveal #about-txt-6', {
                 start: 'center 95%',
                 toggleActions: 'play none none reverse'
         },
-        xPercent: -150,
+        transform: 'translateX(-150%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -219,7 +224,7 @@ gsap.from('.about-box-reveal #about-txt-7', {
                 start: 'top bottom',
                 toggleActions: 'play none none reverse'
         },
-        yPercent: 120,
+        transform: 'translateY(120%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -229,7 +234,7 @@ gsap.from('.about-box-reveal #about-txt-8', {
                 start: 'center bottom',
                 toggleActions: 'play none none reverse'
         },
-        xPercent: -150,
+        transform: 'translateX(-150%)',
         ease: Expo.easeOut,
         duration: 2
 });
@@ -258,7 +263,7 @@ gsap.from('#about--img img', {
                 end: 'bottom 20%',
                 scrub: 1
         },
-        scale: 1.2
+        transform: 'scale(1.2)'
 });
 
 
@@ -285,7 +290,7 @@ gsap.to('#about-txt-img1', {
                 end: '200% top',
                 scrub: .6
         },
-        yPercent: 50
+        transform: 'translateY(50%)'
 });
 gsap.to('#about-txt-img2', {
         scrollTrigger: {
@@ -294,7 +299,7 @@ gsap.to('#about-txt-img2', {
                 end: 'top top',
                 scrub: .6
         },
-        yPercent: -90
+        transform: 'translateY(-90%)'
 });
 
 
@@ -333,13 +338,13 @@ var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 //work
 //work-district survei
 let work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, xPercent: -40, ease: Expo.easeOut, duration: 2, delay: .4})
-    .from('#district-survey .project-title-box h2', { opacity: 0, xPercent: -40, ease: Expo.easeOut, duration: 2}, '-=1.8')
+work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 2, delay: .4})
+    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 2}, '-=1.8')
     .from('#district-survey #work1-close',{opacity: 0, ease: Power2.easeIn}, '-=1.9')
     .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=1.8')
-    .from('#district-survey .project-title-box p', { opacity: 0, xPercent: -15, ease: Expo.easeOut, duration: 1.2}, '-=1.8')
+    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateX(-15%)', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
     .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
-    .from('#district-survey .project-images .pr-image-box', { y: 85, opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=1.8');
+    .from('#district-survey .project-images .pr-image-box', { transform: 'translateY(85px)', opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=1.8');
 
 document.getElementById('work1').addEventListener('click', function(){
         document.getElementById('district-survey').style.transform = 'translateX(0%)';
@@ -387,6 +392,7 @@ gsap.from('.footer-social', {
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
+        // transform: 'translateY(30%)',
         yPercent: 30,
         ease: Expo.easeIn,
         duration: 1,

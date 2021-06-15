@@ -361,7 +361,11 @@ body{
                     p, h1, h2{
                         display: inline-block;
                     }
-    
+                    
+                    #about-txt-5{
+                        mix-blend-mode: normal;
+                    }
+
                     #about-txt-1, #about-txt-5, #about-txt-7{
                         margin-left: 4%;
                     }
@@ -1268,12 +1272,14 @@ body{
             #profile-box{
                 width: 60vw;
                 position: absolute;
-                bottom: 12%;
+                bottom: 5%;
+                @media (max-height: 700px){
+                    bottom: 3%;
+                }
                 @media (max-height: 750px){
                     bottom: 1%;
                 }
-                right: 50%;
-                transform: translateX(50%)
+                right: 20%;
             }
         }
 
