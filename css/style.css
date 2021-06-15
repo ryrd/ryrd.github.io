@@ -1418,7 +1418,7 @@ body {
   }
 }
 
-@media (max-width: 450px) and (height: 568px) {
+@media (max-width: 450px) and (height: 658px) {
   #header #profile-wrapper #profile-box {
     bottom: 1%;
   }
