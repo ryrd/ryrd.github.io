@@ -1412,13 +1412,7 @@ body {
   }
 }
 
-@media (max-width: 450px) and (max-height: 700px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 3%;
-  }
-}
-
-@media (max-width: 450px) and (max-height: 750px) {
+@media (max-width: 450px) and (max-height: 800px) {
   #header #profile-wrapper #profile-box {
     bottom: 1%;
   }

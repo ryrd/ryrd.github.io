@@ -1273,10 +1273,7 @@ body{
                 width: 60vw;
                 position: absolute;
                 bottom: 5%;
-                @media (max-height: 700px){
-                    bottom: 3%;
-                }
-                @media (max-height: 750px){
+                @media (max-height: 800px){
                     bottom: 1%;
                 }
                 right: 20%;
