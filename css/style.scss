@@ -1273,9 +1273,9 @@ body{
                 width: 60vw;
                 position: absolute;
                 bottom: 5%;
-                @media (max-height: 800px){
-                    bottom: 1%;
-                }
+                // @media (max-height: 800px){
+                //     bottom: 1%;
+                // }
                 right: 20%;
             }
         }

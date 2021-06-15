@@ -1410,15 +1410,6 @@ body {
     bottom: 5%;
     right: 20%;
   }
-}
-
-@media (max-width: 450px) and (max-height: 800px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 1%;
-  }
-}
-
-@media (max-width: 450px) {
   #header #scroll-down p {
     font-size: 11px;
   }
