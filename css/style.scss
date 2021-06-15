@@ -1276,8 +1276,11 @@ body{
                 @media (max-height: 750px){
                     bottom: 1.5%;
                 }
+                @media (height: 568px){
+                    bottom: 1%;
+                }
                 @media (max-height: 700px) and (max-width: 375px){
-                    bottom: 3%;
+                    bottom: 4%;
                 }
                 right: 20%;
             }

@@ -1418,9 +1418,15 @@ body {
   }
 }
 
+@media (max-width: 450px) and (height: 568px) {
+  #header #profile-wrapper #profile-box {
+    bottom: 1%;
+  }
+}
+
 @media (max-width: 450px) and (max-height: 700px) and (max-width: 375px) {
   #header #profile-wrapper #profile-box {
-    bottom: 3%;
+    bottom: 4%;
   }
 }
 
