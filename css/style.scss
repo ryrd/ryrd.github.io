@@ -1276,7 +1276,10 @@ body{
                 @media (max-height: 750px){
                     bottom: 1.5%;
                 }
-                @media (max-height: 720px) and (max-width: 375px){
+                @media (min-height:600px) and (max-height: 660px) and (max-width: 375px){
+                    bottom: 2%;
+                }
+                @media (max-height: 670px) and (max-width: 375px){
                     bottom: 6%;
                 }
                 right: 20%;
