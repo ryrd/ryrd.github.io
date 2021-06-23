@@ -5,10 +5,6 @@ paceOptions = {
         eventLag: false,
 };
 
-// if (window.matchMedia("(min-width: 451px)").matches) {
-//         window.onresize = location.reload();
-// }
-
 //cursor
 var cursor = document.querySelector('#cursor');
 document.addEventListener('mousemove', (e) => {
@@ -22,6 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 document.body.style.overflowY = 'hidden';
 var opening = gsap.timeline();
 
+const styles = ['color: #eeeeee','background: #101010','font-family: courier','font-size: 13px','padding: 15px',].join(';');
+console.log('%cRefresh the page when you change view to mobile lol. i still figuring out how to fix that opening header animation bug 🙃', styles);
+
 Pace.on('done', function(){
 
 ScrollTrigger.matchMedia({
@@ -31,15 +30,14 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 })
-        .to('.ryrd.stay1', { transform: 'translateX(-280%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .to('.ryrd.stay2', { transform: 'translateX(-320%)', ease: Expo.easeInOut, duration: .5 }, '-=.4')
-        .to('#header-title1', {transform: 'translateX(30%)', width: '59.5%', ease: Expo.easeInOut, duration: .8 },'-=.65')
-        .to('#header-title1', { transform: 'translate(57%, -370%)', scale: 1.55, ease: Expo.easeInOut, duration: .5 })
-        .to('#header-title1 h1', { transform: 'translateY(14%)', ease: Expo.easeInOut, duration: .5 },'<')
-        .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.5')
-        .set('#header-title2', { transform: 'translate(53%, -470%)', scale: 1.1})
-        .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'<')
-        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 },'<')
+        .to('.ryrd.stay1', { transform: 'translateX(150%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
+        .to('.ryrd.stay3', { transform: 'translateX(350%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
+        .to('.ryrd.stay4', { transform: 'translateX(460%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
+        .from('#name-title', { yPercent: 130, ease: Expo.easeInOut, duration: 1 })
+        .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.8')
+        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 })
+        .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'-=.6')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
@@ -49,8 +47,8 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
-        .to('.ryrd.stay1', { transform: 'translateX(-250%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
-        .to('.ryrd.stay2', { transform: 'translateX(-290%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay1', { transform: 'translateX(-260%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
+        .to('.ryrd.stay2', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
@@ -85,7 +83,7 @@ ScrollTrigger.matchMedia({
 
 "(max-width: 450px)": function(){
         gsap.to('#profile-box', {
-                transform: 'translateY(-55%)',
+                yPercent: -55,
                 scrollTrigger: {
                         trigger: '#profile-box',
                         start: 'top bottom',
@@ -287,7 +285,7 @@ gsap.to('#about-txt-img1', {
                 end: '200% top',
                 scrub: .6
         },
-        transform: 'translateY(50%)'
+        yPercent: 50
 });
 gsap.to('#about-txt-img2', {
         scrollTrigger: {
@@ -296,7 +294,7 @@ gsap.to('#about-txt-img2', {
                 end: 'top top',
                 scrub: .6
         },
-        transform: 'translateY(-90%)'
+        yPercent: -90
 });
 
 
@@ -327,7 +325,7 @@ gsap.from('.skill-box', {
         yPercent: 50,
         ease: Expo.easeIn,
         duration: .75,
-        stagger: .095
+        stagger: .15
 });
 
 var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
@@ -355,7 +353,7 @@ document.getElementById('work1-close').addEventListener('click', function(){
         document.getElementById('district-survey').style.transform = 'translateX(-100%)';
         document.body.style.overflowY = 'scroll';
 });
-setTimeout(function(){console.log(sml)}, 7000);
+setTimeout(function(){console.log(sml)}, 60000);
 
 //footer
 ScrollTrigger.matchMedia({
@@ -389,7 +387,6 @@ gsap.from('.footer-social', {
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
-        // transform: 'translateY(30%)',
         yPercent: 30,
         ease: Expo.easeIn,
         duration: 1,

@@ -66,9 +66,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -76,10 +75,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-left: 4vw;
 }
 
-#header #headline {
-  width: 55%;
+#header #name-title {
+  color: #fdfdfd;
+  padding-left: 7vw;
+  mix-blend-mode: difference;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,73 +96,54 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-left: 11vw;
-  mix-blend-mode: difference;
 }
 
-#header #headline #header-title1 {
-  width: 150%;
-  max-height: 8vw;
-  padding-left: 1vw;
-  overflow: hidden;
+#header #name-title #header-title1 {
+  font-weight: lighter;
+  overflow-y: hidden;
+  overflow-x: visible;
+  width: 120%;
 }
 
-#header #headline #header-title1 h1 {
-  color: #fdfdfd;
+#header #name-title #header-title1 h1 {
   font-family: "Cormorant Garamond";
   width: 100%;
-  display: inline-block;
-  z-index: 1;
 }
 
-#header #headline #header-title1 h1 span {
-  font-size: 7vw;
-  margin: -2px;
+#header #name-title #header-title1 h1 span {
+  display: inline-block;
+  font-size: 8.5vw;
   font-weight: 400;
+}
+
+#header #name-title #header-title2 {
+  margin-top: -3%;
+  padding-left: .5%;
+}
+
+#header #name-title #header-title2 h3 {
   display: inline-block;
-}
-
-#header #headline #header-title2 {
-  margin-top: -2vh;
-}
-
-#header #headline #header-title2 h3 {
   color: #fdfdfd;
   font-weight: 300;
   font-family: "Oswald";
   width: 100%;
-  z-index: 1;
-  padding-left: 1vw;
 }
 
-#header #headline #header-title2 h3 span {
-  font-size: 2.2vw;
-  margin: 0px;
+#header #name-title #header-title2 h3 span {
+  font-size: 2.8vw;
+  margin: 1px;
   font-weight: 300;
   display: inline-block;
 }
 
-#header #profile-wrapper {
-  width: 45%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 9%;
-}
-
-#header #profile-wrapper #profile-box {
-  width: 25vw;
-  position: relative;
+#header #header-image #profile-box {
+  width: 23vw;
   overflow: hidden;
+  position: relative;
+  left: -50%;
 }
 
-#header #profile-wrapper #profile-box #blue-block {
+#header #header-image #profile-box #blue-block {
   width: 100%;
   height: 100%;
   background: #000875;
@@ -168,7 +152,7 @@ body {
   left: 0;
 }
 
-#header #profile-wrapper #profile-box #profile {
+#header #header-image #profile-box #profile {
   width: 100%;
 }
 
@@ -487,7 +471,7 @@ body {
 
 #about #about-content #about-text #about-txt-img2 {
   position: absolute;
-  bottom: -5%;
+  bottom: 0%;
   right: 10%;
   width: 15vw;
 }
@@ -576,8 +560,8 @@ body {
 }
 
 #skill #skill-content .skill-box img {
-  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+  -webkit-transition: 0.5s cubic-bezier(0.2, 0.01, 0, 0.99);
+  transition: 0.5s cubic-bezier(0.2, 0.01, 0, 0.99);
   width: 40%;
 }
 
@@ -916,7 +900,7 @@ body {
 
 .white-line {
   height: 100%;
-  width: 1.5px;
+  width: 2px;
   position: absolute;
   right: 0px;
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(45%, #fdfdfd), color-stop(55%, #fdfdfd), to(transparent));
@@ -1144,33 +1128,6 @@ body {
   #header {
     height: 60vh;
   }
-  #header #headline {
-    width: 100%;
-    padding-left: 9vw;
-    z-index: 3;
-    height: 80%;
-  }
-  #header #headline #header-title1 {
-    max-height: 12vw;
-    width: 200%;
-  }
-  #header #headline #header-title1 h1 span {
-    font-size: 10vw;
-  }
-  #header #headline #header-title2 {
-    margin-top: 0vh;
-  }
-  #header #headline #header-title2 h3 span {
-    font-size: 4.5vw;
-  }
-  #header #profile-wrapper {
-    width: 100%;
-    height: 20%;
-  }
-  #header #profile-wrapper #profile-box {
-    width: 30vw;
-    right: 0%;
-  }
   #header #scroll-down p {
     font-size: 15px;
   }
@@ -1380,57 +1337,42 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-left: 0vw;
   }
-  #header #headline {
+  #header #name-title {
+    max-width: 90%;
+    padding-left: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 50px;
+  }
+  #header #name-title #header-title1 {
     width: 100%;
-    padding-left: 9vw;
-    z-index: 3;
-    height: 99%;
   }
-  #header #headline #header-title1 {
-    max-height: 12vw;
-    width: 100%;
+  #header #name-title #header-title1 h1 span {
+    font-size: 8.9vw;
   }
-  #header #headline #header-title1 h1 span {
-    font-size: 10vw;
+  #header #name-title #header-title2 {
+    margin-top: 3%;
+    padding-left: 0;
   }
-  #header #headline #header-title2 {
-    margin-top: 0vh;
-  }
-  #header #headline #header-title2 h3 span {
+  #header #name-title #header-title2 h3 span {
     font-size: 5.5vw;
   }
-  #header #profile-wrapper {
-    width: 100%;
-    height: 1%;
+  #header #header-image #profile-box {
+    width: 55vw;
+    overflow: hidden;
+    left: 0%;
+    top: 17.5%;
   }
-  #header #profile-wrapper #profile-box {
-    width: 60vw;
-    position: absolute;
-    bottom: 5%;
-    right: 20%;
-  }
-}
-
-@media (max-width: 450px) and (max-height: 750px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 1.5%;
-  }
-}
-
-@media (max-width: 450px) and (height: 658px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 1%;
-  }
-}
-
-@media (max-width: 450px) and (max-height: 700px) and (max-width: 375px) {
-  #header #profile-wrapper #profile-box {
-    bottom: 5%;
-  }
-}
-
-@media (max-width: 450px) {
   #header #scroll-down p {
     font-size: 11px;
   }
@@ -1623,6 +1565,9 @@ body {
   #hm #hmp {
     width: 90vw;
     font-size: 9px;
+  }
+  .white-line {
+    width: 1.5px;
   }
   .show-project #work1-close {
     top: 5vh;

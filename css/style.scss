@@ -32,7 +32,6 @@ $text : 'Oswald';
 }
 *::-webkit-scrollbar-thumb{
     background: #00076b;
-    // border: 1px solid $cold;
     border-radius: 0px;
     cursor: url('../img/cpoint.png'), auto;
     &:hover{
@@ -67,72 +66,64 @@ body{
     background: url(../img/overlay1.jpg);
     background-size: cover;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    padding-left: 4vw;
 
-    #headline{
-        width: 55%;
+    #name-title{
+        color: $light;
+        padding-left: 7vw;
+        mix-blend-mode: difference;
+        z-index: 2;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        padding-left: 11vw;
-        mix-blend-mode: difference;
-
+        
         #header-title1{
-            width: 150%;
-            max-height: 8vw;
-            padding-left: 1vw;
-            overflow: hidden;
-
+            font-weight: lighter;
+            overflow-y: hidden;
+            overflow-x: visible;
+            width: 120%;
+        
             h1{
-                color: $light;
                 font-family: $name;
                 width: 100%;
-                display: inline-block;
-                z-index: 1;
 
                 span{
-                    font-size: 7vw;
-                    margin: -2px;
-                    font-weight: 400;
                     display: inline-block;
+                    font-size: 8.5vw;
+                    font-weight: 400;
                 }
             }
         }
-
         #header-title2{
-            margin-top: -2vh;
+            margin-top: -3%;
+            padding-left: .5%;
+
             h3{
+                display: inline-block;
                 color: $light;
                 font-weight: 300;
                 font-family: $text;
                 width: 100%;
-                z-index: 1;
-                padding-left: 1vw;
-                
+
                 span{
-                    font-size: 2.2vw;
-                    margin: 0px;
+                    font-size: 2.8vw;
+                    margin: 1px;
                     font-weight: 300;
                     display: inline-block;
                 }
             }
         }
     }
-
-    #profile-wrapper{
-        width: 45%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 9%;
-        
+    #header-image{
         #profile-box{
-            width: 25vw;
-            position: relative;
+            width: 23vw;
             overflow: hidden;
+            position: relative;
+            left: -50%;
 
             #blue-block{
                 width: 100%;
@@ -396,7 +387,7 @@ body{
 
             #about-txt-img2{
                 position: absolute;
-                bottom: -5%;
+                bottom: 0%;
                 right: 10%;
                 width: 15vw;
             }
@@ -454,7 +445,7 @@ body{
             transition: .5s ease-in-out;
 
             img{
-                transition: .5s cubic-bezier(0,.57,.45,1);
+                transition: .5s cubic-bezier(.2,.01,0,.99);
                 width: 40%;
             }
             
@@ -614,9 +605,6 @@ body{
             z-index: -1;
             object-fit: cover;
             transition: .8s ease-out;
-            // position: fixed;
-            // bottom: 0%;
-            // left: 0;
         }
     }
 
@@ -733,7 +721,7 @@ body{
 
 .white-line{
     height: 100%;
-    width: 1.5px;
+    width: 2px;
     position: absolute;
     right: 0px;
     background: linear-gradient(to bottom, transparent 0%, $light 45%, $light 55%,  transparent 100%);
@@ -941,45 +929,6 @@ body{
 @media (max-device-width: 1024px) and (orientation: portrait) {
     #header{
         height: 60vh;
-
-        #headline{
-            width: 100%;
-            padding-left: 9vw;
-            z-index: 3;
-            height: 80%;
-
-            #header-title1{
-                max-height: 12vw;
-                width: 200%;
-
-                h1{
-                    span{
-                        font-size: 10vw;
-                    }
-                }
-            }
-
-            #header-title2{
-                margin-top: 0vh;
-                
-                h3{
-                    span{
-                        font-size: 4.5vw;
-                    }
-                }
-            }
-        }
-
-        #profile-wrapper{
-            width: 100%;
-            height: 20%;
-
-
-            #profile-box{
-                width: 30vw;
-                right: 0%;
-            }
-        }
 
         #scroll-down{
             p{
@@ -1236,27 +1185,28 @@ body{
     #header{
         height: 90vh;
         flex-direction: column;
-
-        #headline{
-            width: 100%;
-            padding-left: 9vw;
-            z-index: 3;
-            height: 99%;
+        justify-content: space-evenly;
+        padding-left: 0vw;
+        
+        #name-title{
+            max-width: 90%;
+            padding-left: 0;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 50px;
 
             #header-title1{
-                max-height: 12vw;
                 width: 100%;
-
                 h1{
                     span{
-                        font-size: 10vw;
+                        font-size: 8.9vw;
                     }
                 }
             }
-
             #header-title2{
-                margin-top: 0vh;
-                
+                margin-top: 3%;
+                padding-left: 0;
+
                 h3{
                     span{
                         font-size: 5.5vw;
@@ -1264,25 +1214,12 @@ body{
                 }
             }
         }
-
-        #profile-wrapper{
-            width: 100%;
-            height: 1%;
-
+        #header-image{
             #profile-box{
-                width: 60vw;
-                position: absolute;
-                bottom: 5%;
-                @media (max-height: 750px){
-                    bottom: 1.5%;
-                }
-                @media (height: 658px){
-                    bottom: 1%;
-                }
-                @media (max-height: 700px) and (max-width: 375px){
-                    bottom: 5%;
-                }
-                right: 20%;
+                width: 55vw;
+                overflow: hidden;
+                left: 0%;
+                top: 17.5%;
             }
         }
 
@@ -1472,12 +1409,6 @@ body{
             height: 42%;
         }
 
-        // picture{
-        //     img{
-        //         bottom: -8%;
-        //     }
-        // }
-
         #footer-grad-bottom{
             #socials{
                 height: 8vh;
@@ -1518,7 +1449,9 @@ body{
             font-size: 9px;
         }
     }
-
+    .white-line{
+        width: 1.5px;
+    }
     .show-project{
         
         #work1-close{
