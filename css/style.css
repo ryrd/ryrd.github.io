@@ -1366,6 +1366,7 @@ body {
   }
   #header #name-title #header-title2 h3 span {
     font-size: 5.5vw;
+    margin: 0px;
   }
   #header #header-image #profile-box {
     width: 55vw;
