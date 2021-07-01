@@ -316,7 +316,7 @@ body{
             #about-text-content{
                 width: 100%;
                 height: 100%;
-                margin: auto auto;
+                margin: auto 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -428,7 +428,7 @@ body{
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 10px 100px 60px 100px;
+        padding: 50px 100px 60px 100px;
         position: relative;
 
         .skill-box{
@@ -443,6 +443,10 @@ body{
             text-align: center;
             filter: saturate(0) contrast(1.7);
             transition: .5s ease-in-out;
+
+            &.no-contrast{
+                filter: saturate(0) contrast(1) brightness(3);    
+            }
 
             img{
                 transition: .5s cubic-bezier(.2,.01,0,.99);
@@ -766,21 +770,38 @@ body{
     transform: translateX(-100%);
     transition: 1.2s cubic-bezier(.32,.32,0,1);
 
-    #work1-close{
+    .work-close{
         position: absolute;
+        display: block;
         top: 6vh;
         right: 4vw;
         width: 3vw;
+        height: 7vh;
         opacity: .5;
         transition: .2s ease-in;
         display: grid;
         place-items: center;
 
+        .fullimg-close-part{
+            height: 2px;
+            width: 90%;
+            background: $light;
+            display: grid;
+            place-items: center;
+            transform-origin: center;
+
+            &.cpart1{
+                transform: translateY(500%) rotate(45deg);
+            }
+
+            &.cpart2{
+                transform: translateY(-600%) rotate(-45deg);
+            }
+        }
+
         &:hover{
             opacity: 1 !important;
-        }
-        img{
-            width: 65%;
+            cursor: url('../img/cpoint.png'), auto;
         }
     }
 
@@ -789,6 +810,12 @@ body{
         color: $light;
         margin: 6vh auto;
 
+        .work-title{
+            &.work-title-h1, 
+            &.work-title-h2{
+                overflow-y: hidden;
+            }
+        }
 
         h1, h2{
             font-family: $heading;
@@ -857,16 +884,17 @@ body{
     top: 0;
     background: hsla(0, 0%, 0%, .85);
     z-index: 11;
+    justify-content: center;
+    align-items: center;
     display: none;
-
+    animation: fadein .5s ease;
+    
     #fullimg-main{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 90%;
+        transform-origin: center;
+        animation: zoomin .6s cubic-bezier(0,.72,.14,.99);
     }
-
+    
     #fullimg-close{
         position: absolute;
         top: 7.5%;
@@ -878,10 +906,28 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: fadein .8s ease;
 
         img{
             width: 75%;
             height: 90%;
+        }
+    }
+
+    @keyframes fadein {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    @keyframes zoomin {
+        from{
+            transform: scale(.5);
+        }
+        to{
+            transform: scale(1);
         }
     }
 
@@ -1140,6 +1186,12 @@ body{
             top: 30%;
         }
     }
+
+        .work-close{
+            height: 2vh !important;
+            width: 5vw !important;
+        }
+    
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
@@ -1150,6 +1202,8 @@ body{
 
         #about-content{
             #about-text{
+                display: grid;
+                place-items: center;
                 #about-text-content{
                     width: 80%;
                     align-items: center;
@@ -1159,6 +1213,15 @@ body{
                     }
                 }
             }
+        }
+    }
+
+    #skill-content{
+        width: 80%;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        .skill-box{
+            width: 15vw !important;
         }
     }
 
@@ -1455,13 +1518,23 @@ body{
     }
     .show-project{
         
-        #work1-close{
-            top: 5vh;
+        .work-close{
+            top: 4vh;
             right: 6vw;
-            width: 5vw;
+            width: 6vw;
+            height: 30px;
             opacity: .9;
-            img{
-                width: 90%;
+
+            .fullimg-close-part{
+                height: 1px;
+
+                &.cpart1{
+                    transform: translateY(700%) rotate(45deg);
+                }
+
+                &.cpart2{
+                    transform: translateY(-790%) rotate(-45deg);
+                }
             }
         }
     

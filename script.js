@@ -18,8 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 document.body.style.overflowY = 'hidden';
 var opening = gsap.timeline();
 
-const styles = ['color: #eeeeee','background: #101010','font-family: courier','font-size: 13px','padding: 15px',].join(';');
-console.log('%cRefresh the page when you change view to mobile lol. i still figuring out how to fix that opening header animation bug 🙃', styles);
+const styles = ['color: #eeeeee','background: #101010','font-family: courier','font-size: 13px','padding: 15px','border: 4px solid #000875'].join(';');
+console.log('%cRefresh the page when you open device mode/change viewport width. (it\'s GSAP bug and i don\'t know how to fix it yet 🙃)', styles);
 
 Pace.on('done', function(){
 
@@ -30,10 +30,10 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 })
-        .to('.ryrd.stay1', { transform: 'translateX(160%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
-        .to('.ryrd.stay3', { transform: 'translateX(370%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
-        .to('.ryrd.stay4', { transform: 'translateX(470%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '<')
+        .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay1', { transform: 'translateX(160%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
+        .to('.ryrd.stay4', { transform: 'translateX(470%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.48')
+        .to('.ryrd.stay3', { transform: 'translateX(360%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
         .from('#name-title', { yPercent: 130, ease: Expo.easeInOut, duration: 1 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.8')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 })
@@ -42,7 +42,21 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
 },
-"(min-width: 451px)": function(){
+"(min-width: 451px) and (max-width: 1025px)": function(){
+        opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
+        .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
+        .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
+        .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
+        .to('.ryrd.stay1', { transform: 'translateX(-270%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
+        .to('.ryrd.stay2', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
+        .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
+        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
+        .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
+        .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
+        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
+},
+"(min-width: 1026px)": function(){
  opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
@@ -110,7 +124,7 @@ ScrollTrigger.matchMedia({
 },
 });
 
-var m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
+var m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','\'','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
           ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
 
 //my name - about
@@ -155,7 +169,7 @@ gsap.from('.about-box-reveal #about-txt-1', {
 gsap.from('.about-box-reveal #about-txt-2', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-2',
-                start: 'bottom 90%',
+                start: 'bottom 73%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -176,7 +190,7 @@ s2.addEventListener('touchstart', function(e) {
 gsap.from('.about-box-reveal #about-txt-3', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-3',
-                start: 'bottom 90%',
+                start: 'bottom 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -186,7 +200,7 @@ gsap.from('.about-box-reveal #about-txt-3', {
 gsap.from('.about-box-reveal #about-txt-4', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-4',
-                start: 'center 90%',
+                start: 'center 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateX(-110%)',
@@ -196,7 +210,7 @@ gsap.from('.about-box-reveal #about-txt-4', {
 gsap.from('.about-box-reveal #about-txt-5', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-5',
-                start: 'top 95%',
+                start: 'top 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -206,7 +220,7 @@ gsap.from('.about-box-reveal #about-txt-5', {
 gsap.from('.about-box-reveal #about-txt-6', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-6',
-                start: 'center 95%',
+                start: 'center 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateX(-150%)',
@@ -216,7 +230,7 @@ gsap.from('.about-box-reveal #about-txt-6', {
 gsap.from('.about-box-reveal #about-txt-7', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-7',
-                start: 'top bottom',
+                start: 'top 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -226,7 +240,7 @@ gsap.from('.about-box-reveal #about-txt-7', {
 gsap.from('.about-box-reveal #about-txt-8', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-8',
-                start: 'center bottom',
+                start: 'center 70%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateX(-150%)',
@@ -276,7 +290,7 @@ function show1(){
         ,10);
 };
 
-var m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','t','a','h','t'];
+var m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
 
 gsap.to('#about-txt-img1', {
         scrollTrigger: {
@@ -313,7 +327,7 @@ s3.addEventListener('touchstart', function(e) {
   lastClick = time;
 });
 
-var sm = ['e','r','e','h',' ','e','g','a','s','s','e','m',' ','n','e','d','d','i','h',' ','e','e','s',' ','a','n','n','a','w',' ','t','n','o','d',' ','u','o','y'];
+var sm = ['e','r','e','h',' ','e','g','a','s','s','e','m',' ','n','e','d','d','i','h',' ','e','e','s',' ','a','n','n','a','w',' ','t','\'','n','o','d',' ','u','o','y'];
 //skills
 gsap.from('.skill-box', {
         scrollTrigger: {
@@ -333,11 +347,13 @@ var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 //work
 //work-district survei
 let work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 2, delay: .4})
-    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 2}, '-=1.8')
-    .from('#district-survey #work1-close',{opacity: 0, ease: Power2.easeIn}, '-=1.9')
+work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2, delay: .4})
+    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2}, '-=1.8')
+    .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.6')
+    .from('#district-survey .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1')
+    .from('#district-survey .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
     .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=1.8')
-    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateX(-15%)', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
+    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateY(30%)', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
     .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
     .from('#district-survey .project-images .pr-image-box', { transform: 'translateY(85px)', opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=1.8');
 
@@ -397,31 +413,31 @@ var wif = document.getElementById('work-img-fullimg');
 var fm = document.getElementById('fullimg-main');
 
 document.getElementById('fullimg-work1').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan1.jpg';
 });
 document.getElementById('fullimg-work2').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan2.jpg';
 });
 document.getElementById('fullimg-work3').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan3.jpg';
 });
 document.getElementById('fullimg-work4').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan4.jpg';
 });
 document.getElementById('fullimg-work5').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan5.jpg';
 });
 document.getElementById('fullimg-work6').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan6.jpg';
 });
 document.getElementById('fullimg-work7').addEventListener('click', function(){
-        wif.style.display = 'block';
+        wif.style.display = 'flex';
         fm.src = 'img/work/pengadilan7.jpg';
 });
 
