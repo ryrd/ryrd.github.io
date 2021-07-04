@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
 * {
@@ -106,14 +106,14 @@ body {
 }
 
 #header #name-title #header-title1 h1 {
-  font-family: "Cormorant Garamond";
+  font-family: "Gilda Display";
   width: 100%;
 }
 
 #header #name-title #header-title1 h1 span {
   display: inline-block;
   font-size: 8.5vw;
-  font-weight: 400;
+  font-weight: lighter;
 }
 
 #header #name-title #header-title2 {
@@ -560,8 +560,8 @@ body {
 }
 
 #skill #skill-content .skill-box.no-contrast {
-  -webkit-filter: saturate(0) contrast(1) brightness(3);
-          filter: saturate(0) contrast(1) brightness(3);
+  -webkit-filter: saturate(0) contrast(1) brightness(2);
+          filter: saturate(0) contrast(1) brightness(2);
 }
 
 #skill #skill-content .skill-box img {
@@ -795,7 +795,7 @@ body {
 
 #footer #footer-grad-bottom #socials h3 {
   color: #fdfdfd;
-  font-family: "Cormorant Garamond";
+  font-family: "Gilda Display";
   font-style: italic;
   font-weight: lighter;
   padding-left: 5vw;
@@ -962,7 +962,6 @@ body {
 
 .show-project .work-close {
   position: absolute;
-  display: block;
   top: 6vh;
   right: 4vw;
   width: 3vw;
@@ -970,30 +969,27 @@ body {
   opacity: .5;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
 }
 
 .show-project .work-close .fullimg-close-part {
+  position: absolute;
+  top: 50%;
+  left: 5%;
   height: 2px;
   width: 90%;
   background: #fdfdfd;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
   -webkit-transform-origin: center;
           transform-origin: center;
 }
 
 .show-project .work-close .fullimg-close-part.cpart1 {
-  -webkit-transform: translateY(500%) rotate(45deg);
-          transform: translateY(500%) rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .show-project .work-close .fullimg-close-part.cpart2 {
-  -webkit-transform: translateY(-600%) rotate(-45deg);
-          transform: translateY(-600%) rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .show-project .work-close:hover {
@@ -1119,6 +1115,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: url("../img/cpoint.png"), auto;
   -webkit-animation: fadein .8s ease;
           animation: fadein .8s ease;
 }
@@ -1204,7 +1201,7 @@ body {
 
 @media (max-device-width: 1024px) and (orientation: portrait) {
   #header {
-    height: 60vh;
+    height: 50vh;
   }
   #header #scroll-down p {
     font-size: 15px;
@@ -1666,9 +1663,9 @@ body {
     width: 1.5px;
   }
   .show-project .work-close {
-    top: 4vh;
-    right: 6vw;
-    width: 6vw;
+    top: 5.5vh;
+    right: 5.5vw;
+    width: 7vw;
     height: 30px;
     opacity: .9;
   }
@@ -1676,12 +1673,12 @@ body {
     height: 1px;
   }
   .show-project .work-close .fullimg-close-part.cpart1 {
-    -webkit-transform: translateY(700%) rotate(45deg);
-            transform: translateY(700%) rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   .show-project .work-close .fullimg-close-part.cpart2 {
-    -webkit-transform: translateY(-790%) rotate(-45deg);
-            transform: translateY(-790%) rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   .show-project .project-title-box {
     width: 80%;

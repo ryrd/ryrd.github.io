@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 
@@ -6,7 +6,7 @@ $dark : #090909;
 $light : #fdfdfd;
 $cold : #000875;
 
-$name : 'Cormorant Garamond';
+$name : 'Gilda Display';
 $heading : 'bebas neue';
 $text : 'Oswald';
 
@@ -94,7 +94,8 @@ body{
                 span{
                     display: inline-block;
                     font-size: 8.5vw;
-                    font-weight: 400;
+                    // font-weight: 400;
+                    font-weight: lighter;
                 }
             }
         }
@@ -445,7 +446,7 @@ body{
             transition: .5s ease-in-out;
 
             &.no-contrast{
-                filter: saturate(0) contrast(1) brightness(3);    
+                filter: saturate(0) contrast(1) brightness(2);    
             }
 
             img{
@@ -772,30 +773,28 @@ body{
 
     .work-close{
         position: absolute;
-        display: block;
         top: 6vh;
         right: 4vw;
         width: 3vw;
         height: 7vh;
         opacity: .5;
         transition: .2s ease-in;
-        display: grid;
-        place-items: center;
-
+        
         .fullimg-close-part{
+            position: absolute;
+            top: 50%;
+            left: 5%;
             height: 2px;
             width: 90%;
             background: $light;
-            display: grid;
-            place-items: center;
             transform-origin: center;
 
             &.cpart1{
-                transform: translateY(500%) rotate(45deg);
+                transform: rotate(45deg);
             }
 
             &.cpart2{
-                transform: translateY(-600%) rotate(-45deg);
+                transform: rotate(-45deg);
             }
         }
 
@@ -906,6 +905,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: url('../img/cpoint.png'), auto;
         animation: fadein .8s ease;
 
         img{
@@ -974,7 +974,7 @@ body{
 
 @media (max-device-width: 1024px) and (orientation: portrait) {
     #header{
-        height: 60vh;
+        height: 50vh;
 
         #scroll-down{
             p{
@@ -1519,9 +1519,9 @@ body{
     .show-project{
         
         .work-close{
-            top: 4vh;
-            right: 6vw;
-            width: 6vw;
+            top: 5.5vh;
+            right: 5.5vw;
+            width: 7vw;
             height: 30px;
             opacity: .9;
 
@@ -1529,11 +1529,11 @@ body{
                 height: 1px;
 
                 &.cpart1{
-                    transform: translateY(700%) rotate(45deg);
+                    transform: rotate(45deg);
                 }
 
                 &.cpart2{
-                    transform: translateY(-790%) rotate(-45deg);
+                    transform: rotate(-45deg);
                 }
             }
         }

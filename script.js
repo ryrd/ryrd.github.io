@@ -30,10 +30,10 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 })
-        .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .to('.ryrd.stay1', { transform: 'translateX(160%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
-        .to('.ryrd.stay4', { transform: 'translateX(470%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.48')
-        .to('.ryrd.stay3', { transform: 'translateX(360%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
+        .to('.ryrd.stay2', { transform: 'translateX(130%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay1', { transform: 'translateX(180%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
+        .to('.ryrd.stay4', { transform: 'translateX(440%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.48')
+        .to('.ryrd.stay3', { transform: 'translateX(410%)', scale: 1.5, ease: Expo.easeInOut, duration: .5 }, '-=.46')
         .from('#name-title', { yPercent: 130, ease: Expo.easeInOut, duration: 1 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.8')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 })
@@ -42,27 +42,13 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
 },
-"(min-width: 451px) and (max-width: 1025px)": function(){
+"(min-width: 451px)": function(){
         opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
-        .to('.ryrd.stay1', { transform: 'translateX(-270%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
-        .to('.ryrd.stay2', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
-        .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
-        .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
-        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
-        .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
-},
-"(min-width: 1026px)": function(){
- opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
-        .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
-        .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
-        .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 })
-        .to('.ryrd.stay1', { transform: 'translateX(-260%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
-        .to('.ryrd.stay2', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
+        .to('.ryrd.stay1', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
+        .to('.ryrd.stay2', { transform: 'translateX(-305%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
@@ -347,15 +333,15 @@ var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 //work
 //work-district survei
 let work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2, delay: .4})
-    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2}, '-=1.8')
-    .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.6')
-    .from('#district-survey .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1')
+work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .5})
+    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5}, '-=2.25')
+    .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
+    .from('#district-survey .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
     .from('#district-survey .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
-    .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=1.8')
-    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateY(30%)', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
-    .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=1.8')
-    .from('#district-survey .project-images .pr-image-box', { transform: 'translateY(85px)', opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=1.8');
+    .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=2.25')
+    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateY(30%)', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
+    .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
+    .from('#district-survey .project-images .pr-image-box', { transform: 'translateY(85px)', opacity: 0, ease: Expo.easeOut, duration: 1.8, stagger: .2}, '-=2.2');
 
 document.getElementById('work1').addEventListener('click', function(){
         document.getElementById('district-survey').style.transform = 'translateX(0%)';
@@ -411,36 +397,15 @@ gsap.from('.footer-social', {
 
 var wif = document.getElementById('work-img-fullimg');
 var fm = document.getElementById('fullimg-main');
+var getImgBox = document.getElementsByClassName('fullimg-work');
 
-document.getElementById('fullimg-work1').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan1.jpg';
-});
-document.getElementById('fullimg-work2').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan2.jpg';
-});
-document.getElementById('fullimg-work3').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan3.jpg';
-});
-document.getElementById('fullimg-work4').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan4.jpg';
-});
-document.getElementById('fullimg-work5').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan5.jpg';
-});
-document.getElementById('fullimg-work6').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan6.jpg';
-});
-document.getElementById('fullimg-work7').addEventListener('click', function(){
-        wif.style.display = 'flex';
-        fm.src = 'img/work/pengadilan7.jpg';
-});
+for(let i = 0; i < getImgBox.length; i++) {
+        getImgBox[i].addEventListener("click", function() {
+                wif.style.display = 'flex';
+                fm.src = getImgBox[i].dataset.workCourt;
+        })
+}
 
 document.getElementById('fullimg-close').addEventListener('click',function(){
         wif.style.display = 'none';
-})
+});
