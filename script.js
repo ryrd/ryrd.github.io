@@ -333,7 +333,7 @@ var m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 //work
 //work-district survei
 let work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .5})
+work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
     .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5}, '-=2.25')
     .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
     .from('#district-survey .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
