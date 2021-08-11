@@ -850,6 +850,11 @@ body{
         }
         h1{
             font-size: 3.5vw;
+            
+            &.work-sw{
+                font-size: 5vw;
+                margin-bottom: -15px;
+            }
         }
         h2{
             font-size: 2.5vw;
@@ -1344,7 +1349,8 @@ body{
     }
 
     #skill{
-        min-height: 600px;
+        min-height: 550px;
+        height: 65vh;
 
         #skill-title{
             width: 10%;
@@ -1356,12 +1362,11 @@ body{
 
         #skill-content{
             width: 90%;
-            padding: 10vh 25px 0px 25px;
-            align-items: flex-start;
+            padding: 10px 25px 30px 25px;
+            align-items: center;
 
             .skill-box{
                 width: 19vw;
-                height: 8vh;
                 margin: 1vh 1.3vw;
                 margin-bottom: 0;
                 padding-bottom: 0;
@@ -1532,6 +1537,11 @@ body{
             h1{
                 font-size: 5vw;
                 letter-spacing: 1px;
+
+                &.work-sw{
+                    font-size: 8vw;
+                    margin-bottom: -10px;
+                }
             }
             h2{
                 font-size: 3.8vw;
