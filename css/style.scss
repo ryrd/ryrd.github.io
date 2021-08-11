@@ -1540,7 +1540,7 @@ body{
 
                 &.work-sw{
                     font-size: 8vw;
-                    margin-bottom: -10px;
+                    margin-bottom: -5px;
                 }
             }
             h2{
@@ -1551,6 +1551,10 @@ body{
             .line-project-title{
                 width: 75%;
                 margin-top: 12px;
+
+                &.line-sw{
+                    margin-top: 6px;
+                }
             }
             p{
                 font-size: .7rem;
