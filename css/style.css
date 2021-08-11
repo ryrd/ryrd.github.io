@@ -1653,7 +1653,7 @@ body {
   }
   .show-project .project-title-box h1.work-sw {
     font-size: 8vw;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
   }
   .show-project .project-title-box h2 {
     font-size: 3.8vw;
@@ -1665,7 +1665,7 @@ body {
     margin-top: 12px;
   }
   .show-project .project-title-box .line-project-title.line-sw {
-    margin-top: 6px;
+    margin-top: 2px;
   }
   .show-project .project-title-box p {
     font-size: .7rem;
