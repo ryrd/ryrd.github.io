@@ -595,7 +595,7 @@ body {
 
 #work {
   width: 100vw;
-  height: 150vh;
+  height: 250vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -883,12 +883,17 @@ body {
   top: 8%;
 }
 
+.line.line-4 {
+  width: 90%;
+  bottom: 2%;
+}
+
 .line.line-6 {
   width: 90%;
   bottom: 4%;
 }
 
-.line.line-4, .line.line-5, .line.line-6 {
+.line.line-5, .line.line-6 {
   width: 90%;
   bottom: 0%;
 }
@@ -1007,6 +1012,32 @@ body {
   overflow-y: hidden;
 }
 
+.show-project .project-title-box .work-link {
+  background-color: #000875;
+  border: 1px solid #000875;
+  margin-top: 10px;
+  width: 80px;
+  height: 40px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transition: 0.2s cubic-bezier(0, 0.57, 0.45, 1);
+  transition: 0.2s cubic-bezier(0, 0.57, 0.45, 1);
+}
+
+.show-project .project-title-box .work-link:hover {
+  background-color: transparent;
+}
+
+.show-project .project-title-box .work-link a {
+  color: #fdfdfd;
+  text-decoration: none;
+  font-family: "Oswald";
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: url("../img/cpoint.png"), auto;
+}
+
 .show-project .project-title-box h1, .show-project .project-title-box h2 {
   font-family: "bebas neue";
   font-weight: lighter;
@@ -1040,129 +1071,38 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
+  margin: 9vw;
+  margin-top: 0;
   margin-bottom: 4vh;
   padding-top: 3vh;
 }
 
 .show-project .project-images .pr-image-box {
   width: 33vw;
+  height: calc($width-box*9/16);
   overflow: hidden;
   margin: 3.5vh 3.5vw;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+}
+
+.show-project .project-images .pr-image-box.pr-portrait {
+  height: auto;
+  width: 15vw;
 }
 
 .show-project .project-images .pr-image-box div img {
   width: 100%;
-  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  cursor: url("../img/cpoint.png"), auto;
-}
-
-.show-project .project-images .pr-image-box:hover div img {
-  -webkit-transform: scale(1.05) !important;
-          transform: scale(1.05) !important;
-}
-
-#work-img-fullimg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 11;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: none;
-  -webkit-animation: fadein .5s ease;
-          animation: fadein .5s ease;
-}
-
-#work-img-fullimg #fullimg-main {
-  width: 90%;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-animation: zoomin 0.6s cubic-bezier(0, 0.72, 0.14, 0.99);
-          animation: zoomin 0.6s cubic-bezier(0, 0.72, 0.14, 0.99);
-}
-
-#work-img-fullimg #fullimg-close {
-  position: absolute;
-  top: 7.5%;
-  right: 6%;
-  background: #090909;
-  opacity: .7;
-  width: 45px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: url("../img/cpoint.png"), auto;
-  -webkit-animation: fadein .8s ease;
-          animation: fadein .8s ease;
-}
-
-#work-img-fullimg #fullimg-close img {
-  width: 75%;
-  height: 90%;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes zoomin {
-  from {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes zoomin {
-  from {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+  background-size: cover;
 }
 
 #preloader-blue, #preloader-black {
@@ -1321,7 +1261,7 @@ body {
     margin-top: 2.5px;
   }
   #work {
-    height: 80vh;
+    height: 100vh;
   }
   #work #work-title {
     width: 10%;
@@ -1373,9 +1313,6 @@ body {
             transform: translateY(0%);
     font-size: 15px;
   }
-  #work-img-fullimg #fullimg-close {
-    top: 30%;
-  }
   .work-close {
     height: 2vh !important;
     width: 5vw !important;
@@ -1425,6 +1362,7 @@ body {
   }
   #header {
     height: 90vh;
+    min-height: 600px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1450,7 +1388,7 @@ body {
     width: 100%;
   }
   #header #name-title #header-title1 h1 span {
-    font-size: 8.5vw;
+    font-size: 8vw;
   }
   #header #name-title #header-title2 {
     margin-top: .5%;
@@ -1475,6 +1413,7 @@ body {
   }
   #about {
     height: 90vh;
+    min-height: 600px;
   }
   #about #about--title {
     width: 10%;
@@ -1489,6 +1428,7 @@ body {
   }
   #about #about-content #about--img {
     height: 40vh;
+    min-height: 300px;
   }
   #about #about-content #about--img #about-name p {
     font-size: 3vw;
@@ -1499,6 +1439,7 @@ body {
   }
   #about #about-content #about-text {
     height: 50vh;
+    min-height: 300px;
   }
   #about #about-content #about-text #about-text-content {
     width: 100%;
@@ -1537,7 +1478,7 @@ body {
     width: 28vw;
   }
   #skill {
-    min-height: 60vh;
+    min-height: 600px;
   }
   #skill #skill-title {
     width: 10%;
@@ -1548,15 +1489,17 @@ body {
   }
   #skill #skill-content {
     width: 90%;
-    padding: 17px 25px 30px 25px;
+    padding: 7vh 25px 0px 25px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
   #skill #skill-content .skill-box {
-    width: 19vw;
-    height: 10vh;
-    margin: 2vh 1.5vw;
+    width: 18vw;
+    height: 8vh;
+    margin: 1vh 1.3vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   #skill #skill-content .skill-box img {
     width: 45%;
@@ -1570,7 +1513,8 @@ body {
     margin-top: 2.5px;
   }
   #work {
-    height: 100vh;
+    min-height: 600px;
+    height: 120vh;
   }
   #work #work-title {
     width: 10%;
@@ -1583,14 +1527,19 @@ body {
     width: 90%;
   }
   #work #work-content .work-box {
-    height: 70%;
+    height: 100%;
   }
   #work #work-content .work-box .work-display {
     width: 80%;
+    padding: 3%;
+  }
+  #work #work-content .work-box .work-display .picture-box {
+    width: 100%;
   }
   #work #work-content .work-box .work-display .block-white-line {
     height: .5px;
-    margin-top: .5%;
+    margin-top: 4%;
+    margin-bottom: 3%;
     width: 90%;
   }
   #work #work-content .work-box .work-display h3, #work #work-content .work-box .work-display p {
@@ -1611,6 +1560,7 @@ body {
     letter-spacing: 1px;
   }
   #footer {
+    min-height: 500px;
     height: 70vh;
   }
   #footer #footer-grad-top {
@@ -1684,6 +1634,14 @@ body {
     width: 80%;
     margin-bottom: 23px;
   }
+  .show-project .project-title-box .work-link {
+    margin-top: 10px;
+    width: 60px;
+    height: 25px;
+  }
+  .show-project .project-title-box .work-link a {
+    font-size: .7rem;
+  }
   .show-project .project-title-box h1 {
     font-size: 5vw;
     letter-spacing: 1px;
@@ -1710,23 +1668,15 @@ body {
     overflow: hidden;
     margin: 2.5vh 3.5vw;
   }
+  .show-project .project-images .pr-image-box.pr-portrait {
+    height: auto;
+    width: 27vw;
+  }
   .show-project .project-images .pr-image-box div img {
     width: 100%;
     -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
     transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
     cursor: url("../img/cpoint.png"), auto;
-  }
-  .show-project .project-images .pr-image-box:hover div img {
-    -webkit-transform: scale(1.05) !important;
-            transform: scale(1.05) !important;
-  }
-  #work-img-fullimg #fullimg-main {
-    width: 96%;
-  }
-  #work-img-fullimg #fullimg-close {
-    top: 31%;
-    width: 22px;
-    height: 19px;
   }
 }
 /*# sourceMappingURL=style.css.map */

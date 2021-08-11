@@ -478,7 +478,7 @@ body{
 
 #work{
     width: 100vw;
-    height: 150vh;
+    height: 250vh;
     display: flex;
     flex-direction: row;
     background: $dark;
@@ -704,11 +704,15 @@ body{
         width: 90%;
         top: 8%;
     }
+    &.line-4{
+        width: 90%;
+        bottom: 2%;
+    }
     &.line-6{
         width: 90%;
         bottom: 4%;
     }
-    &.line-4, &.line-5, &.line-6{
+    &.line-5, &.line-6{
         width: 90%;
         bottom: 0%;
     }
@@ -815,6 +819,30 @@ body{
             }
         }
 
+        .work-link{
+            background-color: $cold;
+            border: 1px solid $cold;
+            margin-top: 10px;
+            width: 80px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            transition: .2s cubic-bezier(0,.57,.45,1);
+
+            &:hover{
+                background-color: transparent;
+            }
+
+            a{
+                color: $light;
+                text-decoration: none;
+                font-family: $text;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+                cursor: url('../img/cpoint.png'), auto;
+            }
+        }
+
         h1, h2{
             font-family: $heading;
             font-weight:lighter;
@@ -843,93 +871,36 @@ body{
 
     .project-images{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
         position: relative;
+        margin: 9vw;
+        margin-top: 0;
         margin-bottom: 4vh;
         padding-top: 3vh;
 
         .pr-image-box{
-            width: 33vw;
+            $width-box: 33vw;
+            width: $width-box;
+            height: calc($width-box*9/16);
             overflow: hidden;
             margin: 3.5vh 3.5vw;
+            clip-path: inset(0 0 0 0);
+
+            &.pr-portrait{
+                height: auto;
+                width: 15vw;
+            }
             
             div{
                 img{
                     width: 100%;
-                    transition: .5s cubic-bezier(0,.57,.45,1);
-                    cursor: url('../img/cpoint.png'), auto;
-                }
-            }
-
-            &:hover{
-                div{
-                    img{
-                        transform: scale(1.05) !important; 
-                    }
+                    background-size: cover;
                 }
             }
         }
     }
-}
-
-#work-img-fullimg{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    background: hsla(0, 0%, 0%, .85);
-    z-index: 11;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    animation: fadein .5s ease;
-    
-    #fullimg-main{
-        width: 90%;
-        transform-origin: center;
-        animation: zoomin .6s cubic-bezier(0,.72,.14,.99);
-    }
-    
-    #fullimg-close{
-        position: absolute;
-        top: 7.5%;
-        right: 6%;
-        background: $dark;
-        opacity: .7;
-        width: 45px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: url('../img/cpoint.png'), auto;
-        animation: fadein .8s ease;
-
-        img{
-            width: 75%;
-            height: 90%;
-        }
-    }
-
-    @keyframes fadein {
-        from{
-            opacity: 0;
-        }
-        to{
-            opacity: 1;
-        }
-    }
-    @keyframes zoomin {
-        from{
-            transform: scale(.5);
-        }
-        to{
-            transform: scale(1);
-        }
-    }
-
 }
 
 #preloader-blue, #preloader-black{
@@ -1116,7 +1087,7 @@ body{
     }
 
     #work{
-        height: 80vh;
+        height: 100vh;
 
         #work-title{
             width: 10%;
@@ -1176,12 +1147,6 @@ body{
                     }
                 }
             }
-        }
-    }
-
-    #work-img-fullimg{
-        #fullimg-close{
-            top: 30%;
         }
     }
 
@@ -1245,6 +1210,7 @@ body{
 
     #header{
         height: 90vh;
+        min-height: 600px;
         flex-direction: column;
         justify-content: space-evenly;
         padding-left: 0vw;
@@ -1260,7 +1226,7 @@ body{
                 width: 100%;
                 h1{
                     span{
-                        font-size: 8.5vw;
+                        font-size: 8vw;
                     }
                 }
             }
@@ -1298,6 +1264,7 @@ body{
 
     #about{
         height: 90vh;
+        min-height: 600px;
 
         #about--title{
             width: 10%;
@@ -1313,6 +1280,7 @@ body{
 
             #about--img{
                 height: 40vh;
+                min-height: 300px;
 
                 #about-name{
                     p{
@@ -1327,6 +1295,7 @@ body{
 
             #about-text{
                 height: 50vh;
+                min-height: 300px;
 
                 #about-text-content{
                     width: 100%;
@@ -1375,7 +1344,7 @@ body{
     }
 
     #skill{
-        min-height: 60vh;
+        min-height: 600px;
 
         #skill-title{
             width: 10%;
@@ -1387,13 +1356,15 @@ body{
 
         #skill-content{
             width: 90%;
-            padding: 17px 25px 30px 25px;
+            padding: 7vh 25px 0px 25px;
             align-items: flex-start;
 
             .skill-box{
-                width: 19vw;
-                height: 10vh;
-                margin: 2vh 1.5vw;
+                width: 18vw;
+                height: 8vh;
+                margin: 1vh 1.3vw;
+                margin-bottom: 0;
+                padding-bottom: 0;
 
                 img{
                     width: 45%;
@@ -1414,7 +1385,8 @@ body{
     }
 
     #work{
-        height: 100vh;
+        min-height: 600px;
+        height: 120vh;
 
         #work-title{
             width: 10%;
@@ -1428,14 +1400,20 @@ body{
             width: 90%;
 
             .work-box{
-                height: 70%;
+                height: 100%;
                 
                 .work-display{
                     width: 80%;
+                    padding: 3%;
+
+                    .picture-box{
+                        width: 100%;
+                    }
 
                     .block-white-line{
                         height: .5px;
-                        margin-top: .5%;
+                        margin-top: 4%;
+                        margin-bottom: 3%;
                         width: 90%;
                     }
 
@@ -1465,6 +1443,7 @@ body{
     }
 
     #footer{
+        min-height: 500px;
         height: 70vh;
 
         #footer-grad-top{
@@ -1539,6 +1518,16 @@ body{
         .project-title-box{
             width: 80%;
             margin-bottom: 23px;
+
+            .work-link{
+                margin-top: 10px;
+                width: 60px;
+                height: 25px;
+                
+                a{
+                    font-size: .7rem;
+                }
+            }
     
             h1{
                 font-size: 5vw;
@@ -1567,7 +1556,12 @@ body{
                 width: 65vw;
                 overflow: hidden;
                 margin: 2.5vh 3.5vw;
-    
+
+                &.pr-portrait{
+                    height: auto;
+                    width: 27vw;
+                }
+
                 div{
                     img{
                         width: 100%;
@@ -1575,26 +1569,7 @@ body{
                         cursor: url('../img/cpoint.png'), auto;
                     }
                 }
-    
-                &:hover{
-                    div{
-                        img{
-                            transform: scale(1.05) !important; 
-                        }
-                    }
-                }
             }
-        }
-    }
-
-    #work-img-fullimg{
-        #fullimg-main{
-            width: 96%;
-        }
-        #fullimg-close{
-            top: 31%;
-            width: 22px;
-            height: 19px;
         }
     }
 }
