@@ -1034,7 +1034,7 @@ body {
   text-decoration: none;
   font-family: "Oswald";
   font-size: 1.1rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.75px;
   cursor: url("../img/cpoint.png"), auto;
 }
 
@@ -1489,13 +1489,13 @@ body {
   }
   #skill #skill-content {
     width: 90%;
-    padding: 7vh 25px 0px 25px;
+    padding: 10vh 25px 0px 25px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
   #skill #skill-content .skill-box {
-    width: 18vw;
+    width: 19vw;
     height: 8vh;
     margin: 1vh 1.3vw;
     margin-bottom: 0;
@@ -1636,11 +1636,11 @@ body {
   }
   .show-project .project-title-box .work-link {
     margin-top: 10px;
-    width: 60px;
-    height: 25px;
+    width: 72px;
+    height: 32px;
   }
   .show-project .project-title-box .work-link a {
-    font-size: .7rem;
+    font-size: .8rem;
   }
   .show-project .project-title-box h1 {
     font-size: 5vw;

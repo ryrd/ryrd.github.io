@@ -838,7 +838,7 @@ body{
                 text-decoration: none;
                 font-family: $text;
                 font-size: 1.1rem;
-                letter-spacing: 1px;
+                letter-spacing: 1.75px;
                 cursor: url('../img/cpoint.png'), auto;
             }
         }
@@ -1356,11 +1356,11 @@ body{
 
         #skill-content{
             width: 90%;
-            padding: 7vh 25px 0px 25px;
+            padding: 10vh 25px 0px 25px;
             align-items: flex-start;
 
             .skill-box{
-                width: 18vw;
+                width: 19vw;
                 height: 8vh;
                 margin: 1vh 1.3vw;
                 margin-bottom: 0;
@@ -1521,11 +1521,11 @@ body{
 
             .work-link{
                 margin-top: 10px;
-                width: 60px;
-                height: 25px;
+                width: 72px;
+                height: 32px;
                 
                 a{
-                    font-size: .7rem;
+                    font-size: .8rem;
                 }
             }
     
