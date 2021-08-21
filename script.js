@@ -403,7 +403,7 @@ ScrollTrigger.matchMedia({
 gsap.from('.footer-social', {
         scrollTrigger: {
                 trigger: '#socials',
-                start: 'bottom bottom',
+                start: 'center bottom',
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
