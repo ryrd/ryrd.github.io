@@ -166,12 +166,12 @@ ScrollTrigger.matchMedia({
         ScrollTrigger.create({
                 trigger: '#work-title',
                 start: 'top top',
-                end: '120% bottom',
+                end: '130% bottom',
                 pin: true,
         });
 },
 
-
+//work pinning
 "(min-width: 1025px)": function(){
         ScrollTrigger.create({
                 trigger: '#about--title',
@@ -403,11 +403,11 @@ ScrollTrigger.matchMedia({
 gsap.from('.footer-social', {
         scrollTrigger: {
                 trigger: '#socials',
-                start: 'center bottom',
-                toggleActions: 'play none none reverse'
+                start: 'top bottom',
+                toggleActions: 'play none none reverse',
         },
+        yPercent: 150,
         opacity: 0,
-        yPercent: 30,
-        duration: 1.8,
+        duration: .5,
         stagger: .1
-},'-=2');
+});
