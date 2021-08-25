@@ -215,7 +215,7 @@ gsap.from('.about-box-reveal #about-txt-1', {
 gsap.from('.about-box-reveal #about-txt-2', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-2',
-                start: 'bottom 73%',
+                start: 'bottom 85%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -226,7 +226,7 @@ gsap.from('.about-box-reveal #about-txt-2', {
 gsap.from('.about-box-reveal #about-txt-3', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-3',
-                start: 'bottom 70%',
+                start: 'bottom 85%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateY(120%)',
@@ -236,7 +236,7 @@ gsap.from('.about-box-reveal #about-txt-3', {
 gsap.from('.about-box-reveal #about-txt-4', {
         scrollTrigger: {
                 trigger: '.about-box-reveal #about-txt-4',
-                start: 'center 70%',
+                start: 'center 85%',
                 toggleActions: 'play none none reverse'
         },
         transform: 'translateX(-110%)',
@@ -318,7 +318,8 @@ gsap.to('#about-txt-img2', {
 gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '#skill',
-                start: 'top 77%',
+                start: 'top 78%',
+                markers: true,
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
