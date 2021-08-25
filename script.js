@@ -319,7 +319,6 @@ gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '#skill',
                 start: 'top 78%',
-                markers: true,
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
