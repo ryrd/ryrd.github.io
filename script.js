@@ -58,7 +58,16 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
 }
 });     
         document.body.style.overflowY = 'scroll';
-});        
+});     
+
+//progressbar
+let progressbar = document.getElementById("progressbar");
+let totalHeight = document.body.scrollHeight - window.innerHeight;
+
+window.onscroll = function(){
+        let progress = (window.pageYOffset/ totalHeight) * 100;
+        progressbar.style.height = `${progress}%`;
+}
 
 let s1 = document.getElementById('header-title1');
 let s2 = document.getElementById('about-rr');
@@ -403,7 +412,7 @@ ScrollTrigger.matchMedia({
 gsap.from('.footer-social', {
         scrollTrigger: {
                 trigger: '#socials',
-                start: '-100% bottom',
+                start: 'top bottom',
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
@@ -411,4 +420,4 @@ gsap.from('.footer-social', {
         ease: Expo.easeIn,
         duration: 1.5,
         stagger: .1
-},'-=2');
+},'-=1.2');

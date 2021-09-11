@@ -18,8 +18,7 @@ $text : 'Oswald';
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
     box-sizing: border-box;
-    scrollbar-width: 9px;
-    scrollbar-color: $cold transparent;
+    scrollbar-width: 0px;
 }
 
 ::selection{
@@ -28,21 +27,23 @@ $text : 'Oswald';
 }
 
 *::-webkit-scrollbar{
-    width: 9px;
-}
-*::-webkit-scrollbar-thumb{
-    background: #00076b;
-    border-radius: 0px;
-    cursor: url('../img/cpoint.png'), auto;
-    &:hover{
-        background: #00098d;
-    }
+    width: 0px;
 }
 
 body{
     background: $dark;
     cursor: url('../img/cursor.png'), auto;
     overflow-x: hidden;
+}
+
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 0%;
+    background-color: $cold;
+    z-index: 14;
 }
 
 #cursor{
@@ -768,7 +769,7 @@ body{
     overflow-x: hidden;
     background: $dark;
     border: 1px solid $cold;
-    z-index: 10;
+    z-index: 15;
     display: flex;
     flex-direction: column;
     transform: translateX(-100%);
@@ -1205,12 +1206,9 @@ body{
         display: none;
     }
 
-    *{
-        scrollbar-width: 4px;
-    }
-
-    *::-webkit-scrollbar{
-        width: 4px;
+    #progressbar{
+        width: 2px;
+        left: 0;
     }
 
     #header{
