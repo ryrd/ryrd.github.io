@@ -819,8 +819,8 @@ body {
   max-width: 60px;
   -webkit-filter: saturate(0) brightness(3);
           filter: saturate(0) brightness(3);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: .3s;
+  transition: .3s;
   margin: 0 5px;
   text-align: center;
 }
@@ -837,16 +837,16 @@ body {
   margin: auto auto;
   -webkit-transform: translateY(60%);
           transform: translateY(60%);
-  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 #footer #footer-grad-bottom #socials ul li a p {
   color: #fdfdfd;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
-  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 #footer #footer-grad-bottom #socials ul li:hover {

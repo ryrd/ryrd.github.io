@@ -403,11 +403,12 @@ ScrollTrigger.matchMedia({
 gsap.from('.footer-social', {
         scrollTrigger: {
                 trigger: '#socials',
-                start: 'top bottom',
-                toggleActions: 'play none none reverse',
+                start: '-100% bottom',
+                toggleActions: 'play none none reverse'
         },
-        yPercent: 150,
         opacity: 0,
-        duration: .5,
+        yPercent: 50,
+        ease: Expo.easeIn,
+        duration: 1.5,
         stagger: .1
-});
+},'-=2');

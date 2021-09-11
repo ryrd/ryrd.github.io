@@ -651,7 +651,7 @@ body{
                 li{
                     max-width: 60px;
                     filter: saturate(0) brightness(3);
-                    transition: .3s ease-in-out;
+                    transition: .3s;
                     margin: 0 5px;
                     text-align: center;
 
@@ -665,12 +665,12 @@ body{
                             width: 27px;
                             margin: auto auto;
                             transform: translateY(60%);
-                            transition: .5s cubic-bezier(0,.57,.45,1);
+                            transition: .4s;
                         }
                         p{
                             color: $light;
                             transform: translateY(100%);
-                            transition: .5s cubic-bezier(0,.57,.45,1);
+                            transition: .4s;
                         }
                     }
                     &:hover{
