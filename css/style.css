@@ -176,7 +176,7 @@ body {
 }
 
 #header #scroll-down img {
-  width: 80%;
+  width: 50%;
   height: 90%;
   margin-top: -3px;
   -webkit-animation: scroll-in 1s infinite ease-in-out;
@@ -675,6 +675,7 @@ body {
 
 #work #work-content .work-box .work-display .picture-box {
   width: 100%;
+  position: relative;
   overflow: hidden;
   margin-bottom: 2%;
   cursor: url("../img/cpoint.png"), auto;
@@ -689,6 +690,95 @@ body {
 #work #work-content .work-box .work-display .picture-box:hover picture img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn {
+  position: absolute;
+  width: 9vw;
+  height: 6vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000875;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.25s cubic-bezier(0, 0.57, 0.45, 1);
+  transition: 0.25s cubic-bezier(0, 0.57, 0.45, 1);
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line .spb-img {
+  width: 25%;
+  height: 90%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line .spb-img img {
+  width: 75%;
+  height: 75%;
+  -webkit-transform: rotate(-90deg) translateY(-110%);
+          transform: rotate(-90deg) translateY(-110%);
+  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line p {
+  font-family: 'oswald';
+  color: #fdfdfd;
+  letter-spacing: 1px;
+  font-weight: 200;
+  font-size: 1.15vw;
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+  -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+  transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn:hover .spb-line .spb-img img {
+  -webkit-transform: rotate(-90deg) translateY(-9%);
+          transform: rotate(-90deg) translateY(-9%);
+}
+
+#work #work-content .work-box .work-display .picture-box .show-project-btn:hover .spb-line p {
+  -webkit-transform: translateX(-7%);
+          transform: translateX(-7%);
 }
 
 #work #work-content .work-box .work-display .block-white-line {
@@ -1537,6 +1627,32 @@ body {
   }
   #work #work-content .work-box .work-display .picture-box {
     width: 100%;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn {
+    width: 20vw;
+    height: 30px;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line {
+    border: 1px solid #000875;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line p {
+    font-size: 60%;
+    -webkit-transform: translateX(-17%);
+            transform: translateX(-17%);
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn:hover .spb-line {
+    width: 100%;
+    height: 100%;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn:hover .spb-line .spb-img img {
+    width: 70%;
+    height: 65%;
+    -webkit-transform: rotate(-90deg) translateY(-8%);
+            transform: rotate(-90deg) translateY(-8%);
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn:hover .spb-line p {
+    -webkit-transform: translateX(-7%);
+            transform: translateX(-7%);
   }
   #work #work-content .work-box .work-display .block-white-line {
     height: .5px;

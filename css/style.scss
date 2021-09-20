@@ -159,7 +159,7 @@ body{
         }
         
         img{
-            width: 80%;
+            width: 50%;
             height: 90%;
             margin-top: -3px;
             animation: scroll-in 1s infinite ease-in-out;
@@ -527,6 +527,7 @@ body{
 
                 .picture-box{
                     width: 100%;
+                    position: relative;
                     overflow: hidden;
                     margin-bottom: 2%;
                     cursor: url('../img/cpoint.png'), auto;
@@ -542,6 +543,73 @@ body{
                         picture{
                             img{
                                 transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    .show-project-btn{
+                        position: absolute;
+                        width: 9vw;
+                        height: 6vh;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50% , -50%);
+                        background: rgba(0,0,0, .7);
+                        backdrop-filter: blur(2px);
+                        transition: .5s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 10;
+
+                        .spb-line{
+                            width: 100%;
+                            height: 100%;
+                            border: 2px solid $cold;
+                            z-index: 11;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: .25s cubic-bezier(0,.57,.45,1);
+
+                            .spb-img{
+                                width: 25%;
+                                height: 90%;
+                                overflow: hidden;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img{
+                                    width: 75%;
+                                    height: 75%;
+                                    transform: rotate(-90deg) translateY(-110%);
+                                    transition: .5s cubic-bezier(0,.57,.45,1);
+                                }
+                            }
+
+                            p{
+                                font-family: 'oswald';
+                                color: $light;
+                                letter-spacing: 1px;
+                                font-weight: 200;
+                                font-size: 1.15vw;
+                                transform: translateX(-20%);
+                                transition: .5s cubic-bezier(0,.57,.45,1);
+                            }
+                        }
+
+                        &:hover{
+                            .spb-line{
+                                .spb-img{
+                                    img{
+                                        transform: rotate(-90deg) translateY(-9%);
+                                    }
+                                }
+
+                                p{
+                                    transform: translateX(-7%);
+                                }
                             }
                         }
                     }
@@ -1411,6 +1479,39 @@ body{
 
                     .picture-box{
                         width: 100%;
+
+                        .show-project-btn{
+                            width: 20vw;
+                            height: 30px;
+
+                            .spb-line{
+                                border: 1px solid $cold;
+
+                                p{
+                                    font-size: 60%;
+                                    transform: translateX(-17%);
+                                }
+                            }
+
+                            &:hover{
+                                .spb-line{
+                                    width: 100%;
+                                    height: 100%;
+    
+                                    .spb-img{
+                                        img{
+                                            width: 70%;
+                                            height: 65%;
+                                            transform: rotate(-90deg) translateY(-8%);
+                                        }
+                                    }
+    
+                                    p{
+                                        transform: translateX(-7%);
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     .block-white-line{
