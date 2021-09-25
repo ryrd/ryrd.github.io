@@ -1636,7 +1636,7 @@ body {
     border: 1px solid #000875;
   }
   #work #work-content .work-box .work-display .picture-box .show-project-btn .spb-line p {
-    font-size: 60%;
+    font-size: 55%;
     -webkit-transform: translateX(-17%);
             transform: translateX(-17%);
   }
