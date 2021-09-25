@@ -1804,4 +1804,48 @@ body {
     cursor: url("../img/cpoint.png"), auto;
   }
 }
+
+@media (max-width: 325px) and (max-height: 570px) {
+  #skill {
+    min-height: 100vh;
+    height: 130vh;
+  }
+  #skill #skill-content {
+    padding-top: 0;
+  }
+  #skill #skill-content .skill-box {
+    width: 20vw;
+    margin: .5vh 1vw;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn {
+    width: 25vw;
+    height: 30px;
+  }
+  #footer {
+    min-height: 500px;
+    height: 70vh;
+  }
+  #footer #footer-grad-top {
+    height: 42%;
+  }
+  #footer #footer-grad-bottom #socials {
+    margin-bottom: 2vw;
+  }
+  #footer #footer-grad-bottom #socials ul {
+    margin-right: 10vw;
+  }
+  #footer #footer-grad-bottom #socials ul li {
+    margin: 0 3.5%;
+  }
+  #footer #footer-grad-bottom #socials ul li a img {
+    width: 12px;
+    -webkit-transform: translateY(25%);
+            transform: translateY(25%);
+  }
+  #footer #footer-grad-bottom #socials ul li a p {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    font-size: 7.5px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

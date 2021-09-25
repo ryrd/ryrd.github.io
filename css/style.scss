@@ -1686,3 +1686,73 @@ body{
         }
     }
 }
+
+
+@media (max-width: 325px) and (max-height: 570px){
+    #skill{
+        min-height: 100vh;
+        height: 130vh;
+
+        #skill-content{
+            padding-top: 0;
+
+            .skill-box{
+                width: 20vw;
+                margin: .5vh 1vw;
+            }
+        }
+    }
+
+    #work{
+        
+        #work-content{
+        
+            .work-box{
+                
+                .work-display{
+
+                    .picture-box{
+
+                        .show-project-btn{
+                            width: 25vw;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #footer{
+        min-height: 500px;
+        height: 70vh;
+
+        #footer-grad-top{
+            height: 42%;
+        }
+
+        #footer-grad-bottom{
+            #socials{
+                margin-bottom: 2vw;
+
+                ul{
+                    margin-right: 10vw;
+                    li{
+                        margin: 0 3.5%;
+
+                        a{
+                            img{
+                                width: 12px;
+                                transform: translateY(25%);
+                            }
+                            p{
+                                transform: translateY(0%);
+                                font-size: 7.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
