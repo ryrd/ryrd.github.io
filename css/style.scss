@@ -452,6 +452,10 @@ body{
             img{
                 transition: .5s cubic-bezier(.2,.01,0,.99);
                 width: 40%;
+
+                &.wideimg{
+                    width: 55%;
+                }
             }
             
             p{

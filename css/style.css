@@ -569,6 +569,10 @@ body {
   width: 40%;
 }
 
+#skill #skill-content .skill-box img.wideimg {
+  width: 55%;
+}
+
 #skill #skill-content .skill-box p {
   font-family: "Oswald";
   font-size: 1.5vw;
