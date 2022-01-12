@@ -12,13 +12,13 @@
 }
 
 ::-moz-selection {
-  background: #fdfdfd;
-  color: #090909;
+  background: #000875;
+  color: #fdfdfd;
 }
 
 ::selection {
-  background: #fdfdfd;
-  color: #090909;
+  background: #000875;
+  color: #fdfdfd;
 }
 
 *::-webkit-scrollbar {
