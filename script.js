@@ -76,6 +76,8 @@ const m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',
           ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
 const m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 const m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
+const sArr = [s1, s2, s3];
+const mArr = [m1, m2, m3];
 const hm = document.getElementById('hm');
 const hmp = document.getElementById('hmp');
 let lastClick = 0;
@@ -103,15 +105,11 @@ function showMobile(e, arr){
         lastClick = time;
 }
 
-s1.addEventListener('dblclick', () => show([...m1]));
-s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
-
-s2.addEventListener('dblclick', () => show([...m2]));
-s2.addEventListener('touchstart', () => showMobile(e, [...m2]));
-
-s3.addEventListener('dblclick', () => show([...m3]));
-s3.addEventListener('touchstart', () => showMobile(e, [...m3]));
-
+sArr.forEach( (s, i) => {
+        s.addEventListener('dblclick', () => show([...mArr[i]]));
+        s.addEventListener('touchstart', () => showMobile(e, [...mArr[i]]));
+    }
+)
 
 //about
 ScrollTrigger.matchMedia({
