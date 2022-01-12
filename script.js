@@ -69,94 +69,48 @@ window.onscroll = function(){
         progressbar.style.height = `${progress}%`;
 }
 
-let s1 = document.getElementById('header-title1');
-let s2 = document.getElementById('about-rr');
-let s3 = document.getElementById('rr');
-let m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','\'','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
+const s1 = document.getElementById('header-title1');
+const s2 = document.getElementById('about-rr');
+const s3 = document.getElementById('rr');
+const m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','\'','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
           ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
-let m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
-let m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
+const m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
+const m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
+const hm = document.getElementById('hm');
+const hmp = document.getElementById('hmp');
 let lastClick = 0;
 
-s1.addEventListener('dblclick', show1);
-s1.addEventListener('touchstart', function(e) {
-  e.preventDefault();
-  let date = new Date();
-  let time = date.getTime();
-  const time_between_taps = 200;
-  if (time - lastClick < time_between_taps) {
-        show1();
-  }
-  lastClick = time;
-});
-
-function show1(){
-        let rts = m1.reverse();
-        let str = rts.join('');
-        document.getElementById('hm').style.display = 'block';
-        document.getElementById("hmp").innerHTML = str;
+function show(arr){
+        let str = arr.reverse().join('');
+        hm.style.display = 'block';
+        hmp.innerHTML = str;
         setTimeout(
                 function(){
-                        document.getElementById('hm').style.display = 'none';
-                        document.getElementById("hmp").innerHTML = '';
-                        rts = m1.reverse();
+                        hm.style.display = 'none';
+                        hmp.innerHTML = '';
                 }
         ,10);
-};
+}
 
-s2.addEventListener('dblclick', show2);
-s2.addEventListener('touchstart', function(e) {
-  e.preventDefault();
-  let date = new Date();
-  let time = date.getTime();
-  const time_between_taps = 200;
-  if (time - lastClick < time_between_taps) {
-        show2();
-  }
-  lastClick = time;
-});
+function showMobile(e, arr){
+        e.preventDefault();
+        let date = new Date();
+        let time = date.getTime();
+        const time_between_taps = 200;
+        if (time - lastClick < time_between_taps) {
+                show([...arr]);
+        }
+        lastClick = time;
+}
 
-function show2(){
-        let rts = m2.reverse();
-        let str = rts.join('');
-        document.getElementById('hm').style.display = 'block';
-        document.getElementById("hmp").innerHTML = str;
-        setTimeout(
-                function(){
-                        document.getElementById('hm').style.display = 'none';
-                        document.getElementById("hmp").innerHTML = '';
-                        rts = m2.reverse();
-                }
-        ,10);
-};
+s1.addEventListener('dblclick', () => show([...m1]));
+s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
 
-s3.addEventListener('dblclick', show3);
-s3.addEventListener('touchstart', function(e) {
-  if (e.cancelable) {
-          e.preventDefault();
-  }
-  let date = new Date();
-  let time = date.getTime();
-  const time_between_taps = 200;
-  if (time - lastClick < time_between_taps) {
-        show3();
-  }
-  lastClick = time;
-});
+s2.addEventListener('dblclick', () => show([...m2]));
+s2.addEventListener('touchstart', () => showMobile(e, [...m2]));
 
-function show3(){
-        let rts = m3.reverse();
-        let str = rts.join('');
-        document.getElementById('hm').style.display = 'block';
-        document.getElementById("hmp").innerHTML = str;
-        setTimeout(
-                function(){
-                        document.getElementById('hm').style.display = 'none';
-                        document.getElementById("hmp").innerHTML = '';
-                        rts = m3.reverse();
-                }
-        ,10);
-};
+s3.addEventListener('dblclick', () => show([...m3]));
+s3.addEventListener('touchstart', () => showMobile(e, [...m3]));
 
 
 //about
@@ -211,86 +165,33 @@ gsap.from('.about-anim', {
 });
 
 //about text
-gsap.from('.about-box-reveal #about-txt-1', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-1',
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateY(120%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-2', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-2',
-                start: 'bottom 85%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateY(120%)',
-        ease: Expo.easeOut,
-        duration: 3.7
+const aboutTxt = gsap.utils.toArray('.about-txt');
+const aboutTxtHigh = gsap.utils.toArray('.about-txt-highlight');
+
+aboutTxt.forEach(text => {
+        gsap.from(text, {
+                scrollTrigger: {
+                        trigger: text,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse'
+                },
+                transform: 'translateY(120%)',
+                ease: Expo.easeOut,
+                duration: 6
+        })
 });
 
-gsap.from('.about-box-reveal #about-txt-3', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-3',
-                start: 'bottom 85%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateY(120%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-4', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-4',
-                start: 'center 85%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateX(-110%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-5', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-5',
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateY(120%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-6', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-6',
-                start: 'center 90%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateX(-150%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-7', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-7',
-                start: 'top 95%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateY(120%)',
-        ease: Expo.easeOut,
-        duration: 3.7
-});
-gsap.from('.about-box-reveal #about-txt-8', {
-        scrollTrigger: {
-                trigger: '.about-box-reveal #about-txt-8',
-                start: 'center 95%',
-                toggleActions: 'play none none reverse'
-        },
-        transform: 'translateX(-150%)',
-        ease: Expo.easeOut,
-        duration: 3.7
+aboutTxtHigh.forEach(text => {
+        gsap.from(text, {
+                scrollTrigger: {
+                        trigger: text,
+                        start: 'center 85%',
+                        toggleActions: 'play none none reverse'
+                },
+                transform: 'translateX(-120%)',
+                ease: Expo.easeOut,
+                duration: 3.5     
+        })
 });
 
 //about img
@@ -326,7 +227,7 @@ gsap.to('#about-txt-img2', {
 //skills
 gsap.from('.skill-box', {
         scrollTrigger: {
-                trigger: '#skill',
+                trigger: '.skill-box',
                 start: 'top 78%',
                 toggleActions: 'play none none reverse'
         },
@@ -334,7 +235,7 @@ gsap.from('.skill-box', {
         yPercent: 50,
         ease: Expo.easeIn,
         duration: .75,
-        stagger: .15
+        stagger: .15,
 });
 
 //work
@@ -362,6 +263,7 @@ document.getElementById('work1-close').addEventListener('click', function(){
         document.body.style.overflowY = 'scroll';
 });
 
+//stylish-wear
 let work2 = gsap.timeline({paused: true});
 work2.from('#stylish-wear .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
     .from('#stylish-wear .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
