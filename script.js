@@ -6,26 +6,26 @@ paceOptions = {
 };
 
 //cursor
-let cursor = document.querySelector('#cursor');
-document.addEventListener('mousemove', (e) => {
+const cursor = document.querySelector('#cursor');
+document.addEventListener('mousemove', e => {
         cursor.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
 });
 
-//gsap
+//register gsap scrolltrigger
 gsap.registerPlugin(ScrollTrigger);
 
-//opening
+//-----------------------------opening------------------------
 document.body.style.overflowY = 'hidden';
-let opening = gsap.timeline();
+const opening = gsap.timeline();
 
 const styles = ['color: #eeeeee','background: #101010','font-family: courier','font-size: 13px','padding: 15px','border: 4px solid #000875'].join(';');
 console.log('%cRefresh the page when you open device mode/change viewport width. (it\'s GSAP bug and i don\'t know how to fix it yet 🙃)', styles);
 
-Pace.on('done', function(){
+Pace.on('done', () => {
 
 ScrollTrigger.matchMedia({
 
-"(max-width: 450px)": function(){
+"(max-width: 450px)": () => {
 opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
@@ -42,7 +42,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
 },
-"(min-width: 451px)": function(){
+"(min-width: 451px)": () => {
         opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
@@ -61,40 +61,38 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
 });     
 
 //progressbar
-let progressbar = document.getElementById("progressbar");
+const progressbar = document.querySelector("#progressbar");
 let totalHeight = document.body.scrollHeight - window.innerHeight;
 
-window.onscroll = function(){
+window.onscroll = () => {
         let progress = (window.pageYOffset/ totalHeight) * 100;
         progressbar.style.height = `${progress}%`;
 }
 
-const s1 = document.getElementById('header-title1');
-const s2 = document.getElementById('about-rr');
-const s3 = document.getElementById('rr');
+const s1 = document.querySelector('#header-title1');
+const s2 = document.querySelector('#about-rr');
+const s3 = document.querySelector('#rr');
 const m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','\'','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
-          ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
+            ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
 const m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
 const m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
 const sArr = [s1, s2, s3];
 const mArr = [m1, m2, m3];
-const hm = document.getElementById('hm');
-const hmp = document.getElementById('hmp');
+const hm = document.querySelector('#hm');
+const hmp = document.querySelector('#hmp');
 let lastClick = 0;
 
-function show(arr){
+const show = arr => {
         let str = arr.reverse().join('');
         hm.style.display = 'block';
         hmp.innerHTML = str;
-        setTimeout(
-                function(){
-                        hm.style.display = 'none';
-                        hmp.innerHTML = '';
-                }
-        ,10);
+        setTimeout(() => {
+                hm.style.display = 'none';
+                hmp.innerHTML = '';
+        }, 10);
 }
 
-function showMobile(e, arr){
+const showMobile = (e, arr) => {
         e.preventDefault();
         let date = new Date();
         let time = date.getTime();
@@ -105,16 +103,15 @@ function showMobile(e, arr){
         lastClick = time;
 }
 
-sArr.forEach( (s, i) => {
-        s.addEventListener('dblclick', () => show([...mArr[i]]));
-        s.addEventListener('touchstart', () => showMobile(e, [...mArr[i]]));
-    }
-)
+for (let i in sArr){
+        sArr[i].addEventListener('dblclick', () => show([...mArr[i]]));
+        sArr[i].addEventListener('touchstart', () => showMobile(e, [...mArr[i]]));
+}
 
 //about
 ScrollTrigger.matchMedia({
 
-"(max-width: 450px)": function(){
+"(max-width: 450px)": () => {
         gsap.to('#profile-box', {
                 yPercent: -55,
                 scrollTrigger: {
@@ -133,7 +130,7 @@ ScrollTrigger.matchMedia({
 },
 
 //work pinning
-"(min-width: 1025px)": function(){
+"(min-width: 1025px)": () => {
         ScrollTrigger.create({
                 trigger: '#about--title',
                 start: 'top top',
@@ -175,7 +172,7 @@ aboutTxt.forEach(text => {
                 },
                 transform: 'translateY(120%)',
                 ease: Expo.easeOut,
-                duration: 6
+                duration: 5
         })
 });
 
@@ -238,7 +235,7 @@ gsap.from('.skill-box', {
 
 //work
 //work-district survei
-let work = gsap.timeline({paused: true});
+const work = gsap.timeline({paused: true});
 work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
     .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5}, '-=2.25')
     .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
@@ -262,7 +259,7 @@ document.getElementById('work1-close').addEventListener('click', function(){
 });
 
 //stylish-wear
-let work2 = gsap.timeline({paused: true});
+const work2 = gsap.timeline({paused: true});
 work2.from('#stylish-wear .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
     .from('#stylish-wear .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
     .from('#stylish-wear .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
@@ -287,7 +284,7 @@ document.getElementById('work2-close').addEventListener('click', function(){
 
 //footer
 ScrollTrigger.matchMedia({
-        "(max-width: 450px)": function(){
+        "(max-width: 450px)": () => {
                gsap.from('#footer #img-footer', {
                        scrollTrigger: {
                                trigger: '#footer',
@@ -297,7 +294,7 @@ ScrollTrigger.matchMedia({
                        },scale: 1.4
                });       
        },
-       "(min-width: 451px)": function(){
+       "(min-width: 451px)": () => {
                gsap.from('#footer #img-footer', {
                        scrollTrigger: {
                                trigger: '#footer',
