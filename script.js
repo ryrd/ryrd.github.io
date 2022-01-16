@@ -6,9 +6,8 @@ paceOptions = {
 };
 
 //cursor
-const cursor = document.querySelector('#cursor');
 document.addEventListener('mousemove', e => {
-        cursor.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+        document.querySelector('#cursor').style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
 });
 
 //register gsap scrolltrigger
@@ -17,9 +16,6 @@ gsap.registerPlugin(ScrollTrigger);
 //-----------------------------opening------------------------
 document.body.style.overflowY = 'hidden';
 const opening = gsap.timeline();
-
-const styles = ['color: #eeeeee','background: #101010','font-family: courier','font-size: 13px','padding: 15px','border: 4px solid #000875'].join(';');
-console.log('%cRefresh the page when you open device mode/change viewport width. (it\'s GSAP bug and i don\'t know how to fix it yet 🙃)', styles);
 
 Pace.on('done', () => {
 
@@ -59,6 +55,36 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
 });     
         document.body.style.overflowY = 'scroll';
 });     
+
+const mediaQuerySmall = window.matchMedia('(max-width: 450px)');
+const mediaQueryMedium = window.matchMedia('(min-width: 451px)');
+const mediaQueryBig = window.matchMedia('(min-width: 1025px)');
+let currentWindowSize = '';
+
+if(window.innerWidth >= 451){
+        currentWindowSize = 'medium';
+}
+else if(window.innerWidth < 451){
+        currentWindowSize = 'small';
+}
+
+window.addEventListener('resize', ()=>{
+        if(mediaQueryMedium.matches && currentWindowSize != 'medium'){
+                window.location.reload();
+        }
+        else if(mediaQuerySmall.matches && currentWindowSize != 'small'){
+                window.location.reload();
+        }        
+});
+
+const toDown = document.querySelector('#scroll-down');
+toDown.addEventListener('click', () => {
+        window.scrollTo(0, 600);
+})
+
+window.addEventListener('scroll', () => {
+        window.scrollY > 0 ? toDown.style.display = 'none' : null
+})
 
 //progressbar
 const progressbar = document.querySelector("#progressbar");
@@ -108,9 +134,8 @@ for (let i in sArr){
         sArr[i].addEventListener('touchstart', () => showMobile(e, [...mArr[i]]));
 }
 
-//about
+//-----------------------------about----------------------------
 ScrollTrigger.matchMedia({
-
 "(max-width: 450px)": () => {
         gsap.to('#profile-box', {
                 yPercent: -55,
@@ -121,15 +146,8 @@ ScrollTrigger.matchMedia({
                         scrub: 1
                 }
         });
-        ScrollTrigger.create({
-                trigger: '#work-title',
-                start: 'top top',
-                end: '130% bottom',
-                pin: true,
-        });
 },
 
-//work pinning
 "(min-width: 1025px)": () => {
         ScrollTrigger.create({
                 trigger: '#about--title',
@@ -137,13 +155,7 @@ ScrollTrigger.matchMedia({
                 end: '170% bottom',
                 pin: true,
         });
-        ScrollTrigger.create({
-                trigger: '#work-title',
-                start: 'top top',
-                end: '250% bottom',
-                pin: true,
-        });
-},
+}
 });
 
 //my name - about
@@ -233,56 +245,165 @@ gsap.from('.skill-box', {
         stagger: .15,
 });
 
-//work
-//work-district survei
-const work = gsap.timeline({paused: true});
-work.from('#district-survey .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
-    .from('#district-survey .project-title-box h2', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5}, '-=2.25')
-    .from('#district-survey .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
-    .from('#district-survey .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
-    .from('#district-survey .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
-    .from('#district-survey .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=2.25')
-    .from('#district-survey .project-title-box p', { opacity: 0, transform: 'translateY(30%)', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
-    .from('#district-survey .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
-    .from('#district-survey .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
-    .from('#district-survey .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
-    
-document.getElementById('work1').addEventListener('click', function(){
-        document.getElementById('district-survey').style.transform = 'translateX(0%)';
-        work.restart();
-        document.body.style.overflowY = 'hidden';
+//--------------------------------work----------------------------
+//fetch
+const works = [
+        {
+            id : "work1",
+            name : "Survei Kepuasan Layanan Masyarakat",
+            subName : "Pengadilan Negeri Banjarmasin Kelas 1A",
+            description : "this web application is created to automate service satisfaction survey at Banjarmasin District Court who previously calculated manually. this Web App is hosted in Banjarmasin District Court local server, so this web can't accessed online. but here some screenshot of this web app.",
+            mainImg : "img/work/pengadilan/pengadilan1.jpg",
+            mainImgMobile : "img/work/pengadilan/pengadilan1-2.jpg",
+            link : null,
+            imgs : [
+                "img/work/pengadilan/pengadilan1.jpg",
+                "img/work/pengadilan/pengadilan2.jpg",
+                "img/work/pengadilan/pengadilan3.jpg",
+                "img/work/pengadilan/pengadilan4.jpg",
+                "img/work/pengadilan/pengadilan5.jpg",
+                "img/work/pengadilan/pengadilan6.jpg"
+            ]
+        },
+        {
+            id : "work2",
+            name : "Stylish Wear",
+            subName : "Dummy Project",
+            description : "stylish wear is a dummy website showing few information about clothes.<br>made with :<br>- HTML, CSS, Javascript<br>- Swiper.js<br>- Pace.js<br>- GSAP",
+            mainImg : "img/work/sw/sw2.jpg",
+            mainImgMobile : "img/work/sw/sw5.jpg",
+            link : "https://stylish-wear.netlify.app",
+            imgs : [
+                "img/work/sw/sw1.jpg",
+                "img/work/sw/sw2.jpg",
+                // "img/work/sw/sw3.jpg",
+                // "img/work/sw/sw4.jpg"
+            ]
+        },
+    ];
+
+const workContainer = document.querySelector('#work');
+
+if(mediaQueryBig.matches){
+        workContainer.style.height = `${(100*works.length)+50}vh`;
+}
+else if(mediaQuerySmall.matches){
+        workContainer.style.height = `${(50*works.length)+30}vh`;
+}
+
+ScrollTrigger.matchMedia({
+        "(max-width: 450px)": () => {
+                ScrollTrigger.create({
+                        trigger: '#work-title',
+                        start: 'top top',
+                        end: `${(50*works.length)+30}% bottom`,
+                        pin: true,
+                });
+        },
+        "(min-width: 1025px)": () => {
+                ScrollTrigger.create({
+                        trigger: '#work-title',
+                        start: 'top top',
+                        end: `${(100*works.length)+50}% bottom`,
+                        pin: true,
+                });
+        }
 });
 
-document.getElementById('work1-close').addEventListener('click', function(){
-        document.getElementById('district-survey').style.transform = 'translateX(-100%)';
+//render works display
+const workContent = document.querySelector('#work-content');
+
+const renderWorks =  work => {
+        html = `
+        <div class="work-display">
+                <div class="picture-box" id=${work.id}>
+                        <picture>
+                                <source media="(max-width: 650px)" srcset=${work.mainImgMobile} />
+                                <img src=${work.mainImg} />
+                        </picture>
+                        <div class="show-project-btn">
+                                <div class="spb-line">
+                                        <div class="spb-img">
+                                                <img src="img/down.png">
+                                        </div>
+                                        <p>show project</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="block-white-line"></div>
+                <h3>${work.name}</h3>
+                <p>${work.subName}</p>
+        </div>
+        <div class="line line-6"></div>
+        `;
+
+        const workBox = document.createElement('div');
+        workBox.classList.add('work-box');
+        workBox.innerHTML = html;
+
+        workContent.prepend(workBox);
+}
+works.forEach(work => renderWorks(work));
+
+const projImages = document.querySelector('.project-images');
+const renderProjImages = images => {
+        html = `
+              <div class="fullimg-work">
+                <img src=${images}>
+              </div>
+        `
+        const prImgBox = document.createElement('div');
+        prImgBox.classList.add('pr-image-box');
+        prImgBox.innerHTML = html;
+
+        projImages.append(prImgBox);
+}
+
+//show full work    
+const showWork = document.querySelector('#show-work');
+const pictureBox = document.querySelectorAll('.picture-box');
+const workName = document.querySelector('#work-name');
+const workDesc = document.querySelector('#work-desc');
+const workLink = document.querySelector('.work-link a');
+
+pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
+        works[works.length-1-i].imgs.forEach(img => renderProjImages(img));
+
+        workName.textContent = works[works.length-1-i].name;
+        workDesc.innerHTML = works[works.length-1-i].description;
+        if(works[works.length-1-i].link != null){
+                workLink.parentNode.style.display = 'grid';
+                workLink.setAttribute('href', works[works.length-1-i].link);
+        }
+        else{
+                workLink.parentNode.style.display = 'none';
+        }
+
+        const displayWorkBox = gsap.timeline({paused: true});
+        displayWorkBox.from('#show-work .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
+                .from('#show-work .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
+                .from('#show-work .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
+                .from('#show-work .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
+                .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=2.25')
+                .from('#show-work .project-title-box p#work-desc', { opacity: 0, transform: 'translateY(40%)', ease: Expo.easeOut, duration: 1.6}, '-=2.25')
+                .from('#show-work .project-title-box .work-link', { opacity: 0, yPercent: 90 , ease: Expo.easeOut, duration: 1.8}, '-=2.05')
+                .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
+                .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
+                .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
+
+        showWork.style.transform = 'translateX(0%)';
+        displayWorkBox.restart();
+        document.body.style.overflowY = 'hidden';
+}));
+document.querySelector('#work-close').addEventListener('click', () => {
+        showWork.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+                document.querySelectorAll('.pr-image-box').forEach(pr => pr.remove());
+        }, 500);
         document.body.style.overflowY = 'scroll';
 });
 
-//stylish-wear
-const work2 = gsap.timeline({paused: true});
-work2.from('#stylish-wear .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
-    .from('#stylish-wear .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
-    .from('#stylish-wear .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
-    .from('#stylish-wear .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
-    .from('#stylish-wear .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=2.25')
-    .from('#stylish-wear .project-title-box p', { opacity: 0, transform: 'translateY(30%)', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
-    .from('#stylish-wear .project-title-box .work-link', { opacity: 0, yPercent: 90 , ease: Expo.easeOut, duration: 1.8}, '-=2.05')
-    .from('#stylish-wear .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
-    .from('#stylish-wear .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2')
-    .from('#stylish-wear .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
-    
-document.getElementById('work2').addEventListener('click', function(){
-        document.getElementById('stylish-wear').style.transform = 'translateX(0%)';
-        work2.restart();
-        document.body.style.overflowY = 'hidden';
-});
-
-document.getElementById('work2-close').addEventListener('click', function(){
-        document.getElementById('stylish-wear').style.transform = 'translateX(-100%)';
-        document.body.style.overflowY = 'scroll';
-});
-
-//footer
+//-------------------------------footer----------------------------
 ScrollTrigger.matchMedia({
         "(max-width: 450px)": () => {
                gsap.from('#footer #img-footer', {

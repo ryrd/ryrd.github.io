@@ -21,6 +21,10 @@ $text : 'Oswald';
     scrollbar-width: 0px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 ::selection{
     background: $cold;
     color: $light;

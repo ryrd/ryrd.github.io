@@ -11,6 +11,10 @@
   scrollbar-width: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-moz-selection {
   background: #000875;
   color: #fdfdfd;
