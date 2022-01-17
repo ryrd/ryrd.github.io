@@ -246,7 +246,6 @@ gsap.from('.skill-box', {
 });
 
 //--------------------------------work----------------------------
-//fetch
 const works = [
         {
             id : "work1",
@@ -276,8 +275,7 @@ const works = [
             imgs : [
                 "img/work/sw/sw1.jpg",
                 "img/work/sw/sw2.jpg",
-                // "img/work/sw/sw3.jpg",
-                // "img/work/sw/sw4.jpg"
+                "img/work/sw/sw3.jpg",
             ]
         },
     ];
@@ -312,7 +310,6 @@ ScrollTrigger.matchMedia({
 
 //render works display
 const workContent = document.querySelector('#work-content');
-
 const renderWorks =  work => {
         html = `
         <div class="work-display">
@@ -346,9 +343,10 @@ const renderWorks =  work => {
 works.forEach(work => renderWorks(work));
 
 const projImages = document.querySelector('.project-images');
-const renderProjImages = images => {
+
+const renderProjImages = (images, id) => {
         html = `
-              <div class="fullimg-work">
+              <div class="fullimg-work" alt="${id}">
                 <img src=${images}>
               </div>
         `
@@ -359,16 +357,25 @@ const renderProjImages = images => {
         projImages.append(prImgBox);
 }
 
+works.forEach(work => {
+        work.imgs.forEach(img => {
+                renderProjImages(img, work.id);
+        }
+        );
+});
+
 //show full work    
 const showWork = document.querySelector('#show-work');
 const pictureBox = document.querySelectorAll('.picture-box');
 const workName = document.querySelector('#work-name');
 const workDesc = document.querySelector('#work-desc');
 const workLink = document.querySelector('.work-link a');
+let currentWorkState;
 
 pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
-        works[works.length-1-i].imgs.forEach(img => renderProjImages(img));
-
+        // works[works.length-1-i].imgs.forEach(img => renderProjImages(img));
+        currentWorkState = works.length-i;
+        document.querySelectorAll(`.fullimg-work:not([alt=${works[works.length-1-i].id}])`).forEach(imgs => imgs.parentNode.remove());
         workName.textContent = works[works.length-1-i].name;
         workDesc.innerHTML = works[works.length-1-i].description;
         if(works[works.length-1-i].link != null){
@@ -378,7 +385,7 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
         else{
                 workLink.parentNode.style.display = 'none';
         }
-
+        
         const displayWorkBox = gsap.timeline({paused: true});
         displayWorkBox.from('#show-work .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
                 .from('#show-work .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
@@ -391,14 +398,22 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
                 .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
 
+
         showWork.style.transform = 'translateX(0%)';
         displayWorkBox.restart();
         document.body.style.overflowY = 'hidden';
 }));
+
 document.querySelector('#work-close').addEventListener('click', () => {
         showWork.style.transform = 'translateX(-100%)';
         setTimeout(() => {
-                document.querySelectorAll('.pr-image-box').forEach(pr => pr.remove());
+                document.querySelectorAll(`.fullimg-work[alt=${works[currentWorkState-1].id}]`).forEach(imgs => imgs.parentNode.remove());
+                works.forEach(work => {
+                        work.imgs.forEach(img => {
+                                renderProjImages(img, work.id);
+                        }
+                        );
+                });
         }, 500);
         document.body.style.overflowY = 'scroll';
 });
