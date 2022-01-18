@@ -410,8 +410,7 @@ document.querySelector('#work-close').addEventListener('click', () => {
                 works.forEach(work => {
                         work.imgs.forEach(img => {
                                 renderProjImages(img, work.id);
-                        }
-                        );
+                        });
                 });
         }, 500);
         document.body.style.overflowY = 'scroll';
