@@ -371,9 +371,10 @@ const workName = document.querySelector('#work-name');
 const workDesc = document.querySelector('#work-desc');
 const workLink = document.querySelector('.work-link a');
 let currentWorkState;
+let workSlideOpened = false;
 
 pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
-        // works[works.length-1-i].imgs.forEach(img => renderProjImages(img));
+        workSlideOpened = true;
         currentWorkState = works.length-i;
         document.querySelectorAll(`.fullimg-work:not([alt=${works[works.length-1-i].id}])`).forEach(imgs => imgs.parentNode.remove());
         workName.textContent = works[works.length-1-i].name;
@@ -398,13 +399,13 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
                 .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
 
-
         showWork.style.transform = 'translateX(0%)';
         displayWorkBox.restart();
         document.body.style.overflowY = 'hidden';
 }));
 
-document.querySelector('#work-close').addEventListener('click', () => {
+const closeWork = () => {
+        workSlideOpened = false;
         showWork.style.transform = 'translateX(-100%)';
         setTimeout(() => {
                 document.querySelectorAll(`.fullimg-work[alt=${works[currentWorkState-1].id}]`).forEach(imgs => imgs.parentNode.remove());
@@ -416,7 +417,20 @@ document.querySelector('#work-close').addEventListener('click', () => {
                 });
         }, 500);
         document.body.style.overflowY = 'scroll';
+}
+document.querySelector('#work-close').addEventListener('click', () => {
+        closeWork();
 });
+window.addEventListener('beforeunload', e => {
+        if(workSlideOpened == true){
+                e.preventDefault();
+                closeWork();
+        }
+});
+showWork.addEventListener('swiped-left', () => {
+        closeWork();
+});
+
 
 //-------------------------------footer----------------------------
 ScrollTrigger.matchMedia({
