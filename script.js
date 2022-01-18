@@ -371,10 +371,8 @@ const workName = document.querySelector('#work-name');
 const workDesc = document.querySelector('#work-desc');
 const workLink = document.querySelector('.work-link a');
 let currentWorkState;
-let workSlideOpened = false;
 
 pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
-        workSlideOpened = true;
         currentWorkState = works.length-i;
         document.querySelectorAll(`.fullimg-work:not([alt=${works[works.length-1-i].id}])`).forEach(imgs => imgs.parentNode.remove());
         workName.textContent = works[works.length-1-i].name;
@@ -404,8 +402,8 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
         document.body.style.overflowY = 'hidden';
 }));
 
-const closeWork = () => {
-        workSlideOpened = false;
+
+document.querySelector('#work-close').addEventListener('click', () => {
         showWork.style.transform = 'translateX(-100%)';
         setTimeout(() => {
                 document.querySelectorAll(`.fullimg-work[alt=${works[currentWorkState-1].id}]`).forEach(imgs => imgs.parentNode.remove());
@@ -417,18 +415,6 @@ const closeWork = () => {
                 });
         }, 500);
         document.body.style.overflowY = 'scroll';
-}
-document.querySelector('#work-close').addEventListener('click', () => {
-        closeWork();
-});
-window.addEventListener('beforeunload', e => {
-        if(workSlideOpened == true){
-                e.preventDefault();
-                closeWork();
-        }
-});
-showWork.addEventListener('swiped-left', () => {
-        closeWork();
 });
 
 
