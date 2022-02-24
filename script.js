@@ -96,14 +96,7 @@ window.onscroll = () => {
 }
 
 const s1 = document.querySelector('#header-title1');
-const s2 = document.querySelector('#about-rr');
-const s3 = document.querySelector('#rr');
-const m1 = ['?','l','l','a',' ','t','a',' ','m','e','h','t',' ','p','l','e','h',' ','t','\'','n','a','c',' ','u','o','y',' ','d','n','a',' ','g','n','i','y','d',
-            ,' ','e','r','a','c',' ','u','o','y',' ','e','n','o','e','m','o','s',' ','n','e','h','w',' ','e','k','i','l',' ','l','e','e','f',' ','t','i',' ','w','o','h'];
-const m2 = ['e','m',' ','d','e','z','i','t','a','m','u','a','r','t',' ','t','i'];
-const m3 = ['e','n','o','l','a',' ','o','t',' ','t','n','a','w',' ','i',' ','y','h','w',' ','s','\'','t','a','h','t'];
-const sArr = [s1, s2, s3];
-const mArr = [m1, m2, m3];
+const m1 = ['e','i','d',' ','a','n','n','a','w',' ','i'];
 const hm = document.querySelector('#hm');
 const hmp = document.querySelector('#hmp');
 let lastClick = 0;
@@ -129,10 +122,8 @@ const showMobile = (e, arr) => {
         lastClick = time;
 }
 
-for (let i in sArr){
-        sArr[i].addEventListener('dblclick', () => show([...mArr[i]]));
-        sArr[i].addEventListener('touchstart', () => showMobile(e, [...mArr[i]]));
-}
+s1.addEventListener('dblclick', () => show([...m1]));
+s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
 
 //-----------------------------about----------------------------
 ScrollTrigger.matchMedia({
