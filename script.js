@@ -248,10 +248,10 @@ const works = [
             link : null,
             imgs : [
                 "img/work/pengadilan/pengadilan1.jpg",
+                "img/work/pengadilan/pengadilan7.jpg",
                 "img/work/pengadilan/pengadilan2.jpg",
                 "img/work/pengadilan/pengadilan3.jpg",
                 "img/work/pengadilan/pengadilan4.jpg",
-                "img/work/pengadilan/pengadilan5.jpg",
                 "img/work/pengadilan/pengadilan6.jpg"
             ]
         },
