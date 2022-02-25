@@ -409,27 +409,13 @@ document.querySelector('#work-close').addEventListener('click', () => {
 
 
 //-------------------------------footer----------------------------
-ScrollTrigger.matchMedia({
-        "(max-width: 450px)": () => {
-               gsap.from('#footer #img-footer', {
-                       scrollTrigger: {
-                               trigger: '#footer',
-                               start: 'top bottom',
-                               end: 'top 35%',
-                               scrub: 2
-                       },scale: 1.4
-               });       
-       },
-       "(min-width: 451px)": () => {
-               gsap.from('#footer #img-footer', {
-                       scrollTrigger: {
-                               trigger: '#footer',
-                               start: 'top bottom',
-                               end: 'top 4%',
-                               scrub: 2.5
-                       },scale: 1.2
-               });             
-       },
+gsap.from('#footer #img-footer', {
+        scrollTrigger: {
+                trigger: '#footer',
+                start: 'top bottom',
+                end: 'top 4%',
+                scrub: 2.5
+        },scale: 1.25
 });
 
 gsap.from('.footer-social', {
