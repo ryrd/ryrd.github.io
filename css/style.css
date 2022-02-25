@@ -1686,8 +1686,8 @@ body {
     letter-spacing: 1px;
   }
   #footer {
-    min-height: 500px;
-    height: 50vh;
+    min-height: 300px;
+    height: 55vh;
   }
   #footer #footer-grad-top {
     height: 42%;
