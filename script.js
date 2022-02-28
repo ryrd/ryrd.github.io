@@ -349,10 +349,7 @@ const renderProjImages = (images, id) => {
 }
 
 works.forEach(work => {
-        work.imgs.forEach(img => {
-                renderProjImages(img, work.id);
-        }
-        );
+        work.imgs.forEach(img => renderProjImages(img, work.id));
 });
 
 //show full work    
@@ -399,9 +396,7 @@ document.querySelector('#work-close').addEventListener('click', () => {
         setTimeout(() => {
                 document.querySelectorAll(`.fullimg-work[alt=${works[currentWorkState-1].id}]`).forEach(imgs => imgs.parentNode.remove());
                 works.forEach(work => {
-                        work.imgs.forEach(img => {
-                                renderProjImages(img, work.id);
-                        });
+                        work.imgs.forEach(img => renderProjImages(img, work.id));
                 });
         }, 500);
         document.body.style.overflowY = 'scroll';
