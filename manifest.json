@@ -1,0 +1,15 @@
+{
+    "name": "ryrd",
+    "short_name": "ryrd",
+    "theme_color": "#090909",
+    "background_color": "#090909",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "img/preview.jpg",
+        "type": "any"
+      }
+    ]
+  }

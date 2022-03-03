@@ -226,13 +226,13 @@ gsap.to('#about-txt-img2', {
 gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '.skill-box',
-                start: 'top 78%',
+                start: 'top 83%',
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
         yPercent: 50,
         ease: Expo.easeIn,
-        duration: .75,
+        duration: .35,
         stagger: .15,
 });
 
