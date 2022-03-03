@@ -1,0 +1,196 @@
+#about{
+    height: 170vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 2px;
+    background: $dark;
+
+    #about--title{
+        height: 100vh;
+        width: 20%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../img/overlay2.jpg);
+        background-size: cover;
+
+        #about-title-grad{
+            position: absolute;
+            top: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, #090909 0%,#09090980 30%, transparent 100%);
+            width: 100%;
+        }
+        
+        h2{
+            font-family: $heading;
+            color: $light;
+            font-size: 5vw;
+            font-weight: lighter;
+        }
+
+    }
+
+    #about-content{
+        width: 80%;
+
+        #about--img{
+            height: 70vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            #about-name{
+                position: absolute;
+                right: 9%;
+                bottom: 7%;
+                min-width: 29vw;
+                max-height: 20vh;
+                color: $light;
+                z-index: 2;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 5px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                background: hsla(0, 0%, 0%, 0.2);
+                border-bottom: 3px solid $cold;
+                overflow: hidden;
+                backdrop-filter: blur(5px);
+                -moz-backdrop-filter: blur(5px);
+                -ms-backdrop-filter: blur(5px);
+                -o-backdrop-filter: blur(5px);
+
+                p{
+                    font-size: 2vw;
+                    font-family: $text;
+                    mix-blend-mode: difference;
+                    font-weight: 200;
+                }
+            
+                h2{
+                    font-size: 6vw;
+                    font-family: $heading;
+                    margin-top: -3.5%;
+                    font-weight: 400;
+                    mix-blend-mode: difference;
+                    z-index: 3;
+                }
+            }
+            
+            #about--img-gradient-top{
+                position: absolute;
+                top: 0;
+                height: 120px;
+                width: 100%;
+                background: linear-gradient(to bottom, #090909 0%, transparent 100%);
+                z-index: 4;
+            }
+            #about--img-gradient-bottom{
+                position: absolute;
+                bottom: 0;
+                height: 120px;
+                width: 100%;
+                background: linear-gradient(to bottom, transparent 0%, $dark 100%);
+                z-index: 1;
+            }
+        }
+
+        #about-text{
+            width: 90%;
+            height: 100vh;
+            color: $light;
+            position: relative;
+            margin: 0 auto;
+
+            #about-text-content{
+                width: 100%;
+                height: 100%;
+                margin: auto 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                z-index: 2;
+
+                .about-box-reveal{
+                    width: 73%;
+                    margin: 0 auto;
+                    overflow: hidden;
+
+                    p{
+                        font-family: $text;
+                        font-size: 2vw;
+                        font-weight: lighter;
+                        z-index: 1;
+                        mix-blend-mode: difference;
+                    }
+                    h1{
+                        font-family: $heading;
+                        font-size: 8vw;
+                        z-index: 1;
+                        mix-blend-mode: difference;
+                        font-weight: 400;
+                    }
+                    h2{
+                        font-family: $heading;
+                        font-size: 4.7vw;
+                        z-index: 1;
+                        mix-blend-mode: difference;
+                        font-weight: 400;
+                    }
+    
+                    p, h1, h2{
+                        display: inline-block;
+                    }
+                    
+                    #about-txt-5{
+                        mix-blend-mode: normal;
+                    }
+
+                    #about-txt-1, #about-txt-5, #about-txt-7{
+                        margin-left: 4%;
+                    }
+                    #about-txt-2{
+                        margin-left: 21%;
+                    }
+                    #about-txt-3{
+                        margin-left: 57%;
+                    }
+    
+                    #about-txt-6,#about-txt-8{
+                        margin-left: 7%;
+                    }
+    
+                    #about-txt-4, #about-txt-6,#about-txt-8{
+                        margin-bottom: -3%;
+                        margin-top: -1%;
+                    }
+                }
+            }
+            
+            #about-txt-img1{
+                position: absolute;
+                top: 15%;
+                left: 3%;
+                width: 15vw;
+            }
+
+            #about-txt-img2{
+                position: absolute;
+                bottom: 0%;
+                right: 10%;
+                width: 15vw;
+            }
+        }
+    }
+}

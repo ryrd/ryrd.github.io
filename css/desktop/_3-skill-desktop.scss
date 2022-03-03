@@ -1,0 +1,84 @@
+#skill{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 2px;
+    background: $dark;
+
+    #skill-title{
+        width: 20%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../img/overlay2.jpg);
+        background-size: cover;
+        
+        h2{
+            font-family: $heading;
+            color: $light;
+            font-size: 5vw;
+            font-weight: lighter;
+        }
+
+    }
+
+    #skill-content{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 50px 100px 60px 100px;
+        position: relative;
+
+        .skill-box{
+            width: 12vw;
+            height: 150px;
+            margin: 1vh 1vw;
+            color: $light;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            filter: saturate(0) contrast(1.7);
+            transition: .5s ease-in-out;
+
+            &.no-contrast{
+                filter: saturate(0) contrast(1) brightness(2);    
+            }
+
+            img{
+                transition: .5s cubic-bezier(.2,.01,0,.99);
+                width: 40%;
+
+                &.wideimg{
+                    width: 55%;
+                }
+            }
+            
+            p{
+                font-family: $text;
+                font-size: 1.5vw;
+                font-weight: 600;
+                margin-top: 20px;
+            }
+            span{
+                font-family: $text;
+                font-size: 1.2vw;
+                font-weight: 200;
+            }
+
+            &:hover{
+                filter: saturate(.85) contrast(1);
+    
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

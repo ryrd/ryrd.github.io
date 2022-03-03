@@ -1,0 +1,149 @@
+.show-project{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    background: $dark;
+    border: 1px solid $cold;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: 1.2s cubic-bezier(.32,.32,0,1);
+
+    .work-close{
+        position: absolute;
+        top: 6vh;
+        right: 4vw;
+        width: 3vw;
+        height: 7vh;
+        opacity: .5;
+        transition: .2s ease-in;
+        
+        .fullimg-close-part{
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            height: 2px;
+            width: 90%;
+            background: $light;
+            transform-origin: center;
+
+            &.cpart1{
+                transform: rotate(45deg);
+            }
+
+            &.cpart2{
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:hover{
+            opacity: 1 !important;
+            cursor: url('../img/cpoint.png'), auto;
+        }
+    }
+
+    .project-title-box{
+        width: 70%;
+        color: $light;
+        margin: 6vh auto;
+
+        .work-title{
+            &.work-title-h1, 
+            &.work-title-h2{
+                overflow-y: hidden;
+            }
+        }
+
+        .work-link{
+            background-color: $cold;
+            border: 1px solid $cold;
+            margin-top: 10px;
+            width: 80px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            transition: .2s cubic-bezier(0,.57,.45,1);
+
+            &:hover{
+                background-color: transparent;
+            }
+
+            a{
+                color: $light;
+                text-decoration: none;
+                font-family: $text;
+                font-size: 1.1rem;
+                letter-spacing: 1.75px;
+                cursor: url('../img/cpoint.png'), auto;
+            }
+        }
+
+        h1, h2{
+            font-family: $heading;
+            font-weight:lighter;
+            letter-spacing: 1px;
+        }
+        h1{
+            font-size: 3.5vw;
+            
+            &.work-sw{
+                font-size: 5vw;
+                margin-bottom: -15px;
+            }
+        }
+        h2{
+            font-size: 2.5vw;
+        }
+        .line-project-title{
+            width: 70%;
+            height: 1px;
+            background: $light;
+            margin-top: 10px;
+        }
+        p{
+            font-family: oswald;
+            font-weight: 500;
+            margin-top: 13px;
+            letter-spacing: 1.8px;
+            font-size: 1.1rem;
+        }
+    }
+
+    .project-images{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 9vw;
+        margin-top: 0;
+        margin-bottom: 4vh;
+        padding-top: 3vh;
+
+        .pr-image-box{
+            $width-box: 33vw;
+            width: $width-box;
+            height: calc($width-box*9/16);
+            overflow: hidden;
+            margin: 3.5vh 3.5vw;
+            clip-path: inset(0 0 0 0);
+
+            &.pr-portrait{
+                height: auto;
+                width: 15vw;
+            }
+            
+            div{
+                img{
+                    width: 100%;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}

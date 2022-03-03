@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+$dark : #090909;
+$light : #fdfdfd;
+$cold : #000875;
+
+$name : 'Gilda Display';
+$heading : 'bebas neue';
+$text : 'Oswald';
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+    box-sizing: border-box;
+    scrollbar-width: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::selection{
+    background: $cold;
+    color: $light;
+}
+
+*::-webkit-scrollbar{
+    width: 0px;
+}
+
+body{
+    background: $dark;
+    cursor: url('../img/cursor.png'), auto;
+    overflow-x: hidden;
+}
+
+
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 0%;
+    background-color: $cold;
+    z-index: 14;
+}
+
+#cursor{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid $cold;
+    border-radius: 50%;
+    top: -11px;
+    left: -12px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 15;
+}
+
+.line{
+    width: 100vw;
+    height: 2px;
+    background: linear-gradient(to right, transparent 0%, $cold 45%, $cold 55%,  transparent 100%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.line-1{
+        top: 10vh;
+    }
+    &.line-2{
+        bottom: 10vh;
+    }
+    &.line-3{
+        width: 90%;
+        top: 8%;
+    }
+    &.line-4{
+        width: 90%;
+        bottom: 2%;
+    }
+    &.line-6{
+        width: 90%;
+        bottom: 4%;
+    }
+    &.line-5, &.line-6{
+        width: 90%;
+        bottom: 0%;
+    }
+    &.line-7{
+        width: 90%;
+        top: 0%;
+    }
+    &.line-8{
+        width: 95%;
+        top: 0%;
+    }
+}
+
+.white-line{
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    right: 0px;
+    background: linear-gradient(to bottom, transparent 0%, $light 45%, $light 55%,  transparent 100%);
+}
+
+#hm{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $dark;
+    display: none;
+    z-index: 20;
+
+    #hmp{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Oswald';
+        font-size: 18px;
+        font-weight: lighter;
+        color: $light;
+        letter-spacing: 1px;
+    }
+}
+
+#preloader-blue, #preloader-black{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: none !important;
+}
+#preloader-blue{
+    background: $cold;
+    z-index: 1998;
+}
+#preloader-black{
+    background: $dark;
+    z-index: 1999;
+}

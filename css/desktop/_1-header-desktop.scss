@@ -1,0 +1,138 @@
+#header{
+    position: relative;
+    height: 100vh;
+    max-width: 100vw;
+    background: url(../img/overlay1.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 4vw;
+
+    #name-title{
+        color: $light;
+        padding-left: 7vw;
+        mix-blend-mode: difference;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        
+        #header-title1{
+            font-weight: lighter;
+            overflow-y: hidden;
+            overflow-x: visible;
+            width: 120%;
+        
+            h1{
+                font-family: $name;
+                width: 100%;
+
+                span{
+                    display: inline-block;
+                    font-size: 8.5vw;
+                    font-weight: lighter;
+                }
+            }
+        }
+        #header-title2{
+            margin-top: -3%;
+            padding-left: .5%;
+
+            h3{
+                display: inline-block;
+                color: $light;
+                font-weight: 300;
+                font-family: $text;
+                width: 100%;
+
+                span{
+                    font-size: 2.8vw;
+                    margin: 1px;
+                    font-weight: 300;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    #header-image{
+        #profile-box{
+            width: 23vw;
+            overflow: hidden;
+            position: relative;
+            left: -50%;
+
+            #blue-block{
+                width: 100%;
+                height: 100%;
+                background: $cold;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            #profile{
+                width: 100%;
+            }
+        }
+    }
+
+    #scroll-down{
+        width: 70px;
+        height: 35px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 5;
+
+        p{
+            font-size: 15px;
+            font-family: $text;
+            color: $light;
+            animation: indicate 1s infinite ease-in-out;
+        }
+        
+        img{
+            width: 50%;
+            height: 90%;
+            margin-top: -3px;
+            animation: scroll-in 1s infinite ease-in-out;
+        }
+
+        @keyframes indicate {
+            0%{
+                opacity: .5;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: .5;
+            }
+        }
+
+
+        @keyframes scroll-in {
+            from{
+                opacity: .5;
+                transform: translateY(0%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(50%);
+            }
+        }
+    }
+
+    #header-gradient{
+        position: absolute;
+        bottom: 0;
+        height: 90px;
+        width: 100%;
+        background: linear-gradient(to bottom, transparent 0%, #090909 100%);
+    }
+}
