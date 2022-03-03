@@ -1,3 +1,6 @@
+$widthbox: 33vw;
+// $width: 33;
+
 .show-project{
     position: fixed;
     top: 0;
@@ -126,9 +129,9 @@
         padding-top: 3vh;
 
         .pr-image-box{
-            $width-box: 33vw;
-            width: $width-box;
-            height: calc($width-box*9/16);
+            width: $widthbox;
+            //-----------"bug" disini🔽-----------
+            height: calc(33*9/16);
             overflow: hidden;
             margin: 3.5vh 3.5vw;
             clip-path: inset(0 0 0 0);

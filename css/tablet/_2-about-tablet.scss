@@ -1,0 +1,90 @@
+#about{
+    height: 85vh;
+
+    #about--title{
+        width: 10%;
+        height: 100%;
+
+        h2{
+            transform: rotate(-90deg);
+        }
+    }
+
+    #about-content{
+        width: 90%;
+
+        #about--img{
+            height: 40vh;
+
+            #about-name{
+                p{
+                    font-size: 2.5vw;
+                }
+                h2{
+                    font-size: 7vw;
+                    margin-top: -3%;
+                }
+            }
+        }
+
+        #about-text{
+            height: 45vh;
+            padding-top: 10px;
+
+            #about-text-content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+
+                .about-box-reveal{
+                    margin-top: 4px;
+
+                    p{
+                        font-size: 3.1vw;
+                    }
+                    h1{
+                        font-size: 8.3vw;
+                    }
+                    h2{
+                        font-size: 5vw;
+                    }
+
+                    #about-txt-1, #about-txt-5, #about-txt-7{
+                        margin-left: 8%;
+                    }
+                    #about-txt-2{
+                        margin-left: 25%;
+                    }
+                    #about-txt-3{
+                        margin-left: 50%;
+                    }
+
+                    #about-txt-4{
+                        margin-left: 8%;
+                    }
+    
+                    #about-txt-6,#about-txt-8{
+                        margin-left: 11%;
+                    }
+    
+                    #about-txt-4, #about-txt-6,#about-txt-8{
+                        margin-bottom: -3%;
+                    }
+                }
+            }
+
+            #about-txt-img1{
+                width: 15vw;
+                left: 4%;
+                top: 30%;
+            }
+
+            #about-txt-img2{
+                bottom: 5%;
+                right: 10%;
+                width: 15vw;
+            }
+        }
+    }
+}

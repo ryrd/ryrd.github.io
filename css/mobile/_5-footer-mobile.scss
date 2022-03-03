@@ -1,0 +1,40 @@
+#footer{
+    min-height: 300px;
+    height: 60vh;
+
+    #footer-grad-top{
+        height: 42%;
+    }
+
+    #footer-grad-bottom{
+        #socials{
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            h3{
+                font-size: 13px;
+                padding-top: 2%;
+            }
+            ul{
+                margin-right: 5vw;
+                li{
+                    margin: 0 1%;
+                    display: flex;
+                    justify-content: center;
+
+                    a{
+                        img{
+                            width: 12px;
+                            transform: translateY(25%);
+                        }
+                        p{
+                            transform: translateY(0%);
+                            font-size: 7.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@media (max-width: 1024px) and (orientation: portrait) {
+    @import './tablet/1-header-tablet';
+    @import './tablet/2-about-tablet';
+    @import './tablet/3-skill-tablet';
+    @import './tablet/4-work-tablet';
+    @import './tablet/5-footer-tablet';
+    @import './tablet/6-projectbox-tablet';    
+}
+
+//landscape tablet
+@media (max-width: 1024px) and (orientation: landscape) {
+    #about{
+        #about--title{
+            height: 100%;
+        }
+
+        #about-content{
+            #about-text{
+                display: grid;
+                place-items: center;
+                #about-text-content{
+                    width: 80%;
+                    align-items: center;
+                    
+                    .about-box-reveal{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #skill-content{
+        width: 80%;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        .skill-box{
+            width: 15vw !important;
+        }
+    }
+
+    #work{
+        #work-title{
+            height: 100%;
+        }
+    }
+}

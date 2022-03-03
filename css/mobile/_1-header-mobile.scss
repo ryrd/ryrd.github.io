@@ -1,0 +1,53 @@
+#header{
+    height: 90vh;
+    min-height: 600px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 0vw;
+    
+    #name-title{
+        max-width: 90%;
+        padding-left: 0;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+
+        #header-title1{
+            width: 100%;
+            h1{
+                span{
+                    font-size: 8vw;
+                }
+            }
+        }
+        #header-title2{
+            margin-top: .5%;
+            padding-left: 0;
+
+            h3{
+                span{
+                    font-size: 5.5vw;
+                    margin: 0px;
+                }
+            }
+        }
+    }
+    #header-image{
+        #profile-box{
+            width: 55vw;
+            overflow: hidden;
+            left: 0%;
+            top: 17.5%;
+        }
+    }
+
+    #scroll-down{
+        p{
+            font-size: 11px;
+        }
+        img{
+            width: 60%;
+            height: 70%;
+        }
+    }
+}

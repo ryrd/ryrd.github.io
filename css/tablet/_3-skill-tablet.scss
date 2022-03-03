@@ -1,0 +1,37 @@
+#skill{
+    min-height: 70vh;
+
+    #skill-title{
+        width: 10%;
+
+        h2{
+            transform: rotate(-90deg);
+        }
+    }
+
+    #skill-content{
+        width: 90%;
+        padding: 20px 25px 60px 25px;
+        align-items: center;
+
+        .skill-box{
+            width: 15vw;
+            height: 12vh;
+            margin: 1vw 2vw;
+
+            img{
+                width: 50%;
+            }
+
+            p{
+                font-size: 2.3vw;
+                margin-top: 10px;
+            }
+
+            span{
+                margin-top: 2.5px;
+            }
+
+        }
+    }
+}

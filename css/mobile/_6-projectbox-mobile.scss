@@ -1,0 +1,88 @@
+.show-project{
+        
+    .work-close{
+        top: 5.5vh;
+        right: 5.5vw;
+        width: 7vw;
+        height: 30px;
+        opacity: .9;
+
+        .fullimg-close-part{
+            height: 1px;
+
+            &.cpart1{
+                transform: rotate(45deg);
+            }
+
+            &.cpart2{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .project-title-box{
+        width: 80%;
+        margin-bottom: 23px;
+
+        .work-link{
+            margin-top: 10px;
+            width: 72px;
+            height: 32px;
+            
+            a{
+                font-size: .8rem;
+            }
+        }
+
+        h1{
+            font-size: 5vw;
+            letter-spacing: 1px;
+
+            &.work-sw{
+                font-size: 8vw;
+                margin-bottom: 0px;
+            }
+        }
+        h2{
+            font-size: 3.8vw;
+            margin-top: .25vh;
+            letter-spacing: 1px;
+        }
+        .line-project-title{
+            width: 75%;
+            margin-top: 12px;
+
+            &.line-sw{
+                margin-top: 2px;
+            }
+        }
+        p{
+            font-size: .7rem;
+            padding-right: 15px;
+        }
+    }
+
+    .project-images{
+        margin-bottom: 1vh;
+        padding-top: 2vh;
+
+        .pr-image-box{
+            width: 65vw;
+            overflow: hidden;
+            margin: 2.5vh 3.5vw;
+
+            &.pr-portrait{
+                height: auto;
+                width: 27vw;
+            }
+
+            div{
+                img{
+                    width: 100%;
+                    transition: .5s cubic-bezier(0,.57,.45,1);
+                    cursor: url('../img/cpoint.png'), auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+#footer{
+    height: 50vh;
+
+    #footer-grad-bottom{
+        #socials{
+            height: 75px;
+            h3{
+                font-size: 25px;
+            }
+            ul{
+                margin-right: 3.5vw;
+                li{
+                    min-width: 30px;
+                    margin: 0 1.1vw;
+                    text-align: center;
+                    a{
+                        img{
+                            width: 20px;
+                            transform: translateY(25%);
+                        }
+                        p{
+                            transform: translateY(0%);
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

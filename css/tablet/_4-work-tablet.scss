@@ -1,0 +1,32 @@
+#work{
+    height: 100vh;
+
+    #work-title{
+        width: 10%;
+
+        h2{
+            transform: rotate(-90deg);
+        }
+    }
+
+    #work-content{
+        width: 90%;
+
+        .work-box{
+            height: 70%;
+            
+            .work-display{
+                width: 80%;
+            }
+        }
+
+        #work-other{
+            height: 30%;
+
+            h3{
+                font-size: 2.5vw;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

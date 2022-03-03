@@ -4,3 +4,26 @@
 @import './desktop/4-work-desktop';
 @import './desktop/5-footer-desktop';
 @import './desktop/6-projectbox-desktop';
+
+//ultra big screen
+@media (min-width: 1440px) {
+    #skill{
+        #skill-content{
+            .skill-box{
+                width: 14vw;
+
+                img{
+                    width: 5.5vw;
+                }
+
+                p{
+                    font-size: 2vw;
+                }
+
+                span{
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+}
