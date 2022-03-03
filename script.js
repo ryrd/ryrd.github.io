@@ -226,7 +226,7 @@ gsap.to('#about-txt-img2', {
 gsap.from('.skill-box', {
         scrollTrigger: {
                 trigger: '.skill-box',
-                start: 'top 83%',
+                start: 'top 90%',
                 toggleActions: 'play none none reverse'
         },
         opacity: 0,
