@@ -340,6 +340,7 @@ body {
 
 #header #header-gradient {
   position: absolute;
+  left: 0;
   bottom: 0;
   height: 90px;
   width: 100%;
@@ -441,9 +442,6 @@ body {
   overflow: hidden;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
-  -ms-backdrop-filter: blur(5px);
-  -o-backdrop-filter: blur(5px);
 }
 
 #about #about-content #about--img #about-name p {
@@ -1380,6 +1378,9 @@ body {
   }
   #work #work-content .work-box .work-display {
     width: 80%;
+  }
+  #work #work-content .work-box .work-display .picture-box .show-project-btn {
+    height: 3vh;
   }
   #work #work-content #work-other {
     height: 30%;

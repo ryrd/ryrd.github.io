@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 //-----------------------------opening------------------------
 document.body.style.overflowY = 'hidden';
 const opening = gsap.timeline();
+const toDown = document.querySelector('#scroll-down');
 
 Pace.on('done', () => {
 
@@ -36,7 +37,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'-=.6')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
+        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: .7 }, '<');
 },
 "(min-width: 451px)": () => {
         opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
@@ -50,10 +51,12 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
-        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: 1 }, '<');
+        .from('#scroll-down', { opacity: 0, yPercent: -50, duration: .7 }, '<');
 }
 });     
         document.body.style.overflowY = 'scroll';
+        toDown.style.transition = '.2s ease-in';
+
 });     
 
 const mediaQuerySmall = window.matchMedia('(max-width: 450px)');
@@ -77,13 +80,12 @@ window.addEventListener('resize', ()=>{
         }        
 });
 
-const toDown = document.querySelector('#scroll-down');
 toDown.addEventListener('click', () => {
         window.scrollTo(0, 600);
 })
 
 window.addEventListener('scroll', () => {
-        window.scrollY > 0 ? toDown.style.display = 'none' : null
+        window.scrollY > 0 ? toDown.style.opacity = 0 : null;
 })
 
 //progressbar

@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
-
-$dark : #090909;
-$light : #fdfdfd;
-$cold : #000875;
-
-$name : 'Gilda Display';
-$heading : 'bebas neue';
-$text : 'Oswald';
+// @use './variable' as *;
+@import './variable';
 
 *{
     padding: 0;
@@ -39,7 +30,6 @@ body{
     cursor: url('../img/cursor.png'), auto;
     overflow-x: hidden;
 }
-
 
 #progressbar{
     position: fixed;
