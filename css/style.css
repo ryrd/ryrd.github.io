@@ -1728,16 +1728,6 @@ body {
             transform: translateY(0%);
     font-size: 7.5px;
   }
-  #hm {
-    text-align: center;
-  }
-  #hm #hmp {
-    width: 90vw;
-    font-size: 9px;
-  }
-  .white-line {
-    width: 1.5px;
-  }
   .show-project .work-close {
     top: 5.5vh;
     right: 5.5vw;
@@ -1810,6 +1800,16 @@ body {
     -webkit-transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
     transition: 0.5s cubic-bezier(0, 0.57, 0.45, 1);
     cursor: url("../img/cpoint.png"), auto;
+  }
+  #hm {
+    text-align: center;
+  }
+  #hm #hmp {
+    width: 90vw;
+    font-size: 9px;
+  }
+  .white-line {
+    width: 1.5px;
   }
 }
 

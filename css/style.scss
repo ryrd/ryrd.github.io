@@ -1,4 +1,4 @@
 @import 'base';
-@import 'desktop';
-@import 'tablet';
-@import 'mobile';
+@import './desktop/index';
+@import './tablet/index';
+@import './mobile/index';

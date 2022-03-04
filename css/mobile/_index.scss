@@ -8,11 +8,12 @@
         left: 0;
     }
 
-    @import './mobile/1-header-mobile';
-    @import './mobile/2-about-mobile';
-    @import './mobile/3-skill-mobile';
-    @import './mobile/4-work-mobile';
-    @import './mobile/5-footer-mobile';
+    @import './1-header-mobile';
+    @import './2-about-mobile';
+    @import './3-skill-mobile';
+    @import './4-work-mobile';
+    @import './5-footer-mobile';
+    @import './6-projectbox-mobile';
     
     #hm{
         text-align: center;
@@ -24,8 +25,6 @@
     .white-line{
         width: 1.5px;
     }
-    
-    @import './mobile/6-projectbox-mobile';
 }
 
 //ultra small screen
