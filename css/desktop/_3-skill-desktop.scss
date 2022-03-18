@@ -52,7 +52,7 @@
                 filter: saturate(0) contrast(1) brightness(2);    
             }
 
-            img{
+            img, svg{
                 transition: .5s cubic-bezier(.2,.01,0,.99);
                 width: 40%;
 
@@ -76,7 +76,7 @@
             &:hover{
                 filter: saturate(.85) contrast(1);
     
-                img{
+                img, svg{
                     transform: scale(1.2);
                 }
             }
