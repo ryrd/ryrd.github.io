@@ -235,10 +235,10 @@ const skillsAnimation = gsap.timeline({
 });
 skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
                         fill: "#00000000",
-                }, '+=.5')
+                }, '+=.3')
                 .to(".skill-box .skill-logo-wrapper svg", {
                         stroke: 'rgba(255,255,255, 0)'
-                }, '-=.95')
+                }, '-=1.15')
                 .from('.skill-box .skill-text-wrapper p', {
                         yPercent: 250,
                         duration: 1.2,

@@ -10,14 +10,18 @@
 //landscape tablet
 @media (max-width: 1024px) and (orientation: landscape) {
     #about{
+        height: 150vh;
+
         #about--title{
             height: 100%;
         }
 
         #about-content{
             #about-text{
-                display: grid;
-                place-items: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 500px;
                 #about-text-content{
                     width: 80%;
                     align-items: center;
