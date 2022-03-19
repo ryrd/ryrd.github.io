@@ -225,18 +225,30 @@ gsap.to('#about-txt-img2', {
 });
 
 //skills
-gsap.from('.skill-box', {
+const skillsAnimation = gsap.timeline({
         scrollTrigger: {
                 trigger: '.skill-box',
-                start: 'top 90%',
+                start: 'top 60%',
+                toggleClass: {targets: ".skill-box .skill-logo-wrapper svg", className: "animate-svg"},
                 toggleActions: 'play none none reverse'
-        },
-        opacity: 0,
-        yPercent: 50,
-        ease: Expo.easeIn,
-        duration: .35,
-        stagger: .15,
+        }
 });
+skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
+                        fill: "#00000000",
+                }, '+=.5')
+                .to(".skill-box .skill-logo-wrapper svg", {
+                        stroke: 'rgba(255,255,255, 0)'
+                }, '-=.95')
+                .from('.skill-box .skill-text-wrapper p', {
+                        yPercent: 250,
+                        duration: 1.2,
+                        // stagger: .15,
+                }, '-=1')
+                .from('.skill-box .skill-text-wrapper span', {
+                        yPercent: 250,
+                        duration: 1.2,
+                        // stagger: .15,
+                }, '<');
 
 //--------------------------------work----------------------------
 const works = [

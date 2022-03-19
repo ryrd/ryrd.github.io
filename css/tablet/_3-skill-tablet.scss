@@ -19,17 +19,23 @@
             height: 12vh;
             margin: 1vw 2vw;
 
-            img{
-                width: 50%;
+            .skill-logo-wrapper{
+                svg{
+                    width: 40%;
+                }
+                img{
+                    width: 70%;
+                }
             }
-
-            p{
-                font-size: 2.3vw;
-                margin-top: 10px;
-            }
-
-            span{
-                margin-top: 2.5px;
+            
+            .skill-text-wrapper{
+                p{
+                    font-size: 2.3vw;
+                    margin-top: 10px;
+                }
+                span{
+                    margin-top: 2.5px;
+                }
             }
 
         }

@@ -21,20 +21,23 @@
             margin-bottom: 0;
             padding-bottom: 0;
 
-            img{
-                width: 45%;
+            .skill-logo-wrapper{
+                img, svg{
+                    width: 45%;
+                }
             }
 
-            p{
-                font-size: 2.5vw;
-                margin-top: 10px;
+            .skill-text-wrapper{
+                p{
+                    font-size: 2.5vw;
+                    margin-top: 10px;
+                }
+    
+                span{
+                    font-size: 2.2vw;
+                    margin-top: 2.5px;
+                }
             }
-
-            span{
-                font-size: 2.2vw;
-                margin-top: 2.5px;
-            }
-
         }
     }
 }
