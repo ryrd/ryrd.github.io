@@ -56,7 +56,6 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
 });     
         document.body.style.overflowY = 'scroll';
         toDown.style.transition = '.2s ease-in';
-
 });     
 
 const mediaQuerySmall = window.matchMedia('(max-width: 450px)');
@@ -80,9 +79,7 @@ window.addEventListener('resize', ()=>{
         }        
 });
 
-toDown.addEventListener('click', () => {
-        window.scrollTo(0, 600);
-})
+toDown.addEventListener('click', () => window.scrollTo(0, 600));
 
 window.addEventListener('scroll', () => {
         window.scrollY > 0 ? toDown.style.opacity = 0 : null;
@@ -204,7 +201,6 @@ gsap.from('#about--img img', {
         },
         transform: 'scale(1.2)'
 });
-
 gsap.to('#about-txt-img1', {
         scrollTrigger: {
                 trigger: '#about-txt-img1',
@@ -242,12 +238,10 @@ skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
                 .from('.skill-box .skill-text-wrapper p', {
                         yPercent: 250,
                         duration: 1.2,
-                        // stagger: .15,
                 }, '-=1')
                 .from('.skill-box .skill-text-wrapper span', {
                         yPercent: 250,
                         duration: 1.2,
-                        // stagger: .15,
                 }, '<');
 
 //--------------------------------work----------------------------
@@ -388,13 +382,13 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
         }
         
         const displayWorkBox = gsap.timeline({paused: true});
-        displayWorkBox.from('#show-work .project-title-box h1', { opacity: 0, transform: 'translateY(120%)', ease: Expo.easeOut, duration: 2.5, delay: .35})
-                .from('#show-work .fullimg-close-part',{width: 0, duration: .75, ease: Power2.easeOut}, '-=1.9')
+        displayWorkBox.from('#show-work .project-title-box h1', { yPercent: 130, ease: Expo.easeOut, duration: 2.5}, '+=.2')
+                .from('#show-work .fullimg-close-part',{width: 0, duration: .75, ease: Power1.easeOut}, '-=1.9')
                 .from('#show-work .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
                 .from('#show-work .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
-                .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1}, '-=2.25')
-                .from('#show-work .project-title-box p#work-desc', { opacity: 0, transform: 'translateY(40%)', ease: Expo.easeOut, duration: 1.6}, '-=2.25')
-                .from('#show-work .project-title-box .work-link', { opacity: 0, yPercent: 90 , ease: Expo.easeOut, duration: 1.8}, '-=2.05')
+                .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2')
+                .from('#show-work .project-title-box p#work-desc', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 1.6}, '-=2.25')
+                .from('#show-work .project-title-box .work-link', { opacity: 0, xPercent: -130 , ease: Expo.easeOut, duration: 1.8}, '-=2')
                 .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
                 .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
