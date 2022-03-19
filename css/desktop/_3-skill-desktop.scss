@@ -51,6 +51,10 @@
             &.no-contrast{
                 filter: saturate(0) contrast(1) brightness(2);    
             }
+            
+            &.more-contrast{
+                filter: saturate(0) contrast(2) brightness(1);    
+            }
 
             .skill-logo-wrapper{
                 display: flex;
