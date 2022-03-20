@@ -95,6 +95,14 @@ body{
     }
 }
 
+@media (max-width: 450px){
+    .line{
+        &.line-4{
+            bottom: 7%;
+        }
+    }
+}
+
 .white-line{
     height: 100%;
     width: 2px;
@@ -125,6 +133,7 @@ body{
         letter-spacing: 1px;
     }
 }
+
 
 #preloader-blue, #preloader-black{
     width: 100vw;

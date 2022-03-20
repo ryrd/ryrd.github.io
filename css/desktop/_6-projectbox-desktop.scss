@@ -71,6 +71,8 @@ $widthbox: 33vw;
             height: 40px;
             display: grid;
             place-items: center;
+            white-space: nowrap;
+            overflow: hidden;
             transition: .2s cubic-bezier(0,.57,.45,1);
 
             &:hover{

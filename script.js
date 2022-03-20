@@ -441,10 +441,11 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
                 .from('#show-work .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
                 .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2')
                 .from('#show-work .project-title-box p#work-desc span', { opacity: 0, duration: .02, stagger: .008}, '-=2.25')
-                .from('#show-work .project-title-box .work-link', { opacity: 0, xPercent: -130 , ease: Expo.easeOut, duration: 1.8}, '<')
+                .from('#show-work .project-title-box .work-link', { width: '0px', ease: Expo.easeOut, duration: 1.8}, '<')
                 .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '<')
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '<')
-                .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
+                .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<')
+                .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=2');
 
         showWork.style.transform = 'translateX(0%)';
         displayWorkBox.restart();
