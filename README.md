@@ -1,6 +1,7 @@
 my personal portofolio website source code. <br>
 created with : <br>
--html, sass <br>
+-sass <br>
 -javascript <br>
--gsap (for animation)<br>
--pace.js (for preloader)<br>
+-gsap<br>
+-pace.js<br>
+-charming.js
