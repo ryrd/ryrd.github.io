@@ -30,7 +30,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .set('#header-title1', { overflowY: 'visible' }, '<')
         .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.5')
         .to('.ryrd.stay1', { transform: 'translateX(180%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.46')
-        .to('.ryrd.stay4', { transform: 'translateX(480%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.48')
+        .to('.ryrd.stay4', { transform: 'translateX(462%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.48')
         .to('.ryrd.stay3', { transform: 'translateX(435%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.46')
         .from('#name-title', { yPercent: 130, ease: Expo.easeInOut, duration: 1 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.8')
