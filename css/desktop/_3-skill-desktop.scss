@@ -61,32 +61,25 @@
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-
-                img, svg{
+                
+                svg{
                     transition: .75s cubic-bezier(.2,.01,0,.99);
                     width: 40%;
-                    
-                    &.wideimg{
-                        width: 55%;
-                    }
-                }
-
-                img{
-                    width: 80%;
-                }
-    
-                svg{
                     stroke: rgba(255, 255, 255, 1);
                     stroke-width: 2;
                     stroke-dasharray: 5000;
                     stroke-dashoffset: 5000;
                     
-                    path{
+                    path, circle{
                         transition: 2.5s ease;
                     }
                     
                     &.animate-svg{
                         stroke-dashoffset: 0;
+                    }
+                    
+                    &.wideimg{
+                        width: 55%;
                     }
                 }
             }
@@ -116,7 +109,7 @@
             &:hover{
                 filter: saturate(.85) contrast(1);
     
-                img, svg{
+                svg{
                     transform: scale(1.3);
                 }
             }

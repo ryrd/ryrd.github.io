@@ -126,26 +126,25 @@ s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
 
 //-----------------------------about----------------------------
 ScrollTrigger.matchMedia({
-"(max-width: 450px)": () => {
-        gsap.to('#profile-box', {
-                yPercent: -55,
-                scrollTrigger: {
-                        trigger: '#profile-box',
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: 1
-                }
-        });
-},
-
-"(min-width: 1025px)": () => {
-        ScrollTrigger.create({
-                trigger: '#about--title',
-                start: 'top top',
-                end: '170% bottom',
-                pin: true,
-        });
-}
+        "(max-width: 450px)": () => {
+                gsap.to('#profile-box', {
+                        yPercent: -55,
+                        scrollTrigger: {
+                                trigger: '#profile-box',
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                scrub: 1
+                        }
+                });
+        },
+        "(min-width: 1025px)": () => {
+                ScrollTrigger.create({
+                        trigger: '#about--title',
+                        start: 'top top',
+                        end: '170% bottom',
+                        pin: true,
+                });
+        }
 });
 
 //my name - about
@@ -231,7 +230,10 @@ const skillsAnimation = gsap.timeline({
 });
 skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
                         fill: "#00000000",
-                }, '+=.3')
+                }, '+=.45')
+skillsAnimation.from('.skill-box .skill-logo-wrapper svg circle', {
+                        fill: "#00000000",
+                }, '<')
                 .to(".skill-box .skill-logo-wrapper svg", {
                         stroke: 'rgba(255,255,255, 0)'
                 }, '-=1.15')
@@ -310,7 +312,7 @@ ScrollTrigger.matchMedia({
 //render works display
 const workContent = document.querySelector('#work-content');
 const renderWorks =  work => {
-        html = `
+        let html = `
         <div class="work-display">
                 <div class="picture-box" id=${work.id}>
                         <picture>
@@ -344,7 +346,7 @@ works.forEach(work => renderWorks(work));
 const projImages = document.querySelector('.project-images');
 
 const renderProjImages = (images, id) => {
-        html = `
+        let html = `
               <div class="fullimg-work" alt="${id}">
                 <img src=${images}>
               </div>
@@ -359,6 +361,55 @@ const renderProjImages = (images, id) => {
 works.forEach(work => {
         work.imgs.forEach(img => renderProjImages(img, work.id));
 });
+//charming js
+function charming(
+        element,
+        {
+          tagName = 'span',
+          split,
+          setClassName = function (index) {
+            return 'char' + index
+          }
+        } = {}
+      ) {
+        element.normalize()
+        let index = 1
+        function inject (element) {
+          const parentNode = element.parentNode
+          const nodeValue = element.nodeValue
+          const array = split ? split(nodeValue) : nodeValue.split('')
+          array.forEach(function (string) {
+            const node = document.createElement(tagName)
+            const className = setClassName(index++, string)
+            if (className) {
+              node.className = className
+            }
+            node.appendChild(document.createTextNode(string))
+            node.setAttribute('aria-hidden', 'true')
+            parentNode.insertBefore(node, element)
+          })
+          if (nodeValue.trim() !== '') {
+            parentNode.setAttribute('aria-label', nodeValue)
+          }
+          parentNode.removeChild(element)
+        }
+        ;(function traverse (element) {
+          // `element` is itself a text node
+          if (element.nodeType === 3) {
+            return inject(element)
+          }
+          // `element` has a single child text node
+          const childNodes = Array.prototype.slice.call(element.childNodes) // static array of nodes
+          const length = childNodes.length
+          if (length === 1 && childNodes[0].nodeType === 3) {
+            return inject(childNodes[0])
+          }
+          // `element` has more than one child node
+          childNodes.forEach(function (childNode) {
+            traverse(childNode)
+          })
+        })(element)
+      };
 
 //show full work    
 const showWork = document.querySelector('#show-work');
@@ -367,6 +418,7 @@ const workName = document.querySelector('#work-name');
 const workDesc = document.querySelector('#work-desc');
 const workLink = document.querySelector('.work-link a');
 let currentWorkState;
+const textSplit = document.querySelector('#show-work .project-title-box p#work-desc');
 
 pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
         currentWorkState = works.length-i;
@@ -380,6 +432,7 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
         else{
                 workLink.parentNode.style.display = 'none';
         }
+        charming(textSplit);
         
         const displayWorkBox = gsap.timeline({paused: true});
         displayWorkBox.from('#show-work .project-title-box h1', { yPercent: 130, ease: Expo.easeOut, duration: 2.5}, '+=.2')
@@ -387,10 +440,10 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
                 .from('#show-work .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
                 .from('#show-work .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
                 .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2')
-                .from('#show-work .project-title-box p#work-desc', { opacity: 0, transform: 'translateX(-40%)', ease: Expo.easeOut, duration: 1.6}, '-=2.25')
-                .from('#show-work .project-title-box .work-link', { opacity: 0, xPercent: -130 , ease: Expo.easeOut, duration: 1.8}, '-=2')
-                .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '-=2.25')
-                .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '-=2.2')
+                .from('#show-work .project-title-box p#work-desc span', { opacity: 0, duration: .02, stagger: .008}, '-=2.25')
+                .from('#show-work .project-title-box .work-link', { opacity: 0, xPercent: -130 , ease: Expo.easeOut, duration: 1.8}, '<')
+                .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '<')
+                .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '<')
                 .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
 
         showWork.style.transform = 'translateX(0%)';
