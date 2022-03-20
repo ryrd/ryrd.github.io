@@ -5,6 +5,8 @@ paceOptions = {
         eventLag: false,
 };
 
+window.scrollLeft = 0;
+
 //cursor
 document.addEventListener('mousemove', e => {
         document.querySelector('#cursor').style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
@@ -64,12 +66,9 @@ const mediaQueryMedium = window.matchMedia('(min-width: 451px)');
 const mediaQueryBig = window.matchMedia('(min-width: 1025px)');
 let currentWindowSize = '';
 
-if(window.innerWidth >= 451){
-        currentWindowSize = 'medium';
-}
-else if(window.innerWidth < 451){
-        currentWindowSize = 'small';
-}
+if(window.innerWidth >= 451) currentWindowSize = 'medium'
+else if(window.innerWidth < 451) currentWindowSize = 'small';
+
 
 window.addEventListener('resize', ()=>{
         if(mediaQueryMedium.matches && currentWindowSize != 'medium'){
@@ -283,33 +282,46 @@ const works = [
     ];
 
 const workContainer = document.querySelector('#work');
+//-------------for setting sidetext height-----------
+// if(mediaQueryBig.matches){
+//         workContainer.style.height = `${(100*works.length)+50}vh`;
+// }
+// else if(mediaQuerySmall.matches){
+//         workContainer.style.height = `${(50*works.length)+30}vh`;
+// }
 
-if(mediaQueryBig.matches){
-        workContainer.style.height = `${(100*works.length)+50}vh`;
-}
-else if(mediaQuerySmall.matches){
-        workContainer.style.height = `${(50*works.length)+30}vh`;
-}
-
-ScrollTrigger.matchMedia({
-        "(max-width: 450px)": () => {
-                ScrollTrigger.create({
-                        trigger: '#work-title',
-                        start: 'top top',
-                        end: `${(50*works.length)+30}% bottom`,
-                        pin: true,
-                });
-        },
-        "(min-width: 1025px)": () => {
-                ScrollTrigger.create({
-                        trigger: '#work-title',
-                        start: 'top top',
-                        end: `${(100*works.length)+50}% bottom`,
-                        pin: true,
-                });
-        }
+//-------------for pin animation-----------
+// ScrollTrigger.matchMedia({
+//         "(max-width: 450px)": () => {
+//                 ScrollTrigger.create({
+//                         trigger: '#work-title',
+//                         start: 'top top',
+//                         end: `${(50*works.length)+30}% bottom`,
+//                         pin: true,
+//                 });
+//         },
+//         "(min-width: 1025px)": () => {
+//                 ScrollTrigger.create({
+//                         trigger: '#work-title',
+//                         start: 'top top',
+//                         end: `${(100*works.length)+50}% bottom`,
+//                         pin: true,
+//                 });
+//         }
+// });
+gsap.to('#work-content', {
+        scrollTrigger: {
+                trigger: '#work',
+                start: 'top top',
+                end:`240% top`,
+                pin: true,
+                scrub: true,
+                markers: true
+        }, 
+        xPercent: -80
 });
 
+//----------------ubah bagian sini-------------------
 //render works display
 const workContent = document.querySelector('#work-content');
 const renderWorks =  work => {
@@ -342,7 +354,10 @@ const renderWorks =  work => {
 
         workContent.prepend(workBox);
 }
-works.forEach(work => renderWorks(work));
+// works.forEach(work => renderWorks(work));
+
+//----------------END ubah bagian sini-------------------
+
 
 const projImages = document.querySelector('.project-images');
 

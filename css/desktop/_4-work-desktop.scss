@@ -1,13 +1,19 @@
 // @use '../variable' as *;
 #work{
-    width: 100vw;
-    height: 250vh;
+    //--------------------------------------------
+    width: 260vw;
+    //--------------------------------------------
+    height: 100vh;
     display: flex;
     flex-direction: row;
     background: $dark;
 
+    overflow-x: visible;
+
     #work-title{
-        width: 20%;
+        //--------------------------------------------
+        width: 20vw;
+        //--------------------------------------------
         height: 100vh;
         position: relative;
         display: flex;
@@ -25,17 +31,28 @@
     }
 
     #work-content{
-        width: 80%;
+        //--------------------------------------------
+        width: 240vw;
+        overflow-x: hidden;
+        border: 1px solid red;
+        //--------------------------------------------
         height: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        overflow-x: hidden;
 
         .work-box{
-            width: 100%;
+            width: 80vw;
             height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
+
+            //--------------------------------------------
+            border: 1px solid green;
+            margin: 20px;
+            //--------------------------------------------
+
 
             .work-display{
                 width: 75%;
@@ -166,6 +183,11 @@
             align-items: center;
             width: 100%;
             height: 50vh;
+
+            //----------------------------------
+            border: 1px solid rgb(0, 43, 0);
+            margin: 20px;
+            //---------------------------------
 
             h3{
                 font-family: $text;

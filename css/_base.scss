@@ -4,10 +4,6 @@
 *{
     padding: 0;
     margin: 0;
-    -webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
     box-sizing: border-box;
     scrollbar-width: 0px;
 }
@@ -26,7 +22,9 @@ html{
 }
 
 body{
-    background: $dark;
+    background: white;
+    
+    // background: $dark;
     cursor: url('../img/cursor.png'), auto;
     overflow-x: hidden;
 }
