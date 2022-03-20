@@ -35,7 +35,7 @@
 
             #about-text-content{
                 width: 100%;
-                margin-top: 0%;
+                margin-top: -4%;
 
                 .about-box-reveal{
                     width: 100%;
@@ -45,22 +45,32 @@
                         font-size: 4vw;
                     }
                     h1{
-                        font-size: 10vw;
-                    }
-                    h2{
-                        font-size: 6vw;
+                        font-size: 7.5vw;
+                        padding-top: 0px;
+                        padding-bottom: 0px;
                     }
 
-                    #about-txt-1, 
-                    #about-txt-2, 
+                    #about-txt-1{
+                        margin-left: 16%;
+                    }
+                    #about-txt-2{
+                        margin-left: 35%;
+                    }
                     #about-txt-3, 
-                    #about-txt-4, 
-                    #about-txt-5, 
-                    #about-txt-6, 
-                    #about-txt-7,
-                    #about-txt-8{
+                    #about-txt-5{
                         margin-left: 4%;
-                        margin-top: 0%;
+                    }
+                    #about-txt-4{
+                        margin-left: 10%;
+                    }
+                    #about-txt-6{
+                        margin-left: 6%;
+                    }
+                    #about-txt-7{
+                        margin-left: 13%;
+                    }
+                    #about-txt-8{
+                        margin-left: 20%;
                     }
                 }
                 

@@ -134,45 +134,40 @@
                     }
                     h1{
                         font-family: $heading;
-                        font-size: 8vw;
+                        font-size: 5.5vw;
                         z-index: 1;
                         mix-blend-mode: difference;
-                        font-weight: 400;
-                    }
-                    h2{
-                        font-family: $heading;
-                        font-size: 4.7vw;
-                        z-index: 1;
-                        mix-blend-mode: difference;
-                        font-weight: 400;
+                        font-weight: normal;
+                        margin-top: -3px;
+                        margin-bottom: -14px;
                     }
     
-                    p, h1, h2{
+                    p, h1{
                         display: inline-block;
                     }
                     
-                    #about-txt-5{
-                        mix-blend-mode: normal;
-                    }
-
-                    #about-txt-1, #about-txt-5, #about-txt-7{
-                        margin-left: 4%;
+                    #about-txt-1{
+                        margin-left: 22%;
                     }
                     #about-txt-2{
-                        margin-left: 21%;
+                        margin-left: 42%;
                     }
-                    #about-txt-3{
-                        margin-left: 57%;
+                    #about-txt-3, #about-txt-5{
+                        margin-left: 4%;
+                    }
+                    #about-txt-4{
+                        margin-left: 10%;
+                    }
+                    #about-txt-6{
+                        margin-left: 8%;
+                    }
+                    #about-txt-7{
+                        margin-left: 37%;
+                    }
+                    #about-txt-8{
+                        margin-left: 46%;
                     }
     
-                    #about-txt-6,#about-txt-8{
-                        margin-left: 7%;
-                    }
-    
-                    #about-txt-4, #about-txt-6,#about-txt-8{
-                        margin-bottom: -3%;
-                        margin-top: -1%;
-                    }
                 }
             }
             
