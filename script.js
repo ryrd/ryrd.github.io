@@ -71,26 +71,13 @@ else if(window.innerWidth < 451) currentWindowSize = 'small';
 
 
 window.addEventListener('resize', ()=>{
-        if(mediaQueryMedium.matches && currentWindowSize != 'medium'){
-                window.location.reload();
-        }
-        else if(mediaQuerySmall.matches && currentWindowSize != 'small'){
-                window.location.reload();
-        }        
+        if(mediaQueryMedium.matches && currentWindowSize != 'medium') window.location.reload();
+        else if(mediaQuerySmall.matches && currentWindowSize != 'small') window.location.reload();
 });
 
 toDown.addEventListener('click', () => window.scrollTo(0, 600));
 
 window.addEventListener('scroll', () => { if(window.scrollY > 0) toDown.style.opacity = 0 });
-
-// //progressbar
-// const progressbar = document.querySelector("#progressbar");
-// let totalHeight = document.body.scrollHeight - window.innerHeight;
-
-// window.onscroll = () => {
-//         let progress = (window.pageYOffset/ totalHeight) * 100;
-//         progressbar.style.height = `${progress}%`;
-// }
 
 const s1 = document.querySelector('#header-title1');
 const m1 = ['e','i','d',' ','a','n','n','a','w',' ','i'];
@@ -298,7 +285,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*100}% top`,
                                 pin: true,
-                                scrub: true,
+                                scrub: 1,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -310,7 +297,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*150}% top`,
                                 pin: true,
-                                scrub: true,
+                                scrub: 1,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });

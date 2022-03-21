@@ -2,14 +2,21 @@
 @import './variable';
 
 *{
+    scrollbar-color: transparent;
+    scrollbar-width: none;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+*::-webkit-scrollbar{
+    width: 0px;
+}
+
 html{
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background: $dark;
 }
 
 ::selection{
@@ -19,18 +26,9 @@ html{
 
 body{
     background: $dark;
+    overflow-y: hidden;
+    background: $light;
     cursor: url('../img/cursor.png'), auto;
-}
-
-*::-webkit-scrollbar{
-    width: 13px;
-}
-*::-webkit-scrollbar-thumb{
-    background: #00076b;
-    cursor: url('../img/cpoint.png'), auto;
-    &:hover{
-        background: #00098d;
-    }
 }
 
 #cursor{
