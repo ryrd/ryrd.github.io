@@ -11,6 +11,7 @@
         height: 100vh;
         width: 20%;
         position: relative;
+        z-index: 2;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -130,7 +131,11 @@
                         font-size: 2vw;
                         font-weight: lighter;
                         z-index: 1;
-                        mix-blend-mode: difference;
+                        // mix-blend-mode: difference;
+                        text-shadow: -1px 1px 0 #0909098f,
+                                      1px 1px 0 #0909098f,
+                                      1px -1px 0 #0909098f,
+                                      -1px -1px 0 #0909098f;
                     }
                     h1{
                         font-family: $heading;

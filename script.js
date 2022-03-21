@@ -81,18 +81,16 @@ window.addEventListener('resize', ()=>{
 
 toDown.addEventListener('click', () => window.scrollTo(0, 600));
 
-window.addEventListener('scroll', () => {
-        window.scrollY > 0 ? toDown.style.opacity = 0 : null;
-})
+window.addEventListener('scroll', () => { if(window.scrollY > 0) toDown.style.opacity = 0 });
 
-//progressbar
-const progressbar = document.querySelector("#progressbar");
-let totalHeight = document.body.scrollHeight - window.innerHeight;
+// //progressbar
+// const progressbar = document.querySelector("#progressbar");
+// let totalHeight = document.body.scrollHeight - window.innerHeight;
 
-window.onscroll = () => {
-        let progress = (window.pageYOffset/ totalHeight) * 100;
-        progressbar.style.height = `${progress}%`;
-}
+// window.onscroll = () => {
+//         let progress = (window.pageYOffset/ totalHeight) * 100;
+//         progressbar.style.height = `${progress}%`;
+// }
 
 const s1 = document.querySelector('#header-title1');
 const m1 = ['e','i','d',' ','a','n','n','a','w',' ','i'];
@@ -282,12 +280,20 @@ const works = [
     ];
 
 const workContainer = document.querySelector('#work');
+const workContent = document.querySelector('#work-content');
 //-------------for setting sidetext height-----------
 // if(mediaQueryBig.matches){
 //         workContainer.style.height = `${(100*works.length)+50}vh`;
 // }
 // else if(mediaQuerySmall.matches){
 //         workContainer.style.height = `${(50*works.length)+30}vh`;
+// }
+if(mediaQueryBig.matches){
+        workContainer.style.width = `${(80*works.length)+20}vw`;
+        workContent.style.width = `${80*works.length}vw`;
+}
+// else if(mediaQuerySmall.matches){
+//         workContainer.style.width = `${(50*works.length)+30}vh`;
 // }
 
 //-------------for pin animation-----------
@@ -313,17 +319,16 @@ gsap.to('#work-content', {
         scrollTrigger: {
                 trigger: '#work',
                 start: 'top top',
-                end:`240% top`,
+                end:`${works.length*150}% top`,
                 pin: true,
                 scrub: true,
-                markers: true
+                // markers: true
         }, 
-        xPercent: -80
+        transform: `translateX(-${(works.length-1)*80}vw)`
 });
 
 //----------------ubah bagian sini-------------------
 //render works display
-const workContent = document.querySelector('#work-content');
 const renderWorks =  work => {
         let html = `
         <div class="work-display">
