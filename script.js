@@ -36,7 +36,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('.ryrd.stay3', { transform: 'translateX(435%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.46')
         .from('#name-title', { yPercent: 130, ease: Expo.easeInOut, duration: 1 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .8 }, '-=.8')
-        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 })
+        .to('#blue-block', { yPercent: -120, ease: Expo.easeIn, duration: .6 }, '-=.3')
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 },'-=.6')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
@@ -51,7 +51,7 @@ opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 
         .to('.ryrd.stay2', { transform: 'translateX(-305%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
-        .to('#blue-block', { yPercent: -120, ease: Expo.easeInOut, duration: .6 }, '-=.8')
+        .to('#blue-block', { yPercent: -120, ease: Expo.easeIn, duration: .6 }, '-=1.5')
         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: .7 }, '<');
