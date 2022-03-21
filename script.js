@@ -269,14 +269,15 @@ const works = [
 const workContainer = document.querySelector('#work');
 const workContent = document.querySelector('#work-content');
 
-if(mediaQueryBig.matches){
+if(window.innerWidth >= 1025){
         workContainer.style.width = `${(80*works.length)+20}vw`;
         workContent.style.width = `${80*works.length}vw`;
 }
-else if(mediaQuerySmall.matches){
-        // workContainer.style.width = `${(80*works.length)+20}vw`;
-        // workContent.style.width = `${80*works.length}vw`;
+else if(window.innerWidth < 1025){
+        workContainer.style.width = `${(90*works.length)+10}vw`;
+        workContent.style.width = `${90*works.length}vw`;
 }
+
 ScrollTrigger.matchMedia({
         "(max-width: 1024px)": () => {
                 gsap.to('#work-content', {
@@ -327,7 +328,7 @@ const renderWorks =  work => {
                 <h3>${work.name}</h3>
                 <p>${work.subName}</p>
         </div>
-        <div class="line line-6"></div>
+        <div class="line line-vertical"></div>
         `;
 
         const workBox = document.createElement('div');
@@ -336,7 +337,7 @@ const renderWorks =  work => {
 
         workContent.prepend(workBox);
 }
-// works.forEach(work => renderWorks(work));
+works.forEach(work => renderWorks(work));
 
 //----------------END ubah bagian sini-------------------
 

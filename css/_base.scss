@@ -84,7 +84,7 @@ body{
         top: 0%;
     }
     &.line-vertical{
-        height: 40vw;
+        height: 80vh;
         width: 2px;
         background: linear-gradient(to bottom, transparent 0%, $cold 45%, $cold 55%,  transparent 100%);
         position: absolute;
@@ -98,6 +98,9 @@ body{
     .line{
         &.line-4{
             bottom: 7%;
+        }
+        &.line-vertical{
+            height: 70vh;
         }
     }
 }
@@ -132,7 +135,6 @@ body{
         letter-spacing: 1px;
     }
 }
-
 
 #preloader-blue, #preloader-black{
     width: 100vw;
