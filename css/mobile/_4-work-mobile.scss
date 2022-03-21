@@ -1,9 +1,10 @@
 #work{
     min-height: 600px;
-    height: 130vh;
+    height: 100vh;
+    width: 190vw;
 
     #work-title{
-        width: 10%;
+        width: 10vw;
 
         h2{
             transform: rotate(-90deg);
@@ -11,10 +12,11 @@
     }
 
     #work-content{
-        width: 90%;
+        width: 180vw;
 
         .work-box{
-            height: 41%;
+            width: 90%;
+            height: 100%;
             
             .work-display{
                 width: 80%;
@@ -75,15 +77,6 @@
                 p{
                     font-size: 3vw;
                 }
-            }
-        }
-
-        #work-other{
-            height: 18%;
-
-            h3{
-                font-size: 3vw;
-                letter-spacing: 1px;
             }
         }
     }

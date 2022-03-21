@@ -32,7 +32,6 @@
     #work-content{
         //--------------------------------------------
         width: 160vw;
-        overflow-x: hidden;
         // border: 1px solid red;
         //--------------------------------------------
         z-index: 0;
@@ -46,11 +45,9 @@
             position: relative;
             display: flex;
             align-items: center;
-
             //--------------------------------------------
             // border: 1px solid green;
             //--------------------------------------------
-
 
             .work-display{
                 width: 75%;

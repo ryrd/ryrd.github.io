@@ -281,51 +281,41 @@ const works = [
 
 const workContainer = document.querySelector('#work');
 const workContent = document.querySelector('#work-content');
-//-------------for setting sidetext height-----------
-// if(mediaQueryBig.matches){
-//         workContainer.style.height = `${(100*works.length)+50}vh`;
-// }
-// else if(mediaQuerySmall.matches){
-//         workContainer.style.height = `${(50*works.length)+30}vh`;
-// }
+
 if(mediaQueryBig.matches){
         workContainer.style.width = `${(80*works.length)+20}vw`;
         workContent.style.width = `${80*works.length}vw`;
 }
-// else if(mediaQuerySmall.matches){
-//         workContainer.style.width = `${(50*works.length)+30}vh`;
-// }
-
-//-------------for pin animation-----------
-// ScrollTrigger.matchMedia({
-//         "(max-width: 450px)": () => {
-//                 ScrollTrigger.create({
-//                         trigger: '#work-title',
-//                         start: 'top top',
-//                         end: `${(50*works.length)+30}% bottom`,
-//                         pin: true,
-//                 });
-//         },
-//         "(min-width: 1025px)": () => {
-//                 ScrollTrigger.create({
-//                         trigger: '#work-title',
-//                         start: 'top top',
-//                         end: `${(100*works.length)+50}% bottom`,
-//                         pin: true,
-//                 });
-//         }
-// });
-gsap.to('#work-content', {
-        scrollTrigger: {
-                trigger: '#work',
-                start: 'top top',
-                end:`${works.length*150}% top`,
-                pin: true,
-                scrub: true,
-                // markers: true
-        }, 
-        transform: `translateX(-${(works.length-1)*80}vw)`
-});
+else if(mediaQuerySmall.matches){
+        // workContainer.style.width = `${(80*works.length)+20}vw`;
+        // workContent.style.width = `${80*works.length}vw`;
+}
+ScrollTrigger.matchMedia({
+        "(max-width: 1024px)": () => {
+                gsap.to('#work-content', {
+                        scrollTrigger: {
+                                trigger: '#work',
+                                start: 'top top',
+                                end:`${works.length*100}% top`,
+                                pin: true,
+                                scrub: true,
+                        }, 
+                        transform: `translateX(-${(works.length-1)*90}vw)`
+                });
+        },
+        "(min-width: 1025px)": () => {
+                gsap.to('#work-content', {
+                        scrollTrigger: {
+                                trigger: '#work',
+                                start: 'top top',
+                                end:`${works.length*150}% top`,
+                                pin: true,
+                                scrub: true,
+                        }, 
+                        transform: `translateX(-${(works.length-1)*80}vw)`
+                });
+        }
+})
 
 //----------------ubah bagian sini-------------------
 //render works display

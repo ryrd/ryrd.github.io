@@ -17,10 +17,6 @@ html{
     color: $light;
 }
 
-*::-webkit-scrollbar{
-    width: 15px;
-}
-
 body{
     background: $dark;
     cursor: url('../img/cursor.png'), auto;
@@ -36,7 +32,6 @@ body{
 //     background-color: $cold;
 //     z-index: 14;
 // }
-
 *::-webkit-scrollbar{
     width: 13px;
 }

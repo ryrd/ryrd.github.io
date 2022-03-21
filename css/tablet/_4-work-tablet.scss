@@ -2,7 +2,7 @@
     height: 100vh;
 
     #work-title{
-        width: 10%;
+        width: 10vw;
 
         h2{
             transform: rotate(-90deg);
@@ -10,10 +10,11 @@
     }
 
     #work-content{
-        width: 90%;
+        width: 180vw;
 
         .work-box{
-            height: 70%;
+            height: 100%;
+            width: 90vw;
             
             .work-display{
                 width: 80%;
@@ -23,15 +24,6 @@
                         height: 3vh;
                     }
                 }
-            }
-        }
-
-        #work-other{
-            height: 30%;
-
-            h3{
-                font-size: 2.5vw;
-                letter-spacing: 1px;
             }
         }
     }
