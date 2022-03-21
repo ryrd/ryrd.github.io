@@ -21,6 +21,10 @@
             .work-display{
                 width: 80%;
                 padding: 3%;
+                // ---------------new-----------
+                align-items: center;
+                text-align: center;
+                // ---------------new-----------
 
                 .picture-box{
                     width: 100%;
@@ -72,10 +76,11 @@
                 }
 
                 h3{
-                    font-size: 6vw;
+                    font-size: 9vw;
+                    line-height: 1.1;
                 }
                 p{
-                    font-size: 3vw;
+                    font-size: 5vw;
                 }
             }
         }
