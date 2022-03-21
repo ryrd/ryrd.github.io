@@ -5,11 +5,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    scrollbar-width: 0px;
 }
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 ::selection{
@@ -20,18 +20,8 @@ html{
 body{
     background: $dark;
     cursor: url('../img/cursor.png'), auto;
-    overflow-x: hidden;
 }
 
-// #progressbar{
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     width: 5px;
-//     height: 0%;
-//     background-color: $cold;
-//     z-index: 14;
-// }
 *::-webkit-scrollbar{
     width: 13px;
 }
@@ -42,6 +32,7 @@ body{
         background: #00098d;
     }
 }
+
 #cursor{
     position: fixed;
     width: 50px;
