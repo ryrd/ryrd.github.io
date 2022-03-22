@@ -286,7 +286,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*100}% top`,
                                 pin: true,
-                                scrub: 1,
+                                scrub: .55,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -298,7 +298,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*150}% top`,
                                 pin: true,
-                                scrub: 1,
+                                scrub: .55,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });
