@@ -286,7 +286,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*100}% top`,
                                 pin: true,
-                                scrub: .55,
+                                scrub: .4,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -298,14 +298,13 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*150}% top`,
                                 pin: true,
-                                scrub: .55,
+                                scrub: .4,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });
         }
 })
 
-//----------------ubah bagian sini-------------------
 //render works display
 const renderWorks =  work => {
         let html = `
@@ -338,9 +337,6 @@ const renderWorks =  work => {
         workContent.prepend(workBox);
 }
 works.forEach(work => renderWorks(work));
-
-//----------------END ubah bagian sini-------------------
-
 
 const projImages = document.querySelector('.project-images');
 
