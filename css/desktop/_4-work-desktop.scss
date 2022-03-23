@@ -224,7 +224,14 @@
                     }
 
                     &:hover{
-                        background: rgba($color: #000e8a, $alpha: .2);
+                        background: rgba($color: #000e8a, $alpha: .5);
+                        .spb-line{
+                            .spb-img{
+                                img{
+                                    transform: rotate(-90deg) translate(10%, 6%);
+                                }
+                            }
+                        }
                     }
                 }
             } 

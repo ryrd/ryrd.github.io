@@ -77,15 +77,11 @@ $widthbox: 33vw;
             overflow: hidden;
             transition: .4s cubic-bezier(0,.57,.45,1);
 
-            &:hover{
-                background-color: $cold;
-                cursor: url('../img/cpoint.png'), auto;
-            }
-
             img{
                 width: 20px;
                 height: 20px;
-                transform: rotate(-90deg) translateY(-15%);
+                transition: .4s cubic-bezier(.32,.32,0,1);
+                transform: rotate(-90deg) translateY(-25%);
             }
 
             a{
@@ -95,6 +91,15 @@ $widthbox: 33vw;
                 font-size: 1.1rem;
                 letter-spacing: 1.75px;
                 cursor: url('../img/cpoint.png'), auto;
+            }
+
+            &:hover{
+                background-color: $cold;
+                cursor: url('../img/cpoint.png'), auto;
+
+                img{
+                    transform: rotate(-90deg) translateY(5%) !important;
+                }
             }
         }
 
