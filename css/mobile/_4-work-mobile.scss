@@ -21,10 +21,8 @@
             .work-display{
                 width: 80%;
                 padding: 3%;
-                // ---------------new-----------
                 align-items: center;
                 text-align: center;
-                // ---------------new-----------
 
                 .picture-box{
                     width: 100%;
@@ -32,6 +30,7 @@
                     .show-project-btn{
                         width: 20vw;
                         height: 30px;
+                        display: none;
 
                         .spb-line{
                             border: 1px solid $cold;
@@ -71,14 +70,18 @@
                 }
 
                 h3{
-                    font-size: 9vw;
+                    font-size: 8vw;
                     line-height: 1.1;
                     letter-spacing: .5px;
                 }
                 p{
                     margin-top: 2%;
-                    font-size: 5vw;
+                    font-size: 3.5vw;
                     letter-spacing: 1px;
+                    padding-top: 3px;
+                }
+                .spb-mobile{
+                    display: block;
                 }
             }
         }

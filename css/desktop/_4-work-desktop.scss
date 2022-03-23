@@ -1,17 +1,13 @@
 // @use '../variable' as *;
 #work{
-    //--------------------------------------------
     width: 180vw;
-    //--------------------------------------------
     height: 100vh;
     display: flex;
     flex-direction: row;
     background: $dark;
 
     #work-title{
-        //--------------------------------------------
         width: 20vw;
-        //--------------------------------------------
         height: 100vh;
         z-index: 1;
         position: relative;
@@ -30,10 +26,7 @@
     }
 
     #work-content{
-        //--------------------------------------------
         width: 160vw;
-        // border: 1px solid red;
-        //--------------------------------------------
         z-index: 0;
         height: 100%;
         display: flex;
@@ -45,9 +38,6 @@
             position: relative;
             display: flex;
             align-items: center;
-            //--------------------------------------------
-            // border: 1px solid green;
-            //--------------------------------------------
 
             .work-display{
                 width: 75%;
@@ -82,20 +72,24 @@
                     }
 
                     .show-project-btn{
-                        position: absolute;
                         width: 9vw;
                         height: 6vh;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50% , -50%);
                         background: rgba(0,0,0, .7);
+                        outline: none;
+                        border: none;
                         backdrop-filter: blur(2px);
                         transition: .5s ease;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        z-index: 10;
+                        z-index: 10;               
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50% , -50%);
+                        cursor: url('../img/cpoint.png'), auto;
 
+                        
                         .spb-line{
                             width: 100%;
                             height: 100%;
@@ -112,7 +106,7 @@
                                 overflow: hidden;
                                 display: flex;
                                 justify-content: center;
-                                align-items: center;
+                                align-items: center;   
 
                                 img{
                                     width: 75%;
@@ -170,6 +164,68 @@
                     font-size: 1.7vw;
                     font-weight: normal;
                     color: $light;
+                }
+
+                .spb-mobile{
+                    width: 22vw;
+                    height: 4vh;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                    backdrop-filter: blur(2px);
+                    transition: .5s ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 10px;
+                    padding-top: 0;
+                    cursor: url('../img/cpoint.png'), auto;
+
+
+                    display: none;
+
+                    .spb-line{
+                        width: 100%;
+                        height: 100%;
+                        border: 2px solid $cold;
+                        z-index: 11;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: .25s cubic-bezier(0,.57,.45,1);
+
+                        .spb-img{
+                            width: 25%;
+                            height: 70%;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img{
+                                width: 60%;
+                                height: 80%;
+                                transform: rotate(-90deg) translate(10%, -23%);
+                                transition: .5s cubic-bezier(0,.57,.45,1);
+                            }
+                        }
+
+                        p{
+                            font-family: 'oswald';
+                            color: $light;
+                            letter-spacing: 1px;
+                            font-weight: 200;
+                            font-size: 2.4vw;
+                            padding-top: 0;
+                            margin-top: 0;
+                            transform: translate(-7%, -11%);
+                            transition: .5s cubic-bezier(0,.57,.45,1);
+                        }
+                    }
+
+                    &:hover{
+                        background: rgba($color: #000e8a, $alpha: .2);
+                    }
                 }
             } 
         }

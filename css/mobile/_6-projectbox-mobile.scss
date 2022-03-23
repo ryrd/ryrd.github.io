@@ -26,11 +26,18 @@
 
         .work-link{
             margin-top: 10px;
-            width: 72px;
+            width: 80px;
             height: 32px;
             
+            img{
+                width: 15px;
+                height: 15px;
+                transform: rotate(-90deg) translate(0%);
+            }
+
             a{
                 font-size: .8rem;
+                letter-spacing: 1.2px;
             }
         }
 

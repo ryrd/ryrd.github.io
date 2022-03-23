@@ -64,19 +64,28 @@ $widthbox: 33vw;
         }
 
         .work-link{
-            background-color: $cold;
+            background-color: transparent;
             border: 1px solid $cold;
             margin-top: 10px;
-            width: 80px;
+            width: 120px;
             height: 40px;
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
             white-space: nowrap;
             overflow: hidden;
-            transition: .2s cubic-bezier(0,.57,.45,1);
+            transition: .4s cubic-bezier(0,.57,.45,1);
 
             &:hover{
-                background-color: transparent;
+                background-color: $cold;
+                cursor: url('../img/cpoint.png'), auto;
+            }
+
+            img{
+                width: 20px;
+                height: 20px;
+                transform: rotate(-90deg) translateY(-15%);
             }
 
             a{

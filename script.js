@@ -231,6 +231,56 @@ skillsAnimation.from('.skill-box .skill-logo-wrapper svg circle', {
                         duration: 1.2,
                 }, '<');
 
+//charming js
+function charming(
+        element,
+        {
+          tagName = 'span',
+          split,
+          setClassName = function (index) {
+            return 'char' + index
+          }
+        } = {}
+      ) {
+        element.normalize()
+        let index = 1
+        function inject (element) {
+          const parentNode = element.parentNode
+          const nodeValue = element.nodeValue
+          const array = split ? split(nodeValue) : nodeValue.split('')
+          array.forEach(function (string) {
+            const node = document.createElement(tagName)
+            const className = setClassName(index++, string)
+            if (className) {
+              node.className = className
+            }
+            node.appendChild(document.createTextNode(string))
+            node.setAttribute('aria-hidden', 'true')
+            parentNode.insertBefore(node, element)
+          })
+          if (nodeValue.trim() !== '') {
+            parentNode.setAttribute('aria-label', nodeValue)
+          }
+          parentNode.removeChild(element)
+        }
+        ;(function traverse (element) {
+          // `element` is itself a text node
+          if (element.nodeType === 3) {
+            return inject(element)
+          }
+          // `element` has a single child text node
+          const childNodes = Array.prototype.slice.call(element.childNodes) // static array of nodes
+          const length = childNodes.length
+          if (length === 1 && childNodes[0].nodeType === 3) {
+            return inject(childNodes[0])
+          }
+          // `element` has more than one child node
+          childNodes.forEach(function (childNode) {
+            traverse(childNode)
+          })
+        })(element)
+      };
+
 //--------------------------------work----------------------------
 const works = [
         {
@@ -314,18 +364,26 @@ const renderWorks =  work => {
                                 <source media="(max-width: 650px)" srcset=${work.mainImgMobile} />
                                 <img src=${work.mainImg} />
                         </picture>
-                        <div class="show-project-btn">
+                        <button class="show-project-btn .spb-desktop">
                                 <div class="spb-line">
                                         <div class="spb-img">
                                                 <img src="img/down.png">
                                         </div>
                                         <p>show project</p>
                                 </div>
-                        </div>
+                        </button>
                 </div>
                 <div class="block-white-line"></div>
                 <h3>${work.name}</h3>
                 <p>${work.subName}</p>
+                <button class="spb-mobile">
+                        <div class="spb-line">
+                                <div class="spb-img">
+                                        <img src="img/down.png">
+                                </div>
+                                <p>show project</p>
+                        </div>
+                </button>
         </div>
         <div class="line line-vertical"></div>
         `;
@@ -356,73 +414,26 @@ const renderProjImages = (images, id) => {
 works.forEach(work => {
         work.imgs.forEach(img => renderProjImages(img, work.id));
 });
-//charming js
-function charming(
-        element,
-        {
-          tagName = 'span',
-          split,
-          setClassName = function (index) {
-            return 'char' + index
-          }
-        } = {}
-      ) {
-        element.normalize()
-        let index = 1
-        function inject (element) {
-          const parentNode = element.parentNode
-          const nodeValue = element.nodeValue
-          const array = split ? split(nodeValue) : nodeValue.split('')
-          array.forEach(function (string) {
-            const node = document.createElement(tagName)
-            const className = setClassName(index++, string)
-            if (className) {
-              node.className = className
-            }
-            node.appendChild(document.createTextNode(string))
-            node.setAttribute('aria-hidden', 'true')
-            parentNode.insertBefore(node, element)
-          })
-          if (nodeValue.trim() !== '') {
-            parentNode.setAttribute('aria-label', nodeValue)
-          }
-          parentNode.removeChild(element)
-        }
-        ;(function traverse (element) {
-          // `element` is itself a text node
-          if (element.nodeType === 3) {
-            return inject(element)
-          }
-          // `element` has a single child text node
-          const childNodes = Array.prototype.slice.call(element.childNodes) // static array of nodes
-          const length = childNodes.length
-          if (length === 1 && childNodes[0].nodeType === 3) {
-            return inject(childNodes[0])
-          }
-          // `element` has more than one child node
-          childNodes.forEach(function (childNode) {
-            traverse(childNode)
-          })
-        })(element)
-      };
 
 //show full work    
 const showWork = document.querySelector('#show-work');
 const pictureBox = document.querySelectorAll('.picture-box');
+const spbMobile = document.querySelectorAll('.spb-mobile');
 const workName = document.querySelector('#work-name');
 const workDesc = document.querySelector('#work-desc');
 const workLink = document.querySelector('.work-link a');
 let currentWorkState;
 const textSplit = document.querySelector('#show-work .project-title-box p#work-desc');
 
-pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
+const workSlide = i => {
         currentWorkState = works.length-i;
         document.querySelectorAll(`.fullimg-work:not([alt=${works[works.length-1-i].id}])`).forEach(imgs => imgs.parentNode.remove());
         workName.textContent = works[works.length-1-i].name;
         workDesc.innerHTML = works[works.length-1-i].description;
         if(works[works.length-1-i].link != null){
-                workLink.parentNode.style.display = 'grid';
+                workLink.parentNode.style.display = 'flex';
                 workLink.setAttribute('href', works[works.length-1-i].link);
+                
         }
         else{
                 workLink.parentNode.style.display = 'none';
@@ -440,12 +451,16 @@ pictureBox.forEach((pB,i) => pB.addEventListener('click', () => {
                 .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '<')
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '<')
                 .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<')
-                .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=2');
+                .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=2')
+                .from('#show-work .project-title-box .work-link img', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=1.75');
 
         showWork.style.transform = 'translateX(0%)';
         displayWorkBox.restart();
         document.body.style.overflowY = 'hidden';
-}));
+}
+
+pictureBox.forEach((pB,i) => pB.addEventListener('click', () => workSlide(i) ));
+spbMobile.forEach((spb,i) => spb.addEventListener('click', () => workSlide(i) ));
 
 
 document.querySelector('#work-close').addEventListener('click', () => {
