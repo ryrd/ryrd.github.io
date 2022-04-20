@@ -285,7 +285,34 @@ function charming(
 //--------------------------------work----------------------------
 const works = [
         {
-            id : "work1",
+            id : "bjm",
+            name : "Banjarmasin",
+            subName : "Dummy Project",
+            description : "this very-very simple static website is a dummy project originally created for a college assigment. originally created with vanilla css then recreated with tailwind for hone my tailwind skill. i decided to add this to my portofolio because the UI design is looks pretty decent.",
+            mainImg : "img/work/bjm/bjm1.jpg",
+            mainImgMobile : "img/work/bjm/bjm1-2.jpg",
+            link : "https://ryrd-tailwind-test.netlify.app",
+            imgs : [
+                "img/work/bjm/bjm1.jpg",
+                "img/work/bjm/bjm2.jpg",
+                "img/work/bjm/bjmm.jpg"
+            ]
+        },
+        {
+            id : "expense-tracker",
+            name : "Expense tracker PWA",
+            subName : "Dummy Project",
+            description : "this web app is is a dummy project created for hone my skill with typescript, tailwind, and create futuristic UI with figma. The purpose of this web app is to track daily expenses. and this web app can be installed like native app because of progressive web app (PWA) feature. yeah.. UI for this web app is overkill, but because main purpose of creating this web app is for excercise only and i want to create a futuristic UI design so i applied futuristic design to this web app.<br>created with :<br>- Tailwind<br>- Typescript",
+            mainImg : "img/work/et/et.jpg",
+            mainImgMobile : "img/work/et/et1-2.jpg",
+            link : "https://ryrd-expense-tracker.netlify.app",
+            imgs : [
+                "img/work/et/et.jpg",
+                "img/work/et/etm.jpg"
+            ]
+        },
+        {
+            id : "survey-app",
             name : "Survei Kepuasan Layanan Masyarakat",
             subName : "Pengadilan Negeri Banjarmasin Kelas 1A",
             description : "this web application is created to automate service satisfaction survey at Banjarmasin District Court who previously calculated manually. this Web App is hosted in Banjarmasin District Court local server, so this web can't accessed online. but here some screenshot of this web app.",
@@ -296,16 +323,14 @@ const works = [
                 "img/work/pengadilan/pengadilan1.jpg",
                 "img/work/pengadilan/pengadilan7.jpg",
                 "img/work/pengadilan/pengadilan2.jpg",
-                "img/work/pengadilan/pengadilan3.jpg",
-                "img/work/pengadilan/pengadilan4.jpg",
-                "img/work/pengadilan/pengadilan6.jpg"
+                "img/work/pengadilan/pengadilan3.jpg"
             ]
         },
         {
-            id : "work2",
+            id : "stylish-wear",
             name : "Stylish Wear",
             subName : "Dummy Project",
-            description : "stylish wear is a dummy website showing few information about clothes.<br>made with :<br>- HTML, CSS, Javascript<br>- Swiper.js<br>- Pace.js<br>- GSAP",
+            description : "stylish wear is a dummy website showing few information about clothes.<br>created with :<br>- HTML, CSS, Javascript<br>- GSAP<br>- Swiper.js<br>- Pace.js",
             mainImg : "img/work/sw/sw2.jpg",
             mainImgMobile : "img/work/sw/sw5.jpg",
             link : "https://stylish-wear.netlify.app",
@@ -335,9 +360,9 @@ ScrollTrigger.matchMedia({
                         scrollTrigger: {
                                 trigger: '#work',
                                 start: 'top top',
-                                end:`${works.length*100}% top`,
+                                end:`${works.length*125}% top`,
                                 pin: true,
-                                scrub: .4,
+                                scrub: .35,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -347,9 +372,9 @@ ScrollTrigger.matchMedia({
                         scrollTrigger: {
                                 trigger: '#work',
                                 start: 'top top',
-                                end:`${works.length*150}% top`,
+                                end:`${works.length*350}% top`,
                                 pin: true,
-                                scrub: .4,
+                                scrub: .36,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });
@@ -449,11 +474,11 @@ const workSlide = i => {
                 .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2')
                 .from('#show-work .project-title-box p#work-desc span', { opacity: 0, duration: .02, stagger: .008}, '-=2.25')
                 .from('#show-work .project-title-box .work-link', { width: '0px', ease: Expo.easeOut, duration: 1.8}, '<')
+                .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '<')
+                .from('#show-work .project-title-box .work-link img', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '<')
                 .from('#show-work .project-images .line-8', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeOut, duration: 1.2}, '<')
                 .from('#show-work .project-images .pr-image-box', { clipPath: 'inset(0 0 100% 0)' , ease: Power4.easeOut, duration: 1.8, stagger: .2}, '<')
-                .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<')
-                .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=2')
-                .from('#show-work .project-title-box .work-link img', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '-=1.75');
+                .from('#show-work .project-images .pr-image-box img', { scale: 1.3 , ease: Expo.easeOut, duration: 1.8, stagger: .2}, '<');
 
         showWork.style.transform = 'translateX(0%)';
         displayWorkBox.restart();
