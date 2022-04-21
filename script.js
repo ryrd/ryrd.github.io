@@ -288,7 +288,7 @@ const works = [
             id : "bjm",
             name : "Banjarmasin",
             subName : "Dummy Project",
-            description : "this very-very simple static website is a dummy project originally created for a college assigment. originally created with vanilla css then recreated with tailwind for hone my tailwind skill. i decided to add this to my portofolio because the UI design is looks pretty decent.",
+            description : "this very-very simple static website is a dummy project originally created for a college assigment. originally created with vanilla css then recreated with tailwind to hone my tailwind skill. i decided to add this to my portofolio because i think the UI design of this site is looks pretty decent.",
             mainImg : "img/work/bjm/bjm1.jpg",
             mainImgMobile : "img/work/bjm/bjm1-2.jpg",
             link : "https://ryrd-tailwind-test.netlify.app",
@@ -302,7 +302,7 @@ const works = [
             id : "expense-tracker",
             name : "Expense tracker PWA",
             subName : "Dummy Project",
-            description : "this web app is is a dummy project created for hone my skill with typescript, tailwind, and create futuristic UI with figma. The purpose of this web app is to track daily expenses. and this web app can be installed like native app because of progressive web app (PWA) feature. yeah.. UI for this web app is overkill, but because main purpose of creating this web app is for excercise only and i want to create a futuristic UI design so i applied futuristic design to this web app.<br>created with :<br>- Tailwind<br>- Typescript",
+            description : "this web app is is a dummy project created to hone my skill with typescript, tailwind, and create futuristic UI with figma. The purpose of this web app is to track daily expenses. and this web app can be installed like native app because of progressive web app (PWA) feature. yeah.. UI for this web app is overkill, but because main purpose of creating this web app is for excercise only and i want to create a futuristic UI design so i applied futuristic design to this web app.<br>created with :<br>- Tailwind<br>- Typescript",
             mainImg : "img/work/et/et.jpg",
             mainImgMobile : "img/work/et/et1-2.jpg",
             link : "https://ryrd-expense-tracker.netlify.app",
@@ -360,9 +360,9 @@ ScrollTrigger.matchMedia({
                         scrollTrigger: {
                                 trigger: '#work',
                                 start: 'top top',
-                                end:`${works.length*125}% top`,
+                                end:`${works.length*140}% top`,
                                 pin: true,
-                                scrub: .35,
+                                scrub: .38,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -374,7 +374,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*350}% top`,
                                 pin: true,
-                                scrub: .36,
+                                scrub: .38,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });
