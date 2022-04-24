@@ -130,6 +130,16 @@ $widthbox: 33vw;
             margin-top: 13px;
             letter-spacing: 1.8px;
             font-size: 1.1rem;
+
+            .work-param{
+                display: inline-block;
+                margin-left: 2.2px;
+                overflow: hidden;
+
+                span{
+                    display: inline-block;
+                }
+            }
         }
     }
 

@@ -349,7 +349,7 @@ if(window.innerWidth >= 1025){
         workContainer.style.width = `${(80*works.length)+20}vw`;
         workContent.style.width = `${80*works.length}vw`;
 }
-else if(window.innerWidth < 1025){
+else{
         workContainer.style.width = `${(90*works.length)+10}vw`;
         workContent.style.width = `${90*works.length}vw`;
 }
@@ -362,7 +362,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*140}% top`,
                                 pin: true,
-                                scrub: .38,
+                                scrub: 0,
                         }, 
                         transform: `translateX(-${(works.length-1)*90}vw)`
                 });
@@ -374,7 +374,7 @@ ScrollTrigger.matchMedia({
                                 start: 'top top',
                                 end:`${works.length*350}% top`,
                                 pin: true,
-                                scrub: .38,
+                                scrub: 0,
                         }, 
                         transform: `translateX(-${(works.length-1)*80}vw)`
                 });
@@ -459,20 +459,23 @@ const workSlide = i => {
         if(works[works.length-1-i].link != null){
                 workLink.parentNode.style.display = 'flex';
                 workLink.setAttribute('href', works[works.length-1-i].link);
-                
         }
         else{
                 workLink.parentNode.style.display = 'none';
         }
-        charming(textSplit);
+        charming(textSplit, {tagName : 'div', split : (string) => string.split(/(\s+)/) , setClassName: () => 'work-param'});
+        const addSpan = document.querySelectorAll('.work-param');
+        addSpan.forEach(aS => {
+                charming(aS, {tagName : 'span', split : (string) => string.split(/(\s+)/) , setClassName: () => 'work-param-span'});
+        });
         
         const displayWorkBox = gsap.timeline({paused: true});
         displayWorkBox.from('#show-work .project-title-box h1', { yPercent: 130, ease: Expo.easeOut, duration: 2.5}, '+=.2')
                 .from('#show-work .fullimg-close-part',{width: 0, duration: .75, ease: Power1.easeOut}, '-=1.9')
                 .from('#show-work .fullimg-close-part.cpart1',{rotation: 0, duration: .5, ease: Power2.easeOut},'-=1.5')
                 .from('#show-work .fullimg-close-part.cpart2',{rotation: 0, duration: .5, ease: Power2.easeOut},'<')
-                .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2')
-                .from('#show-work .project-title-box p#work-desc span', { opacity: 0, duration: .02, stagger: .008}, '-=2.25')
+                .from('#show-work .project-title-box .line-project-title', { scaleX: 0, transformOrigin: 'left', ease: Expo.easeOut, duration: 1.3}, '-=2.2')
+                .from('#show-work .project-title-box p#work-desc .work-param span.work-param-span', { yPercent: 110, duration: 1.8, ease: Expo.easeOut}, '<')
                 .from('#show-work .project-title-box .work-link', { width: '0px', ease: Expo.easeOut, duration: 1.8}, '<')
                 .from('#show-work .project-title-box .work-link a', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '<')
                 .from('#show-work .project-title-box .work-link img', { xPercent: -120, ease: Expo.easeOut, duration: 1.8}, '<')
