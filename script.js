@@ -109,13 +109,13 @@ const showMobile = (e, arr) => {
 s1.addEventListener('dblclick', () => show([...m1]));
 s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
 
-const footer = document.querySelector("#footer");
+const rr = document.querySelector("#rr");
 const svg = document.querySelector("#svg");
-footer.addEventListener('dblclick', () => {
+rr.addEventListener('dblclick', () => {
         svg.style.display = 'flex';
         setTimeout(() => svg.style.display = 'none', 10);
 });
-footer.addEventListener('touchstart', e => {
+rr.addEventListener('touchstart', e => {
         e.preventDefault();
         let date = new Date();
         let time = date.getTime();
