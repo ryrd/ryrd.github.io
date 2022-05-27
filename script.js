@@ -69,7 +69,6 @@ let currentWindowSize = '';
 if(window.innerWidth >= 451) currentWindowSize = 'medium'
 else if(window.innerWidth < 451) currentWindowSize = 'small';
 
-
 window.addEventListener('resize', ()=>{
         if(mediaQueryMedium.matches && currentWindowSize != 'medium') window.location.reload();
         else if(mediaQuerySmall.matches && currentWindowSize != 'small') window.location.reload();
@@ -101,8 +100,8 @@ const showMobile = (e, arr = null , func = null) => {
         let time = date.getTime();
         const time_between_taps = 200;
         if (time - lastClick < time_between_taps) {
-                if (arr != null) show([...arr]);                
-                else if (func != null) func();
+                if (arr !== null) show([...arr]); 
+                else if (func !== null) func();
         }
         lastClick = time;
 }
