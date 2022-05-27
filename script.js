@@ -95,37 +95,30 @@ const show = arr => {
         }, 10);
 }
 
-const showMobile = (e, arr) => {
+const showMobile = (e, arr = null , func = null) => {
         e.preventDefault();
         let date = new Date();
         let time = date.getTime();
         const time_between_taps = 200;
         if (time - lastClick < time_between_taps) {
-                show([...arr]);
+                if (arr != null) show([...arr]);                
+                else if (func != null) func();
         }
         lastClick = time;
 }
 
 s1.addEventListener('dblclick', () => show([...m1]));
-s1.addEventListener('touchstart', () => showMobile(e, [...m1]));
+s1.addEventListener('touchstart', () => showMobile(e, arr = [...m1]));
 
 const rr = document.querySelector("#rr");
 const svg = document.querySelector("#svg");
-rr.addEventListener('dblclick', () => {
+const svgShow = () => {
         svg.style.display = 'flex';
         setTimeout(() => svg.style.display = 'none', 10);
-});
-rr.addEventListener('touchstart', e => {
-        e.preventDefault();
-        let date = new Date();
-        let time = date.getTime();
-        const time_between_taps = 200;
-        if (time - lastClick < time_between_taps) {
-                svg.style.display = 'flex';
-                setTimeout(() => svg.style.display = 'none', 10);
-        }
-        lastClick = time;
-});
+}
+
+rr.addEventListener('dblclick', () => svgShow());
+rr.addEventListener('touchstart', e => showMobile(e, func = svgShow));
 
 //-----------------------------about----------------------------
 ScrollTrigger.matchMedia({
