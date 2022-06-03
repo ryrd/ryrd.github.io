@@ -82,7 +82,14 @@ const s1 = document.querySelector('#header-title1');
 const m1 = ['e','i','d',' ','a','n','n','a','w',' ','i'];
 const hm = document.querySelector('#hm');
 const hmp = document.querySelector('#hmp');
+const rr = document.querySelector("#rr");
+const svg = document.querySelector("#svg");
 let lastClick = 0;
+
+const svgShow = () => {
+        svg.style.display = 'flex';
+        setTimeout(() => svg.style.display = 'none', 10);
+}
 
 const show = arr => {
         let str = arr.reverse().join('');
@@ -94,30 +101,19 @@ const show = arr => {
         }, 10);
 }
 
-const showMobile = (e, arr = null , func = null) => {
-        e.preventDefault();
+const showMobile = ({arr = null , func = null}) => {
         let date = new Date();
         let time = date.getTime();
-        const time_between_taps = 200;
-        if (time - lastClick < time_between_taps) {
+        const TIME_BETWEEN_TAPS = 200;
+        if (time - lastClick < TIME_BETWEEN_TAPS) {
                 if (arr !== null) show([...arr]); 
                 else if (func !== null) func();
         }
         lastClick = time;
 }
 
-s1.addEventListener('dblclick', () => show([...m1]));
-s1.addEventListener('touchstart', () => showMobile(e, arr = [...m1]));
-
-const rr = document.querySelector("#rr");
-const svg = document.querySelector("#svg");
-const svgShow = () => {
-        svg.style.display = 'flex';
-        setTimeout(() => svg.style.display = 'none', 10);
-}
-
-rr.addEventListener('dblclick', () => svgShow());
-rr.addEventListener('touchstart', e => showMobile(e, func = svgShow));
+s1.addEventListener('pointerdown', () => showMobile({arr : [...m1]}));
+rr.addEventListener('pointerdown', () => showMobile({func : svgShow}));
 
 //-----------------------------about----------------------------
 ScrollTrigger.matchMedia({
