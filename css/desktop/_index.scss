@@ -6,22 +6,27 @@
 @import './6-projectbox-desktop';
 
 //ultra big screen
-@media (min-width: 1440px) {
+@media (min-width: 1079px) {
     #skill{
         #skill-content{
             .skill-box{
                 width: 14vw;
+                height: 20vh;
 
-                img{
-                    width: 5.5vw;
+                .skill-logo-wrapper{
+                    svg{
+                        width: 35%;
+                    }
                 }
 
-                p{
-                    font-size: 2vw;
-                }
-
-                span{
-                    font-size: 1.5vw;
+                .skill-text-wrapper{
+                    p{
+                        font-size: 1.2vw;
+                    }
+    
+                    span{
+                        font-size: 1vw;
+                    }
                 }
             }
         }
