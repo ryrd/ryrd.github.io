@@ -34,7 +34,7 @@
         flex-wrap: wrap;
         padding: 50px 100px 60px 100px;
         position: relative;
-
+        
         .skill-box{
             width: 12vw;
             height: 150px;
@@ -113,6 +113,13 @@
                     transform: scale(1.3);
                 }
             }
+        }
+
+        #skill-svg{
+            position: absolute;
+            left: -10%;
+            bottom: 10%;
+            transform: rotate(-90deg) scale(.4);
         }
     }
 }
