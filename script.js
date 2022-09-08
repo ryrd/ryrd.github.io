@@ -346,6 +346,22 @@ const works = [
                 "img/work/sw/sw3.jpg",
             ]
         },
+        {
+            id : "earth-wonderer",
+            name : "Earth Wonderer",
+            subName : "Dummy Project",
+            description : "Earth Wonderer is a dummy travel destination site showing Banjarmasin, Kotabaru, and few underrate but beautiful location around the world.<br>created with :<br>- react + typescript<br>- tailwind<br>- framer motion<br>- vite <br>- Pace.js",
+            mainImg : "img/work/earth-wonderer/ew1.jpg",
+            mainImgMobile : "img/work/earth-wonderer/ew1-2.jpg",
+            link : "https://earth-wonderer-ryrd.netlify.app",
+            imgs : [
+                "img/work/earth-wonderer/ew1.jpg",
+                "img/work/earth-wonderer/ew2.jpg",
+                "img/work/earth-wonderer/ew3.jpg",
+                "img/work/earth-wonderer/ew4.jpg",
+                "img/work/earth-wonderer/ewm.jpg",
+            ]
+        },
     ];
 
 const workContainer = document.querySelector('#work');
