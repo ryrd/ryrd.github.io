@@ -307,8 +307,8 @@ const works = [
         {
             id : "expense-tracker",
             name : "Expense tracker PWA",
-            subName : "Dummy Project",
-            description : "this web app is is a dummy project created to hone my skill with typescript, tailwind, and create futuristic UI with figma. The purpose of this web app is to track daily expenses. and this web app can be installed like native app because of progressive web app (PWA) feature. yeah.. UI for this web app is overkill, but because main purpose of creating this web app is for excercise only and i want to create a futuristic UI design so i applied futuristic design to this project.<br>created with :<br>- Tailwind<br>- Typescript",
+            subName : "Personal Project",
+            description : "this web app is is a dummy project created to hone my skill with typescript, tailwind, and create futuristic UI with figma. The purpose of this web app is to track daily expenses. and this web app can be installed like native app because of progressive web app (PWA) feature. UI for this web app might be overkill, but because main purpose of creating this web app is for excercise only and i want to create a futuristic UI design so i applied futuristic design to this project.<br>created with :<br>- Tailwind<br>- Typescript",
             mainImg : "img/work/et/et.jpg",
             mainImgMobile : "img/work/et/et1-2.jpg",
             link : "https://ryrd-expense-tracker.netlify.app",
