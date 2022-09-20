@@ -1,6 +1,5 @@
 #skill{
     min-height: 550px;
-    height: 80vh;
 
     #skill-title{
         width: 10%;
@@ -13,6 +12,8 @@
     #skill-content{
         width: 90%;
         padding: 10px 25px 30px 25px;
+        margin-top: 3vh;
+        margin-bottom: 2vh;
         align-items: center;
 
         .skill-box{
@@ -22,8 +23,12 @@
             padding-bottom: 0;
 
             .skill-logo-wrapper{
-                img, svg{
+                svg{
                     width: 45%;
+
+                    &.wideimg{
+                        width: 65%;
+                    }
                 }
             }
 

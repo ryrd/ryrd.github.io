@@ -222,7 +222,7 @@ const skillsAnimation = gsap.timeline({
 skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
                         fill: "#00000000",
                 }, '+=.45')
-skillsAnimation.from('.skill-box .skill-logo-wrapper svg circle', {
+                .from('.skill-box .skill-logo-wrapper svg circle', {
                         fill: "#00000000",
                 }, '<')
                 .to(".skill-box .skill-logo-wrapper svg", {
