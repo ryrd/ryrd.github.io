@@ -350,7 +350,7 @@ const works = [
             id : "earth-wonderer",
             name : "Earth Wonderer",
             subName : "Dummy Project",
-            description : "Earth Wonderer is a dummy travel destination site showing Banjarmasin, Kotabaru, and few underrate but beautiful location around the world.<br>created with :<br>- react + typescript<br>- tailwind<br>- framer motion<br>- vite <br>- Pace.js <br> <i>recommended to view on desktop and chrome browser</i>",
+            description : "Earth Wonderer is a dummy travel destination site showing Banjarmasin, Kotabaru, and few underrate but beautiful location around the world.<br>created with :<br>- react + typescript<br>- tailwind<br>- framer motion<br>- vite <br>- Pace.js <br>- <i>(also recreated with <a href='https://earthwonderer-vue-ryrd.netlify.app' target='_blank' style='color: #fdfdfd;'>vue</a>/<a href='https://earthwonderer-nuxt-ryrd.netlify.app' target='_blank' style='color: #fdfdfd;'>nuxt</a>)</i> <br><i>recommended to view on desktop and chrome browser</i>",
             mainImg : "img/work/earth-wonderer/ew1.jpg",
             mainImgMobile : "img/work/earth-wonderer/ew1-2.jpg",
             link : "https://earth-wonderer-ryrd.netlify.app",
