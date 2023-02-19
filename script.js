@@ -347,6 +347,21 @@ const works = [
             ]
         },
         {
+            id : "ryrd-photos",
+            name : "ryrd photography portofolio",
+            subName : "Dummy Project",
+            description : "\"ryrd photography portofolio\" is a dummy project to hone my three js skill. this site showing few of my photos in 3d environment. <br>created with :<br>- three js <br>- vue + typescript<br>- gsap<br>- tailwind<br>- vite",
+            mainImg : "img/work/threejs/t1.webp",
+            mainImgMobile : "img/work/threejs/t1-2.webp",
+            link : "https://ryrd-photos.netlify.app",
+            imgs : [
+                "img/work/threejs/t1.webp",
+                "img/work/threejs/t2.webp",
+                "img/work/threejs/t3.webp",
+                "img/work/threejs/tm.webp",
+            ]
+        },
+        {
             id : "earth-wonderer",
             name : "Earth Wonderer",
             subName : "Dummy Project",
