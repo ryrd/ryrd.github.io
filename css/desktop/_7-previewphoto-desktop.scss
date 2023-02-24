@@ -1,0 +1,31 @@
+#preview-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 80;
+    background: #000000b6;
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    animation: opac .8s;
+
+    #preview-close{
+        position: absolute;
+        top: 5vh;
+        right: 3.5vw;
+        width: 2vw;
+        cursor: url('../img/cpoint.png'), auto;
+    }
+
+    #preview-photo{
+        width: 80%;
+    }
+}
+
+// @keyframes opac {
+//     0%{ background: #00000000; }
+//     100%{ background: #00000087; }
+// }

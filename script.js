@@ -347,21 +347,6 @@ const works = [
             ]
         },
         {
-            id : "ryrd-photos",
-            name : "ryrd photography portofolio",
-            subName : "Dummy Project",
-            description : "\"ryrd photography portofolio\" is a dummy project to hone my three js skill. this site showing few of my photos in 3d environment. <br>created with :<br>- three js <br>- vue + typescript<br>- gsap<br>- tailwind<br>- vite",
-            mainImg : "img/work/threejs/t1.webp",
-            mainImgMobile : "img/work/threejs/t1-2.webp",
-            link : "https://ryrd-photos.netlify.app",
-            imgs : [
-                "img/work/threejs/t1.webp",
-                "img/work/threejs/t2.webp",
-                "img/work/threejs/t3.webp",
-                "img/work/threejs/tm.webp",
-            ]
-        },
-        {
             id : "earth-wonderer",
             name : "Earth Wonderer",
             subName : "Dummy Project",
@@ -375,6 +360,21 @@ const works = [
                 "img/work/earth-wonderer/ew3.jpg",
                 "img/work/earth-wonderer/ew4.jpg",
                 "img/work/earth-wonderer/ewm.jpg",
+            ]
+        },
+        {
+            id : "ryrd-photos",
+            name : "ryrd photography portofolio",
+            subName : "Dummy Project",
+            description : "\"ryrd photography portofolio\" is a dummy project to hone my three js skill. this site showing few of my photos in 3d environment. <br>created with :<br>- three js <br>- vue + typescript<br>- gsap<br>- tailwind<br>- vite",
+            mainImg : "img/work/threejs/t1.webp",
+            mainImgMobile : "img/work/threejs/t1-2.webp",
+            link : "https://ryrd-photos.netlify.app",
+            imgs : [
+                "img/work/threejs/t1.webp",
+                "img/work/threejs/t2.webp",
+                "img/work/threejs/t3.webp",
+                "img/work/threejs/tm.webp",
             ]
         },
     ];
@@ -468,7 +468,11 @@ const renderProjImages = (images, id) => {
               </div>
         `
         const prImgBox = document.createElement('div');
+        prImgBox.setAttribute('data-imgurl', `${images}`)
         prImgBox.classList.add('pr-image-box');
+        prImgBox.addEventListener('click', () => {
+                showPreviewPhoto(prImgBox.dataset.imgurl);
+        })
         prImgBox.innerHTML = html;
 
         projImages.append(prImgBox);
@@ -524,7 +528,6 @@ const workSlide = i => {
 pictureBox.forEach((pB,i) => pB.addEventListener('click', () => workSlide(i) ));
 spbMobile.forEach((spb,i) => spb.addEventListener('click', () => workSlide(i) ));
 
-
 document.querySelector('#work-close').addEventListener('click', () => {
         showWork.style.transform = 'translateX(-100%)';
         setTimeout(() => {
@@ -536,6 +539,20 @@ document.querySelector('#work-close').addEventListener('click', () => {
         document.body.style.overflowY = 'scroll';
 });
 
+// ------------------------preview clicked photo function-----------------
+const previewContainer = document.querySelector('#preview-container')
+const previewClose = document.querySelector('#preview-close')
+const previewPhoto = document.querySelector('#preview-photo')
+
+const showPreviewPhoto = imgurl => {
+        previewContainer.style.display = 'flex'
+        previewPhoto.src = imgurl
+}
+[previewClose, previewContainer].forEach(box => {
+        box.addEventListener('click', () => {
+                previewContainer.style.display = 'none'
+        })     
+}) 
 
 //-------------------------------footer----------------------------
 gsap.from('#footer #img-footer', {
