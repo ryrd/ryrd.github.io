@@ -31,6 +31,7 @@ ScrollTrigger.matchMedia({
                         .to('.stay4-2', { transform: 'rotateY(-90deg)' , ease: Expo.easeIn, duration: .5 }, '<')        
                         .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .1 }, '-=.3')
                         .set('#header-title1', { overflowY: 'visible' }, '<')
+                        .to('.stay4', { margin: '0%' }, '<')
                         .to('.ryrd.stay2', { transform: 'translateX(150%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.5')
                         .to('.ryrd.stay1', { transform: 'translateX(180%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.46')
                         .to('.ryrd.stay4', { transform: 'translateX(462%)', scale: 1.75, ease: Expo.easeInOut, duration: .5 }, '-=.48')
@@ -42,19 +43,20 @@ ScrollTrigger.matchMedia({
                         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
                         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
                         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: .7 }, '<');
-        },
-        "(min-width: 451px)": () => {
-                opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
+                },
+                "(min-width: 451px)": () => {
+                        opening.to('#preloader-black', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7})
                         .to('#preloader-blue', {yPercent: -110, ease: Expo.easeInOut, duration: 1.7,}, '-=1.52')
                         .from('.ryrd', { transform: 'translateY(100%)', stagger: .1, ease: Expo.easeInOut, duration: .8, }, '-=.85')
-                        .to('.stay4-1', { transform: 'rotateY(-90deg)' , ease: Expo.easeIn, duration: .5 })
+                        .to('.stay4-1', { transform: 'rotateY(-90deg)' , ease: Expo.easeIn, duration: .5 }, '-=.2')
                         .to('.stay4-2', { transform: 'rotateY(-90deg)' , ease: Expo.easeIn, duration: .5 }, '<')
-                        .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 }, '-=.2')
-                        .to('.ryrd.stay1', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
-                        .to('.ryrd.stay2', { transform: 'translateX(-305%)', ease: Expo.easeInOut, duration: .5 }, '-=.5')
+                        .to('.stay4', { margin: '0%', duration : .085 }, '-=.1')
+                        .to('.ryrd.gone', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .2 }, '-=.4')
+                        .to('.ryrd.stay1', { transform: 'translateX(-300%)', ease: Expo.easeInOut, duration: .5 }, '-=.7')
+                        .to('.ryrd.stay2', { transform: 'translateX(-305%)', ease: Expo.easeInOut, duration: .5 }, '-=.6')
                         .from('.wd', { opacity: 0, stagger: .1, ease: Expo.easeIn, duration: .01 })
                         .from('#profile-box', { scaleY: 0, transformOrigin: 'bottom', ease: Expo.easeInOut, duration: .6 }, '<')
-                        .to('#blue-block', { yPercent: -120, ease: Expo.easeIn, duration: .6 }, '-=1.5')
+                        .to('#blue-block', { yPercent: -120, ease: Expo.easeIn, duration: .6 }, '-=1.6')
                         .from('.line-1', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
                         .from('.line-2', { scaleX: 0, transformOrigin: 'center', ease: Expo.easeInOut, duration: 1 }, '<')
                         .from('#scroll-down', { opacity: 0, yPercent: -50, duration: .7 }, '<');
