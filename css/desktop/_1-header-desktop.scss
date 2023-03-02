@@ -36,6 +36,21 @@
                     font-size: 8.5vw;
                     font-weight: lighter;
                 }
+
+                .stay4{
+                    position: relative;
+                    margin: -1%;
+                }
+                .stay4-1{
+                    position: relative;
+                    rotate: y 90deg;
+                }
+                .stay4-2{
+                    position: absolute;
+                    left: 50%;
+                    translate: -50% 0;
+                    rotate: y 0deg;
+                }
             }
         }
         #header-title2{
