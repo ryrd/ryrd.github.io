@@ -299,7 +299,7 @@ const works = [
             id : "pizza",
             name : "pizza app",
             subName : "Dummy Project",
-            description : "inspired from this <a href='https://www.instagram.com/reel/CkNVhUJg_PF/?utm_source=ig_web_copy_link' target='_blank' style='color: #fdfdfd;'>post<a/>, which the animation is consider hard to develop, so i challenge myself to create web app from this design.",
+            description : "inspired from this <a href='https://www.instagram.com/reel/CkNVhUJg_PF/?utm_source=ig_web_copy_link' target='_blank' style='color: #fdfdfd;'>post<a/>, which the animation is consider hard to develop, so i challenge myself to create web app from this design.<br>created with :<br>- Vue+Typescript<br>- GSAP<br>- Tailwind<br>- Vite",
             mainImg : "img/work/pizza/p1.webp",
             mainImgMobile : "img/work/pizza/p1-2.webp",
             link : "https://ryrd-pizza.netlify.app",
