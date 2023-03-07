@@ -243,7 +243,7 @@ skillsAnimation.from('.skill-box .skill-logo-wrapper svg path', {
                 }, '<');
 
 //charming js
-//yeah i know.. pasting the library code here look ridiculous, but i try to use it via cdn but it doesn't work. And i'm not installing it from npm because i wanna make this project dependency simple
+//yeah i know.. pasting the library code here look ridiculous, but i try to use it via cdn but it doesn't work. And i can't install it from npm neither because i'm not using module bundler/build tool in this project.
 function charming(
         element,
         {

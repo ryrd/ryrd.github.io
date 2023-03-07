@@ -27,6 +27,7 @@ html{
 body{
     background: $dark;
     cursor: url('../img/cursor.png'), auto;
+    overflow: hidden;
 }
 
 #cursor{
