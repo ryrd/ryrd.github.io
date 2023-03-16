@@ -23,9 +23,9 @@
                 padding-top: 2%;
             }
             ul{
-                margin-right: 5vw;
+                margin-right: 7vw;
                 li{
-                    margin: 0 1%;
+                    margin: 0 3%;
                     display: flex;
                     justify-content: center;
 
@@ -35,8 +35,10 @@
                             transform: translateY(25%);
                         }
                         p{
+                            margin-top: 3px;
                             transform: translateY(0%);
                             font-size: 7.5px;
+                            letter-spacing: 1px;
                         }
                     }
                 }
