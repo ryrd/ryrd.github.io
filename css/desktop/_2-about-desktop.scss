@@ -110,65 +110,72 @@
             height: 100vh;
             color: $light;
             position: relative;
-            margin: 0 auto;
+            margin: auto auto;
 
             #about-text-content{
-                width: 100%;
+                width: 80%;
                 height: 100%;
-                margin: auto 0;
+                margin: auto auto;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                row-gap: .3%;
                 z-index: 2;
 
+                p{
+                    font-family: $text;
+                    font-size: 2vw;
+                    font-weight: lighter;
+                    z-index: 1;
+                }
+                h1{
+                    font-family: $heading;
+                    font-size: 4vw;
+                    z-index: 1;
+                    mix-blend-mode: difference;
+                    font-weight: normal;
+                    margin-top: -3px;
+                    margin-bottom: -14px;
+                    display: inline-block;
+                }
+
+                #about-text-highlight-container-1{
+                    margin-left: 2%;
+                }
+                #about-text-highlight-container-2{
+                    margin-left: 5%;
+                }
+
+                .about-text-highlight-container{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: end;
+                    column-gap: 1.5%;
+                    width: 90%;
+
+                    .about-box-reveal-highlight{
+                        overflow: hidden;
+                    
+                        #about-txt-3{
+                            margin-left: 10%;
+                        }
+                    }
+                }
+
                 .about-box-reveal{
-                    width: 73%;
+                    width: 90%;
                     margin: 0 auto;
                     overflow: hidden;
-
-                    p{
-                        font-family: $text;
-                        font-size: 2vw;
-                        font-weight: lighter;
-                        z-index: 1;
-                        // mix-blend-mode: difference;
-                        text-shadow: -1px 1px 0 #0909098f,
-                                      1px 1px 0 #0909098f,
-                                      1px -1px 0 #0909098f,
-                                      -1px -1px 0 #0909098f;
-                    }
-                    h1{
-                        font-family: $heading;
-                        font-size: 5.5vw;
-                        z-index: 1;
-                        mix-blend-mode: difference;
-                        font-weight: normal;
-                        margin-top: -3px;
-                        margin-bottom: -14px;
-                    }
-    
-                    p, h1{
-                        display: inline-block;
-                    }
                     
-                    #about-txt-1{
-                        margin-left: 22%;
-                    }
-                    #about-txt-2{
-                        margin-left: 8%;
-                    }
-                    #about-txt-3, #about-txt-5{
-                        margin-left: 4%;
-                    }
-                    #about-txt-4{
-                        margin-left: 10%;
+                    #about-txt-5{
+                        margin-left: 1.25%;
                     }
                     #about-txt-6{
-                        margin-left: 8%;
+                        margin-left: 10%;
                     }
                     #about-txt-7{
-                        margin-top: 1%;
-                        margin-left: 27%;
+                        margin-left: 18%;
                     }
                 }
             }

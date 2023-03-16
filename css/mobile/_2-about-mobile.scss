@@ -24,7 +24,6 @@
                 }
                 h2{
                     font-size: 8vw;
-                    margin-top: -3%;
                 }
             }
         }
@@ -35,36 +34,50 @@
 
             #about-text-content{
                 width: 100%;
-                margin-top: -4%;
+                margin-left: 3%;
+                row-gap: 1%;
+                
+                p{
+                    font-size: 3vw;
+                    width: 100%;
+                    font-weight: 600;
+                    mix-blend-mode: normal;
+                    color: white;
+                    letter-spacing: 1px;
+                }
+                h1{
+                    font-size: 5.2vw;
+                    width: 100%;
+                    letter-spacing: 1.2px;
+                }
+                
+                #about-text-highlight-container-1{
+                    margin-left: 0%;
+                }
+                #about-text-highlight-container-2{
+                    margin-left: 5%;
+                }
+                
+                .about-text-highlight-container{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: end;
+                    column-gap: 1.5%;
+                    width: 100%;
+                }
 
                 .about-box-reveal{
                     width: 100%;
-                    margin-top: 0px;
-
-                    p{
-                        font-size: 4vw;
-                    }
-                    h1{
-                        font-size: 7.5vw;
-                        padding-bottom: 0px;
-                    }
-
-                    #about-txt-1{
-                        margin-left: 16%;
-                    }
+                    overflow: hidden;
                     
-                    #about-txt-2,
-                    #about-txt-4,
-                    #about-txt-6{
-                        margin-left: 7%;
-                    }
-                    #about-txt-3, 
                     #about-txt-5{
-                        margin-left: 4%;
+                        margin-left: 0%;
+                    }
+                    #about-txt-6{
+                        margin-left: 6%;
                     }
                     #about-txt-7{
-                        margin-left: 24%;
-                        margin-top: .5%;
+                        margin-left: 12%;
                     }
                 }
             }
@@ -74,9 +87,9 @@
             }
 
             #about-txt-img2{
-                bottom: 0%;
-                right: 7%;
-                width: 28vw;
+                bottom: 4%;
+                right: 2%;
+                width: 21vw;
             }
         }
     }

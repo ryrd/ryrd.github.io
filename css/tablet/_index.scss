@@ -1,4 +1,4 @@
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
     @import './1-header-tablet';
     @import './2-about-tablet';
     @import './3-skill-tablet';
