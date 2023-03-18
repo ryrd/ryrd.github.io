@@ -64,6 +64,11 @@
                     align-items: end;
                     column-gap: 1.5%;
                     width: 100%;
+
+                    #about-txt-3{
+                        margin-right: 1.5px;
+                        margin-bottom: 1.1px;
+                    }
                 }
 
                 .about-box-reveal{
@@ -71,6 +76,7 @@
                     overflow: hidden;
                     
                     #about-txt-5{
+                        margin-top: -2px;
                         margin-left: 0%;
                     }
                     #about-txt-6{
