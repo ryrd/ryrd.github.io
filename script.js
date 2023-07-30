@@ -355,12 +355,12 @@ const works = [
             name : "Stylish Wear",
             subName : "Dummy Project",
             description : "stylish wear is a dummy website showing few information about clothes.<br>created with :<br>- HTML, CSS, Javascript<br>- GSAP<br>- Swiper.js<br>- Pace.js",
-            mainImg : "img/work/sw/sw2.jpg",
+            mainImg : "img/work/sw/sw2.webp",
             mainImgMobile : "img/work/sw/sw5.jpg",
             link : "https://stylish-wear.netlify.app",
             imgs : [
                 "img/work/sw/sw1.jpg",
-                "img/work/sw/sw2.jpg",
+                "img/work/sw/sw2.webp",
                 "img/work/sw/sw3.jpg",
             ]
         },
